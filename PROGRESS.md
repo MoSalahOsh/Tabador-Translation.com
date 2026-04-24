@@ -2,7 +2,7 @@
 
 > Updated: 2026-04-24
 
-## Current Phase: 7 — Bilingual Content Pass (next)
+## Current Phase: 9 — Deploy (next after Gate 4)
 
 ## Phase Checklist
 
@@ -54,16 +54,27 @@
 - [x] `/api/contact` route — rate-limited, zod-validated, Resend email, mailto fallback
 - [x] Image assets: hero.jpg, office.jpg, logo.jpeg copied to `public/images/`
 
-### Phase 7 — Bilingual Content Pass 🔲 NEXT
-- [ ] Arabic QA checklist (MISSION.md §Arabic QA)
-- [ ] Footer service links: replace slug-derived text with localized dict strings
-- [ ] Wire social URLs when provided by client
-- [ ] Wire backup email when provided
-- [ ] Add testimonials section when provided
-- [ ] Final pass: all strings in dictionaries (zero hardcoded strings audit)
+### Phase 7 — Bilingual Content Pass ✅
+- [x] Arabic QA checklist (MISSION.md §12) — all 15 items verified
+- [x] Footer service links: localized dict titles (no slug-derived text)
+- [x] Eastern Arabic numerals → Western Arabic site-wide (ar/site.json, ar.json)
+- [x] BreadcrumbList JSON-LD + aria-current on service pages
+- [ ] Wire social URLs (pending from client — OPEN_QUESTIONS #3–6)
+- [ ] Wire backup email (pending from client — OPEN_QUESTIONS #11)
+- [ ] Testimonials (pending from client — OPEN_QUESTIONS #12)
 
-### Phase 8 — QA / Performance / Accessibility / SEO
-- [ ] Not started
+### Phase 8 — QA / Performance / Accessibility / SEO ✅
+- [x] sitemap.ts — 30 routes (EN+AR) with hreflang alternates
+- [x] robots.ts — allow all except /api, /privacy, /terms
+- [x] opengraph-image.tsx — edge-rendered 1200×630 OG image
+- [x] Security headers: CSP, HSTS, X-Frame-Options, Referrer-Policy
+- [x] Image optimization: AVIF+WebP, device sizes configured
+- [x] LocalBusiness + ProfessionalService JSON-LD on every locale page
+- [x] metadataBase + x-default hreflang + Twitter card in locale layout
+- [x] Analytics: track() on theme_toggle + locale_toggle (§10.4 complete)
+- [x] EDITING_GUIDE.md written for non-dev edits
+- [ ] Lighthouse scores (run post-deploy on live URL)
+- [ ] axe a11y audit (run post-deploy)
 
 ### Phase 9 — Deploy
 - [ ] Not started (GitHub push + Vercel Pro + env vars: RESEND_API_KEY, CONTACT_EMAIL_PRIMARY)

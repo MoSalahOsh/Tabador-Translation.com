@@ -1,55 +1,73 @@
 # NEXT_STEPS.md — Resume Here
 
-> Updated: 2026-04-24 — Phases 5 & 6 complete. Smoke test passed.
+> Updated: 2026-04-24 — Phases 7 & 8 complete. Ready for Gate 4 + Deploy.
 
 ## Current status
 
-All pages built and smoke-tested locally. The site runs at `localhost:3000` with both `/en` and `/ar` working, RTL correct, theme toggle functional, and all 6 pages + 11 service sub-pages rendering.
+Phases 5–8 complete and pushed to GitHub. The site is fully bilingual, RTL-correct, SEO-structured, and security-hardened. Ready for Vercel deployment.
 
-## Immediate next: Phase 7 — Bilingual Content Pass
+## 🛑 Gate 4 — User review of Arabic copy
 
-### 7a — Footer service links (quick fix, 5 min)
-The Footer currently derives link labels from slugs (`"Personal Official"` instead of the localized dictionary title). Fix by passing `dict.services.categories` to Footer and rendering proper titles.
+Before going live, the user (or a native Arabic speaker from the team) should review the Arabic pages:
+- `/ar` — Homepage
+- `/ar/services` — Services index
+- `/ar/contact` — Contact page
+- Any 2–3 service detail pages in Arabic
 
-**File:** `app/components/layout/Footer.tsx`
-**Fix:** Replace the `.replace(/-/g, ' ')` label hack with a lookup into a passed `categories` dict.
+Specifically check (§12 checklist items 1–7): grammar, construct state (إضافة), verb agreement, industry terminology, punctuation (،؟؛).
 
-### 7b — Arabic QA checklist (from MISSION.md)
-- [ ] All Arabic text renders in Tajawal (not fallback)
-- [ ] No mixed LTR/RTL in Arabic pages
-- [ ] Form fields RTL-correct (labels, placeholders, error messages)
-- [ ] Numbers displayed correctly (Arabic-Indic vs Western)
-- [ ] Breadcrumb chevrons rotate 180° in RTL
-- [ ] WhatsApp floating button on correct side (left in RTL) ✅ done
-- [ ] Footer columns order sensible in RTL
-- [ ] Locale toggle accessible from Arabic page ✅ done
+**Action:** Confirm "Arabic copy approved" before Phase 9.
 
-### 7c — Content gaps (waiting on client)
-These are non-blocking. When client provides:
-- **Social URLs** → update `content/{en|ar}/site.json` social object
-- **Backup email** → update `CONTACT_EMAIL_BACKUP` env var
-- **Testimonials** → add section to homepage between services grid and final CTA
+---
 
-## After Phase 7 — Phase 8: QA / Perf / A11y / SEO
+## Phase 9 — Deploy to Vercel
 
-1. Run Lighthouse on `/en` and `/ar`
-2. Fix any a11y issues (aria labels, focus states, color contrast)
-3. Add `next/og` OG image generation for service pages
-4. Add `sitemap.xml` + `robots.txt`
-5. Verify `generateMetadata` canonical/hreflang on all pages
-6. Check Core Web Vitals (LCP, CLS, FID)
+### Step 1: Connect GitHub repo to Vercel
+1. Go to [vercel.com](https://vercel.com) → New Project
+2. Import: `https://github.com/MoSalahOsh/Tabador-Translation.com`
+3. **Root Directory:** set to `app` (the Next.js project is inside `app/`)
+4. Framework Preset: Next.js (auto-detected)
 
-## After Phase 8 — Phase 9: Deploy
+### Step 2: Set environment variables in Vercel
+```
+RESEND_API_KEY          = <get from resend.com>
+CONTACT_EMAIL_PRIMARY   = newtabador@gmail.com
+CONTACT_EMAIL_BACKUP    = mudtheronly1976@gmail.com
+```
 
-1. Push to GitHub: `https://github.com/MoSalahOsh/Tabador-Translation.com`
-2. Connect repo to Vercel Pro
-3. Set env vars: `RESEND_API_KEY`, `CONTACT_EMAIL_PRIMARY=newtabador@gmail.com`, `CONTACT_EMAIL_BACKUP=mudtheronly1976@gmail.com`
-4. Add custom domain `tabador-translation.com`
-5. Verify DNS (CNAME/A records via Vercel DNS guide)
-6. 🛑 Gate 2: User approves live URL before social announcement
+### Step 3: Add custom domain
+1. Vercel → Project → Settings → Domains
+2. Add `tabador-translation.com` and `www.tabador-translation.com`
+3. Follow Vercel DNS instructions (add CNAME or A record at your domain registrar)
 
-## Pending from user (non-blocking)
+### Step 4: Smoke-test live
+- Visit `https://tabador-translation.com/en` and `/ar`
+- Test WhatsApp button opens correct pre-filled chat
+- Submit a test quote form
+- Check HTTPS + security headers
 
-- Social media URLs → see OPEN_QUESTIONS.md #3–6
-- Backup email → see OPEN_QUESTIONS.md #11
-- Testimonials → see OPEN_QUESTIONS.md #12
+### Step 5: Run Lighthouse on live URL
+Target: Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95
+
+### Step 6: Tag v1.0.0
+```bash
+git tag v1.0.0 && git push --tags
+```
+
+---
+
+## Remaining content items (non-blocking, add any time)
+
+| Item | Action |
+|---|---|
+| Social media URLs | Update `content/{en,ar}/site.json` → `social.*` |
+| Backup email | Set `CONTACT_EMAIL_BACKUP` env var in Vercel |
+| Testimonials | Add to dictionaries + homepage component |
+
+All pending in OPEN_QUESTIONS.md #3–6, #11, #12.
+
+---
+
+## 🛑 Gate 5 — Final sign-off
+
+After deploy + live smoke test: user confirms site is done → tag `v1.0.0`.
