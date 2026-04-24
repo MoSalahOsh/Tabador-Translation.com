@@ -85,8 +85,19 @@
 - [x] `services/[slug]/page.tsx` — renders bullets grid when present
 - [x] AR dict typo fixed: `المستنأدات` → `المستندات`
 
-### Phase 9 — Deploy
-- [ ] Not started (GitHub push + Vercel Pro + env vars: RESEND_API_KEY, CONTACT_EMAIL_PRIMARY)
+### Phase 9 — Deploy ✅ (partial)
+- [x] Vercel CLI installed + authenticated (account: mu-salah-oshi)
+- [x] `vercel.json` created in `app/`
+- [x] First production deploy: https://app-mu-salah-oshi.vercel.app (now → https://tabador-translation.vercel.app)
+- [x] `CONTACT_EMAIL_PRIMARY` env var set (newtabador@gmail.com)
+- [x] `CONTACT_EMAIL_BACKUP` env var set (mudtheronly1976@gmail.com)
+- [x] Domains added: tabador-translation.com + www.tabador-translation.com
+- [x] Project renamed to `tabador-translation` in Vercel
+- [ ] DNS: add A record `tabador-translation.com → 76.76.21.21` at domain registrar
+- [ ] DNS: add A record `www.tabador-translation.com → 76.76.21.21` at domain registrar
+- [ ] RESEND_API_KEY: get from resend.com, add in Vercel → Project → Settings → Env Vars, redeploy
+- [ ] Lighthouse scores (run after DNS propagates)
+- [ ] Tag v1.0.0
 
 ## Lighthouse Scores (target: Perf ≥ 90, A11y ≥ 95, BP ≥ 95, SEO ≥ 95)
 

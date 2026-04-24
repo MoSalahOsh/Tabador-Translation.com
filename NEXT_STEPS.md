@@ -22,23 +22,31 @@ Specifically check (§12 checklist items 1–7): grammar, construct state (إض�
 
 ## Phase 9 — Deploy to Vercel
 
-### Step 1: Connect GitHub repo to Vercel
-1. Go to [vercel.com](https://vercel.com) → New Project
-2. Import: `https://github.com/MoSalahOsh/Tabador-Translation.com`
-3. **Root Directory:** set to `app` (the Next.js project is inside `app/`)
-4. Framework Preset: Next.js (auto-detected)
+**Status: DEPLOYED** — https://tabador-translation.vercel.app (live now)
 
-### Step 2: Set environment variables in Vercel
-```
-RESEND_API_KEY          = <get from resend.com>
-CONTACT_EMAIL_PRIMARY   = newtabador@gmail.com
-CONTACT_EMAIL_BACKUP    = mudtheronly1976@gmail.com
-```
+### ✅ Done
+- Vercel CLI deployed, project = `tabador-translation` (account: mu-salah-oshi)
+- Env vars set: CONTACT_EMAIL_PRIMARY, CONTACT_EMAIL_BACKUP
+- Domains registered in Vercel: tabador-translation.com + www
 
-### Step 3: Add custom domain
-1. Vercel → Project → Settings → Domains
-2. Add `tabador-translation.com` and `www.tabador-translation.com`
-3. Follow Vercel DNS instructions (add CNAME or A record at your domain registrar)
+### 🔧 Remaining: DNS (at your domain registrar)
+Add these two DNS records at wherever you bought `tabador-translation.com`:
+
+| Type | Name | Value |
+|---|---|---|
+| A | `@` (or `tabador-translation.com`) | `76.76.21.21` |
+| A | `www` | `76.76.21.21` |
+
+DNS propagates in 0–48 hours. After that, the site is live at `https://tabador-translation.com`.
+
+### 🔧 Remaining: Email (Resend API key)
+1. Sign up free at [resend.com](https://resend.com)
+2. Create an API key
+3. Go to [Vercel → Project → Settings → Environment Variables](https://vercel.com/mu-salah-oshi/tabador-translation/settings/environment-variables)
+4. Add: `RESEND_API_KEY = <your-key>`
+5. Redeploy: `vercel --prod` from `D:/Tabador-Translation.com/app`
+
+Without this, forms fall back to mailto (no leads are lost).
 
 ### Step 4: Smoke-test live
 - Visit `https://tabador-translation.com/en` and `/ar`
