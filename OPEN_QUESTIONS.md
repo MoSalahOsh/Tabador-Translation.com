@@ -1,51 +1,60 @@
 # OPEN_QUESTIONS.md — Unresolved Questions
 
-> Items here block specific phases. Answer in this file or reply in chat — agent will update accordingly.
-
-## 🛑 Gate 0 (blocking Phase 1 start)
-
-1. **Mode?** `review` (5 gates, maximum control, slower) or `autopilot` (3 gates, faster)?
-2. **GitHub repo?** New repo named `tabador-translation-com`, or push to an existing one? (If existing, provide the URL.)
+> Gate 0 is cleared. Items below are blocking specific phases.
+> Answered questions have been moved to PROJECT_MEMORY.md.
 
 ---
 
-## Contact & NAP
+## ✅ RESOLVED (Gate 0)
 
-3. **WhatsApp number** — is it the same as the phone number (0538992076), or different?
-4. **Backup email** — a second email to CC on every form submission so no lead is lost.
-5. **Physical address** — full address in Arabic and English (street, district, city, postal code, country).
-6. **Working hours** — days and times (e.g., Sun–Thu 9 AM–5 PM).
-7. **Google Maps pin / coordinates** — link or lat/long.
+- ~~Mode?~~ → **Autopilot**
+- ~~GitHub repo?~~ → **https://github.com/MoSalahOsh/Tabador-Translation.com**
+- ~~WhatsApp same as phone?~~ → **Yes, confirmed (0538992076)**
+- ~~Phone number~~ → **0538992076 / +966 53 899 2076**
+- ~~Primary email~~ → **mudtheronly1976@gmail.com**
+- ~~Official business email~~ → **newtabador@gmail.com**
+- ~~Address~~ → **مقابل الجوازات، الدمام ٣١٩٥٢، ص.ب ٧٣٦١٢**
+- ~~C.R., Licence, Chamber~~ → **C.R. 2051221647 | Lic. 317 | CoC 240404**
+- ~~Owner name~~ → **مدثر احمد المترجم (Mudthar Ahmad)**
+- ~~Office photos approved?~~ → **IMG-10 (storefront) and IMG-12 (hero) are clearly intended for public use**
+- ~~Arabic numerals preference~~ → **Defaulting to Western Arabic (0–9) per MISSION.md — will confirm if needed**
+- ~~Hero concept~~ → **Autopilot: Concept B (single hero + 5-reason strip)**
 
-## Social Media
+---
 
-8. **TikTok** — account URL or handle.
-9. **Instagram** — account URL or handle.
-10. **LinkedIn** — account URL or handle.
-11. **Facebook** — account URL or handle.
+## 🔴 Still Blocking (needed before Gate 1 / Phase 3)
 
-## Trust & Proof
+### Contact
 
-12. **Years in business** — when was the establishment founded?
-13. **Volume claim** — do you have a number for "X documents translated"? (Even a rounded figure is fine.)
-14. **Certifications** — which bodies/authorities certify/accredit the office? (Saudi MOJ, etc.)
-15. **Partner / client logos** — any company/institution logos you have permission to display?
+1. **Working hours** — days and times (e.g., Sun–Thu 9 AM–5 PM). Needed for Contact page and JSON-LD.
+2. **Google Maps link or coordinates** — for the Contact page embedded map. Can be a Google Maps share link.
 
-## Pricing
+### Social Media (needed for footer and Contact page)
 
-16. **Pricing policy** — do you display prices publicly, or prefer "contact for quote"? If you show prices, please provide the price list.
+3. **TikTok** — account URL or @handle.
+4. **Instagram** — account URL or @handle.
+5. **LinkedIn** — account URL or @handle.
+6. **Facebook** — account URL or @handle.
 
-## Testimonials (require individual approval before publishing)
+### Trust & Proof
 
-*None extracted yet — will populate after Phase 2 image reading.*
+7. **Years in business** — founding year (for "X years of experience" trust badge). When was the establishment registered/founded?
+8. **Volume claim** — "X documents translated" or similar stat (even a rounded number is fine; will show as "10,000+" etc.).
+9. **Partner / client logos** — any organizations, companies, or embassies whose logos you have permission to display.
 
-## Content Decisions
+### Pricing
 
-17. **Arabic numerals** — Western Arabic (0–9) or Eastern Arabic (٠–٩) across the Arabic site?
-18. **Hero concept** — 5-banner carousel, or single strong hero + 5-reason strip (recommended for conversion)?
+10. **Pricing policy** — do you display prices publicly, or prefer "contact for quote"? If public, please provide a price list or starting-from prices.
 
-## Miscellaneous
+### Content
 
-19. **Owner / founder name** — to use in About page or legal footer (or prefer not to publish)?
-20. **Office photos** — the 12 images in `source-materials/photos/` — are these office/staff photos approved for use on the website?
-21. **Translation sample PDFs** — are the 5 PDFs in `source-materials/documents/` meant as design references only, or can redacted versions be shown on the site?
+11. **Backup email** — a second email to CC on every form submission so no lead is ever lost if one inbox misses it.
+12. **Testimonials** — do you have any client praise messages (WhatsApp screenshots or written reviews) you'd like to include? Each one needs your individual approval before publishing.
+
+---
+
+## 🟡 Optional (nice-to-have)
+
+13. **Additional services** — Are there services beyond the 7 catalogued categories + visit visa extension + international licence that should be listed?
+14. **Certifications** — Any specific certifying bodies beyond the C.R. and Licence No. 317? (Ministry of Justice approval, ISO, etc.?)
+15. **Languages offered** — Do you want to list specific language pairs prominently, or keep it as "جميع اللغات / All languages"?

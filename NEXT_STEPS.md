@@ -1,24 +1,37 @@
 # NEXT_STEPS.md — Resume Here
 
-> Ordered resume plan. Updated at the end of every response.
+> Updated: 2026-04-24 after Phase 1 + Phase 2 completion.
 
-## Current blocker
+## Current status
 
-**Waiting for Gate 0 answers from the user:**
+**Waiting at 🛑 Gate 1** — user must review extracted facts and answer open questions before Phase 3 begins.
 
-1. **Mode** — `review` or `autopilot`?
-2. **GitHub repo** — new repo, or existing? (URL if existing)
+## Immediate next actions (once Gate 1 is cleared)
 
-## Immediate next actions (once Gate 0 is answered)
+1. **Git remote + push** — add `https://github.com/MoSalahOsh/Tabador-Translation.com` as `origin` and push `main`.
+2. **Phase 3 — Information Architecture**
+   - Draft site map (EN + AR mirror routes).
+   - Autopilot self-approval: standard 8-page structure (Home, Services index + 7 sub-pages, Projects, Partners, About, Contact, Privacy, Terms, 404).
+   - Save `docs/ia.mmd` (Mermaid diagram).
+   - Record IA decisions in `DECISIONS.md`.
+3. **Phase 4 — Design System**
+   - Load `design-md-library` and `frontend-design` skills.
+   - Define token set: color (light/dark), spacing, radii, shadows, glass tiers, motion timing.
+   - Font selection: Tajawal (Arabic) + Inter (Latin).
+   - Build `app/design-system/` with hero preview (Concept B: single hero + 5-reason strip).
+   - Autopilot self-approval: Concept B confirmed.
+4. **Phase 5 — Scaffolding**
+   - `npx create-next-app@latest` with TS + Tailwind + App Router.
+   - Install all required packages.
+   - Configure i18n routing, layout, WhatsApp button.
 
-1. `git init` in project root + `git add -A` + first commit: `chore: bootstrap project memory`
-2. Begin **Phase 1 — Deep Research** using the `research-assistant` skill.
-   - Copy `research-assistant` SKILL.md into `SKILLS_SNAPSHOT/`.
-   - Analyze ≥ 5 translation agency sites (global + Gulf/Saudi).
-   - Produce `RESEARCH.md` with 8–12 Tabador-specific recommendations.
-3. Begin **Phase 2 — Asset & Brand Intake** (can partially overlap with Phase 1).
-   - View all images in `source-materials/brand/` for brand extraction.
-   - View `source-materials/photos/` to classify office/staff images.
-   - Read all PDF translation samples.
-   - Populate `PROJECT_MEMORY.md` fully.
-   - Surface Gate 1 review to user (extracted facts + open questions).
+## Gate 1 items being reviewed
+
+User should confirm / correct the facts in [PROJECT_MEMORY.md](PROJECT_MEMORY.md) and answer the questions in [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md).
+
+The most critical missing items:
+- Working hours (#1)
+- Google Maps link (#2)
+- Social media handles (#3–6)
+- Years in business (#7)
+- Backup email (#11)
