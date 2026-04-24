@@ -73,7 +73,10 @@ export function BannerCarousel({ lang, label, slides, cta, ctaHref, images = DEF
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
               >
-                <p className="text-xs uppercase tracking-[0.18em] text-brand-gold font-semibold mb-3">{label}</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-white/95 font-semibold mb-3">
+                  <span className="inline-block w-2 h-2 rounded-full bg-brand-gold me-2 align-middle" />
+                  {label}
+                </p>
                 <h2 className="text-2xl md:text-4xl font-extrabold leading-tight mb-3">{slide.headline}</h2>
                 <p className="text-white/85 leading-relaxed mb-6 max-w-xl">{slide.body}</p>
               </motion.div>
@@ -99,14 +102,19 @@ export function BannerCarousel({ lang, label, slides, cta, ctaHref, images = DEF
                 >
                   <ChevronLeft size={18} className={isAr ? 'rotate-180' : ''} />
                 </button>
-                <div className="flex items-center gap-1.5 px-2">
+                <div className="flex items-center px-2">
                   {Array.from({ length: total }).map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setIndex(i)}
                       aria-label={`Slide ${i + 1}`}
-                      className={`h-1.5 rounded-full transition-all ${i === index ? 'w-6 bg-brand-gold' : 'w-1.5 bg-white/30 hover:bg-white/50'}`}
-                    />
+                      aria-current={i === index ? 'true' : undefined}
+                      className="group/dot inline-flex items-center justify-center w-8 h-8"
+                    >
+                      <span
+                        className={`block h-1.5 rounded-full transition-all ${i === index ? 'w-6 bg-brand-gold' : 'w-1.5 bg-white/40 group-hover/dot:bg-white/70'}`}
+                      />
+                    </button>
                   ))}
                 </div>
                 <button
