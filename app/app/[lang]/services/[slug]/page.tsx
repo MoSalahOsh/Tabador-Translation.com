@@ -1,12 +1,26 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ChevronRight, MessageCircle } from 'lucide-react'
+import { ChevronRight, MessageCircle, Phone, CheckCircle, ShieldCheck, Clock } from 'lucide-react'
 import { getDictionary, hasLocale } from '../../dictionaries'
 import enSite from '../../../../content/en/site.json'
 import arSite from '../../../../content/ar/site.json'
 
 const BASE_URL = 'https://tabador-translation.com'
+
+const SERVICE_ICONS: Record<string, string> = {
+  'personal-official': '🪪',
+  'embassy-schengen': '🛂',
+  'academic': '🎓',
+  'contracts-business': '📋',
+  'medical': '🏥',
+  'legal-administrative': '⚖️',
+  'trademark': '™️',
+  'financial-commercial': '💼',
+  'technical-engineering': '⚙️',
+  'website-localization': '🌐',
+  'interpretation': '🗣️',
+}
 
 export async function generateStaticParams() {
   const slugs = [
@@ -23,8 +37,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(lang)
   const svc = dict.services.categories[slug as keyof typeof dict.services.categories]
   if (!svc) return {}
+  const isAr = lang === 'ar'
   return {
-    title: `${svc.title} | Tabador Translation Est.`,
+    title: `${svc.title} | ${isAr ? 'مؤسسة دار تبادر للترجمة' : 'Tabador Translation Est.'}`,
     description: svc.desc,
     alternates: {
       canonical: `${BASE_URL}/${lang}/services/${slug}`,
@@ -32,6 +47,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         en: `${BASE_URL}/en/services/${slug}`,
         ar: `${BASE_URL}/ar/services/${slug}`,
       },
+    },
+    openGraph: {
+      title: svc.title,
+      description: svc.desc,
+      url: `${BASE_URL}/${lang}/services/${slug}`,
+      type: 'article',
     },
   }
 }
@@ -62,12 +83,23 @@ export default async function ServicePage({
     ],
   }
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: svc.title,
+    name: svc.title,
+    description: svc.desc,
+    provider: { '@id': `${BASE_URL}/${lang}#business` },
+    areaServed: { '@type': 'Country', name: 'Saudi Arabia' },
+    url: `${BASE_URL}/${lang}/services/${slug}`,
+    offers: { '@type': 'Offer', priceCurrency: 'SAR', availability: 'https://schema.org/InStock' },
+  }
+
   return (
     <div className="py-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8" aria-label="breadcrumb">
@@ -78,30 +110,74 @@ export default async function ServicePage({
           <span className="text-foreground" aria-current="page">{svc.title}</span>
         </nav>
 
-        <h1 className="text-3xl md:text-4xl font-extrabold mb-4">{svc.title}</h1>
-        <p className="text-lg text-muted-foreground mb-8">{svc.desc}</p>
+        {/* Header card */}
+        <div className="rounded-2xl bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy text-white p-6 md:p-8 mb-8 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-[0.06] quill-watermark" />
+          <div className="relative flex items-start gap-4">
+            <span className="text-5xl shrink-0">{SERVICE_ICONS[slug] ?? '📄'}</span>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-2">{svc.title}</h1>
+              <p className="text-white/85 leading-relaxed">{svc.desc}</p>
+            </div>
+          </div>
+        </div>
 
+        {/* Service bullets */}
         {'bullets' in svc && Array.isArray(svc.bullets) && svc.bullets.length > 0 && (
           <ul className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {(svc.bullets as string[]).map((b: string) => (
-              <li key={b} className="flex items-start gap-2 text-sm">
-                <span className="mt-1 text-brand-gold font-bold">✓</span>
+              <li key={b} className="flex items-start gap-2 text-sm p-3 rounded-lg bg-card border border-border">
+                <CheckCircle size={16} className="text-brand-gold shrink-0 mt-0.5" />
                 <span>{b}</span>
               </li>
             ))}
           </ul>
         )}
 
-        <div className="p-6 rounded-2xl bg-secondary/30 border border-border space-y-4 mb-8">
-          <p className="font-semibold">{dict.trust.certified}</p>
-          <p className="text-sm text-muted-foreground">{dict.trust.firstTime}</p>
+        {/* Trust callouts */}
+        <div className="grid sm:grid-cols-2 gap-3 mb-8">
+          <div className="p-5 rounded-2xl bg-secondary/30 border border-border flex items-start gap-3">
+            <ShieldCheck size={20} className="text-brand-gold shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold mb-0.5">{dict.trust.certified}</p>
+              <p className="text-sm text-muted-foreground">{dict.trust.firstTime}</p>
+            </div>
+          </div>
+          <div className="p-5 rounded-2xl bg-secondary/30 border border-border flex items-start gap-3">
+            <Clock size={20} className="text-brand-gold shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold mb-0.5">{dict.trust.fast}</p>
+              <p className="text-sm text-muted-foreground">{dict.trust.fastDesc}</p>
+            </div>
+          </div>
         </div>
 
-        <a href={waHref} target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#1ebe5d] transition-colors">
-          <MessageCircle size={20} />
-          {dict.hero.cta}
-        </a>
+        {/* CTAs */}
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#1ebe5d] transition-colors"
+          >
+            <MessageCircle size={20} />
+            {dict.hero.cta}
+          </a>
+          <a
+            href={`tel:${site.contact.phone}`}
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-navy text-white font-bold hover:bg-brand-navy-light transition-colors"
+          >
+            <Phone size={18} />
+            {dict.hero.callCta}
+          </a>
+          <Link
+            href={`/${lang}/pricing`}
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border text-foreground font-semibold hover:bg-secondary transition-colors"
+          >
+            {dict.nav.pricing}
+            <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} />
+          </Link>
+        </div>
       </div>
     </div>
   )

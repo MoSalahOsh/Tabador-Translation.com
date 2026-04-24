@@ -78,6 +78,27 @@
 **Decision:** Fixed three-column bottom bar (Call · WhatsApp · Quote) on mobile only. Retired the floating call button; floating WhatsApp side-bubble remains on desktop.
 **Rationale:** A docked bar is a stronger primary-action surface on mobile than two floating dots; three actions are tappable without overlap; `pb-16 md:pb-0` on `main` prevents content from being hidden behind the bar.
 
+---
+
+## 2026-04-24 — Phase 12 (Gate 4 + final polish + ops fix)
+
+### D-018: Vercel rootDirectory fix (ops bug)
+**Decision:** Patched the `tabador-translation` Vercel project via API to set `rootDirectory: "app"`. Was previously `/`, which caused every GitHub-triggered deploy to fail with `ENOENT package.json` (because `package.json` lives in `/app/`, not the repo root).
+**Rationale:** Discovered when user reported repeated "Failed production deployment" Vercel emails. CLI deploys from inside `/app/` worked because they uploaded that subdirectory directly. Now both flows work the same way.
+**Implementation:** `PATCH https://api.vercel.com/v9/projects/{projectId}` with `{"rootDirectory":"app"}`. Confirmed by `GET` showing the field set.
+
+### D-019: Gate 4 self-cleared (autopilot)
+**Decision:** Conducted Arabic copy deep audit and applied 13 fixes (calques, gender agreement, register, redundancy). User authorized self-clearance per autopilot mode.
+**Rationale:** Issues found were objective (calques, agreement bugs) rather than stylistic, so self-correcting is safe. User retains right to override any specific phrasing.
+
+### D-020: Add `/[lang]/faq` as a dedicated page (not just the homepage section)
+**Decision:** Built a comprehensive FAQ page with 12 Q&A grouped into 4 categories, in addition to the 6-Q homepage section.
+**Rationale:** SEO — FAQPage JSON-LD on a dedicated URL ranks better than embedded in the homepage. Conversion — "answers" pages reduce bounce by giving high-intent visitors a place to resolve objections without contacting first. Used native `<details>` so accordion works without JS (faster + accessible).
+
+### D-021: Service JSON-LD on each service detail page
+**Decision:** Each `/[lang]/services/[slug]` page now ships a `Service` schema with `provider` linked by `@id` to the LocalBusiness graph node (declared in the locale layout).
+**Rationale:** Google's rich results require the link between Service and Provider; sharing the `@id` rather than redeclaring saves bytes and avoids duplication risk.
+
 ### D-003: Skill availability
 **Decision:** Skills `research-assistant`, `corporate-website-builder`, `frontend-design`, `design-md-library`, `diagram-generator`, `visual-explainer`, `promptforge` are available in this session. Will copy them to SKILLS_SNAPSHOT/ before their respective phases.
 **Rationale:** Per §5 of MISSION.md — skill copies ensure future agents have same guidance.

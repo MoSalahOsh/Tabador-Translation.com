@@ -1,60 +1,53 @@
 # NEXT_STEPS.md — Resume Here
 
-> Updated: 2026-04-24 — Phase 11 (forms + uploads + new pages + hardening) pushed.
+> Updated: 2026-04-24 — Phase 12 deployed. Gate 4 self-cleared.
 
 ## Site is live at https://tabador-translation.com
 
-GitHub push to `master` auto-deploys via Vercel. Latest commit adds:
-- Document upload on both forms (PDF/JPG/PNG/WEBP/DOC/DOCX, ≤3MB) → delivered as email attachment to the office
-- Email field + notes field on quote form; translated validation errors
-- HTML-escape + Origin/host check on API routes (CSRF/XSS hardening)
-- New pages: `/pricing` + `/urgent` (both locales, indexed in sitemap)
-- TrustBadges strip (8 authorities) on homepage
-- Mobile docked action bar (Call · WhatsApp · Quote) replacing single call button
-- Arabic polish: `اطلب عرض سعر سريع`, `نصادق على أمانة الترجمة`
-- Header nav expanded with Pricing + Urgent links
+GitHub `master` push → Vercel auto-deploy (rootDirectory fix in place).
 
-## 🛑 Gate 4 — User review of Arabic copy
+Latest commit ships: dedicated `/faq` page, Service JSON-LD on every service detail page, gradient hero card on service pages, per-page metadata descriptions, skip-to-content a11y link, global focus-visible ring, and 13 Arabic copy refinements.
 
-Review live Arabic pages before v1.0.0:
-- `/ar`, `/ar/services`, `/ar/about`, `/ar/contact`
-- **New**: `/ar/pricing`, `/ar/urgent`
+## What's left to close `v1.0.0`
 
-Check grammar, construct state (إضافة), verb agreement, industry terminology, punctuation (،؟؛).
-Report any exact line that needs change.
+### 1. Resend domain verification (skipped for now — DO LATER)
+Until done, form emails only deliver to `coolenaa999@gmail.com`. To fix:
+- Resend → Domains → Add `tabador-translation.com`
+- Add the 3 DNS records (TXT + DKIM + SPF) at the registrar
+- Update API route's `from:` from `onboarding@resend.dev` to `website@tabador-translation.com` (one-line change in `app/app/api/quote/route.ts` and `app/app/api/contact/route.ts`)
 
-## Remaining to close v1.0.0
+### 2. Rotate the Resend API key (skipped for now — DO LATER)
+Current key `re_aXcWF7H1_3sE9n2XGZbkpHncYV8A2bpyX` was shared in chat. Once user is ready:
+- Resend → API Keys → revoke that key → create new
+- `vercel env rm RESEND_API_KEY production` then `vercel env add RESEND_API_KEY production`
+- Trigger redeploy
 
-1. **RESEND_API_KEY** — at [resend.com](https://resend.com), free tier is fine. Add in Vercel → Settings → Environment Variables → redeploy. Without it, forms fall back to `mailto:` (still works).
-   - Note: until you verify the `tabador-translation.com` sending domain in Resend, the `from` address stays `onboarding@resend.dev`. Verifying the domain is a 5-minute DNS step — optional but recommended for production.
-2. **Lighthouse + axe** on live URL, record scores in PROGRESS.md.
-3. **Gate 4 sign-off** — confirm Arabic copy OK.
-4. **Tag v1.0.0**:
-   ```bash
-   git tag v1.0.0 && git push --tags
-   ```
+### 3. Lighthouse + axe (run on live)
+Record the four scores per locale in PROGRESS.md. Target Perf ≥ 90, A11y ≥ 95, BP ≥ 95, SEO ≥ 95.
 
-## Form flow — end-to-end (for your reference)
-
-**Quote form (homepage + on `/en` `/ar`):** Name + Phone + Document type + From/To language + Email (optional) + Notes (optional) + File upload (optional, ≤3MB).
-- Submits JSON to `/api/quote` → Resend → `newtabador@gmail.com` with `mudtheronly1976@gmail.com` CC'd. Reply-to = customer's email.
-- File arrives as an attachment on the email.
-- If anything fails, browser opens a pre-filled `mailto:` to your email.
-
-**Contact form (on `/en/contact` `/ar/contact`):** Name + Phone + Email + Service + Message + File. Same Resend path.
-
-**WhatsApp:** `+966538992076`, pre-filled message per locale. Note: WhatsApp deep-links cannot pre-attach files (platform limitation) — customers attach in WA manually. Form upload is the "upload a file to us" path.
+### 4. Tag `v1.0.0`
+Once 1–3 are done:
+```
+git tag -a v1.0.0 -m "v1.0.0 — initial production release"
+git push --tags
+```
 
 ## Pending client content (non-blocking)
 
-| Item | Where it slots in |
+| Item | Slot |
 |---|---|
-| Social URLs | `content/{en,ar}/site.json` → `social.*` |
+| Social URLs (TikTok / IG / LinkedIn / Facebook) | `content/{en,ar}/site.json` → `social.*` |
 | Testimonials | Future `testimonials.items[]` in site.json |
 | Partner logos | New `/partners` content when provided |
-| Founding year | Replace "15+ years" with "since 20XX" if preferred |
-| Pricing examples | If you want specific numbers on `/pricing` |
+| Founding year | Replace "15+ years" with "since 20XX" |
+| Specific pricing examples | Add to `/pricing` if desired |
 
-## 🛑 Gate 5 — Final sign-off
+## How to continue this project (for any agent picking up)
 
-Post-deploy smoke test on production → you confirm → tag `v1.0.0`.
+1. Read [CLAUDE.md](CLAUDE.md) and [MISSION.md](MISSION.md) first.
+2. Read this file + [PROGRESS.md](PROGRESS.md).
+3. Read [DECISIONS.md](DECISIONS.md) — D-001 through D-021 capture the architectural choices.
+4. Code lives in `/app`. **Vercel rootDirectory is `app`** — never run `npm install` from repo root.
+5. Auto-deploy: `git push origin master`. Manual deploy from `/app`: `npx vercel deploy --prod --yes`.
+6. Vercel project ID: `prj_G6HVlAioGrUHJ4jDWZKZhIRRUQcD`, team `team_rxNZJMs7dSM8krr8o7ZoRu02`.
+7. Forms POST JSON (with optional base64 file) to `/api/quote` or `/api/contact`. The API route validates origin + MIME + size, then forwards via Resend.

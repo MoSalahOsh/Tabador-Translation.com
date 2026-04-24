@@ -4,6 +4,7 @@
     "services": "Services",
     "pricing": "Pricing",
     "urgent": "Urgent",
+    "faq": "FAQ",
     "about": "About Us",
     "projects": "Projects",
     "partners": "Partners",
@@ -95,6 +96,46 @@
   "testimonials": {
     "title": "What Our Clients Say",
     "subtitle": "Real feedback from individuals, law firms, and embassies we serve"
+  },
+  "faqPage": {
+    "title": "Help Center",
+    "subtitle": "Everything you need to know about certified translation in Saudi Arabia",
+    "groups": [
+      {
+        "title": "About Certified Translation",
+        "items": [
+          { "q": "What makes a translation 'certified'?", "a": "A certified translation is produced by a licensed translator who attaches an official stamp, signature, and a statement of accuracy. This is what makes it legally accepted by ministries, courts, embassies, and immigration authorities." },
+          { "q": "Why can't I use Google Translate or AI?", "a": "Machine translations have no legal standing — no Saudi authority or foreign embassy will accept them. Certified translation requires a licensed human translator who is legally accountable for the accuracy of the document." },
+          { "q": "Do you certify the content of the document?", "a": "No. We certify the fidelity of the translation only — that the translation accurately reflects the source. The truthfulness or validity of the original document is the responsibility of its issuer." }
+        ]
+      },
+      {
+        "title": "Pricing & Turnaround",
+        "items": [
+          { "q": "How is the price calculated?", "a": "Pricing depends on document type, length, language pair, and how urgent you need it. We send a fixed quote within minutes — no hidden fees, no surprises after delivery." },
+          { "q": "Do you charge for the certification stamp?", "a": "No. The certification stamp, signature, and one printed copy are included in the price. Extra physical copies are available at a small additional cost." },
+          { "q": "What's your fastest turnaround?", "a": "For most personal documents (IDs, certificates, passports), same-day delivery is possible if you submit before noon. For larger files or rare languages, we'll confirm a precise turnaround in your quote." }
+        ]
+      },
+      {
+        "title": "Submitting Documents",
+        "items": [
+          { "q": "Can I submit by phone or do I need to visit?", "a": "You don't need to visit. Send a clear scan or photo via WhatsApp, email, or the quote form on this site. Pickup or delivery options are arranged after the translation is complete." },
+          { "q": "What file formats do you accept?", "a": "PDF, JPG, PNG, WEBP, DOC, and DOCX. The quote-form upload accepts files up to 3 MB; for larger files (rare for certified docs), send via WhatsApp." },
+          { "q": "Is my document handled confidentially?", "a": "Yes. All documents are handled with strict confidentiality. We do not share your documents with third parties and they are deleted from our systems after delivery upon request." }
+        ]
+      },
+      {
+        "title": "Acceptance & Delivery",
+        "items": [
+          { "q": "What if my translation is rejected by an authority?", "a": "Our first-time-acceptance guarantee covers exactly this. If a Saudi authority or embassy rejects a translation we issued, we correct it free of charge until it is accepted." },
+          { "q": "Do you handle Schengen visa applications?", "a": "Yes — Schengen files are one of our most common services. We translate every required document with the proper certification expected by the consulates of France, Germany, Italy, Spain, the Netherlands, and other Schengen states." },
+          { "q": "Can you deliver to a different city or abroad?", "a": "Yes. Local pickup is from our office opposite Jawazat in Dammam. We also offer email delivery (certified PDF) and courier delivery anywhere in the Kingdom or abroad at the client's preferred carrier." }
+        ]
+      }
+    ],
+    "stillTitle": "Still have a question?",
+    "stillBody": "We answer WhatsApp and phone calls during working hours — Sunday through Thursday, 8 AM to 10 PM."
   },
   "services": {
     "title": "Our Services",
@@ -279,6 +320,9 @@
   "whatsapp": {
     "ariaLabel": "Contact us on WhatsApp",
     "tooltip": "Chat with us"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
   },
   "theme": {
     "light": "Light mode",

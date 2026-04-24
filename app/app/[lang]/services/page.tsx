@@ -4,10 +4,20 @@ import { notFound } from 'next/navigation'
 import { ChevronRight } from 'lucide-react'
 import { getDictionary, hasLocale } from '../dictionaries'
 
+const BASE_URL = 'https://tabador-translation.com'
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
+  const isAr = lang === 'ar'
   return {
-    title: lang === 'ar' ? 'خدماتنا | دار تبادر للترجمة' : 'Services | Tabador Translation Est.',
+    title: isAr ? 'خدماتنا | دار تبادر للترجمة' : 'Services | Tabador Translation Est.',
+    description: isAr
+      ? '11 خدمة ترجمة معتمدة في الدمام: الشخصية، السفارات والشنغن، الأكاديمية، العقود، الطبية، القانونية، التجارية، الفنية والتعريب والترجمة الفورية.'
+      : '11 certified translation services in Dammam: Personal, Embassy & Schengen, Academic, Contracts, Medical, Legal, Trademark, Financial, Technical, Localization, and Interpretation.',
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/services`,
+      languages: { en: `${BASE_URL}/en/services`, ar: `${BASE_URL}/ar/services` },
+    },
   }
 }
 

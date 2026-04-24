@@ -10,7 +10,7 @@ const serviceSlugs = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/services', '/about', '/contact', '/pricing', '/urgent']
+  const staticRoutes = ['', '/services', '/about', '/contact', '/pricing', '/urgent', '/faq']
 
   const entries: MetadataRoute.Sitemap = []
 

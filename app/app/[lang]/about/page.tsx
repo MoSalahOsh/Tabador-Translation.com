@@ -6,10 +6,20 @@ import { getDictionary, hasLocale } from '../dictionaries'
 import enSite from '../../../content/en/site.json'
 import arSite from '../../../content/ar/site.json'
 
+const BASE_URL = 'https://tabador-translation.com'
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
+  const isAr = lang === 'ar'
   return {
-    title: lang === 'ar' ? 'من نحن | مؤسسة دار تبادر للترجمة' : 'About Us | Tabador Translation Est.',
+    title: isAr ? 'من نحن | مؤسسة دار تبادر للترجمة' : 'About Us | Tabador Translation Est.',
+    description: isAr
+      ? 'مؤسسة دار تبادر للترجمة — أكثر من 15 عاماً من الترجمة المعتمدة في الدمام والمنطقة الشرقية. ترخيص رقم 317، س.ت 2051221647.'
+      : 'Tabador Translation Est. — over 15 years of certified translation in Dammam and the Eastern Province. Licence No. 317, C.R. 2051221647.',
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/about`,
+      languages: { en: `${BASE_URL}/en/about`, ar: `${BASE_URL}/ar/about` },
+    },
   }
 }
 

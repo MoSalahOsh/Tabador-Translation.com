@@ -201,6 +201,36 @@
     inset-inline-end: 1.5rem;
     z-index: 50;
   }
+
+  /* Skip-to-content link (accessibility) */
+  .skip-link {
+    position: fixed;
+    top: -3rem;
+    inset-inline-start: 1rem;
+    z-index: 100;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--brand-navy);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: top 0.18s ease;
+  }
+  .skip-link:focus {
+    top: 1rem;
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 2px;
+  }
+}
+
+/* ─── Focus-visible ring polish (a11y) ─── */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
 
 /* ─── Motion ─── */

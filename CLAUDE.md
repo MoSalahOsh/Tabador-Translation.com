@@ -11,6 +11,17 @@
 2. **Read `NEXT_STEPS.md`** — it tells you exactly where to resume. If it doesn't exist, you are starting a new project and must execute **Phase 0** in `MISSION.md`.
 3. **Read `PROGRESS.md`** — current status and Lighthouse / audit scores.
 
+## Critical infrastructure facts
+
+- **Code lives in `/app`**, not at repo root.
+- **Vercel project rootDirectory = `app`** (set via API in Phase 12). Never run `npm install` from repo root — it will ENOENT.
+- **Vercel project:** `tabador-translation` (id `prj_G6HVlAioGrUHJ4jDWZKZhIRRUQcD`, team `team_rxNZJMs7dSM8krr8o7ZoRu02`).
+- **Auto-deploy:** every `git push origin master` deploys via Vercel.
+- **Manual deploy:** `cd app && npx vercel deploy --prod --yes`.
+- **Live domain:** https://tabador-translation.com (aliased; HSTS preload enabled).
+- **Forms** POST JSON (with optional base64 file ≤3MB) to `/api/quote` and `/api/contact`. Validates origin + MIME + size, sends via Resend with attachment. Falls back to client `mailto:` if Resend fails.
+- **Resend caveat:** until domain `tabador-translation.com` is verified in Resend, emails only deliver to the Resend account email (`coolenaa999@gmail.com`). See `NEXT_STEPS.md`.
+
 ## Hard rules (do not violate)
 
 - **Folder-as-truth.** Never invent client facts (phone, email, address, testimonials, partners, projects). If missing → add to `OPEN_QUESTIONS.md`.

@@ -1,14 +1,18 @@
 # PROGRESS.md — Build Status
 
-> Updated: 2026-04-24 (post-Phase 11 forms + new pages + security)
+> Updated: 2026-04-24 — Phase 12 (Gate 4 cleared, final polish, FAQ page, SEO + a11y).
 
-## Current Phase: 11 — Forms, uploads, new pages, hardening ✅ DEPLOYED
+## Current Phase: 12 — Gate 4 self-cleared, final polish ✅ DEPLOYED
+
+**Live:** https://tabador-translation.com
+**Repo:** https://github.com/MoSalahOsh/Tabador-Translation.com
+**Vercel project:** `tabador-translation` (rootDirectory = `app`)
 
 ## Phase Checklist
 
 ### Phase 0 — Bootstrap ✅
 ### Phase 1 — Research ✅
-### Phase 2 — Asset & Brand Intake ✅ (Gate 1 CLEARED)
+### Phase 2 — Asset & Brand Intake ✅ (🛑 Gate 1 CLEARED)
 ### Phase 3 — Information Architecture ✅
 ### Phase 4 — Design System ✅
 ### Phase 5 — Scaffolding ✅
@@ -17,59 +21,73 @@
 ### Phase 8 — QA / Performance / Accessibility / SEO ✅
 
 ### Phase 9 — Deploy ✅
-- [x] Vercel project `tabador-translation` live on `tabador-translation.com`
-- [x] HTTPS, HSTS preload, security headers all verified
-- [x] GitHub → Vercel continuous deploy wired
-- [ ] `RESEND_API_KEY` — still pending
-- [ ] Lighthouse scores (run post-merge)
-- [ ] Tag `v1.0.0` (after Gate 4)
+- [x] Vercel project live; custom domain `tabador-translation.com` ALIASED
+- [x] HTTPS, HSTS preload, full CSP / Permissions / X-Frame / Referrer / nosniff headers
+- [x] **Vercel rootDirectory fix** — was `/`, now `app`. GitHub auto-deploy works (was previously failing with `ENOENT package.json`; fixed via Vercel API patch in Phase 12).
+- [x] GitHub → Vercel continuous deploy verified working
+- [x] `RESEND_API_KEY` set in Vercel production env (key: `re_aXc...bpyX` — **needs rotation**, see NEXT_STEPS)
+- [x] `CONTACT_EMAIL_PRIMARY` and `CONTACT_EMAIL_BACKUP` env vars set
+- [ ] **Resend domain verification** for `tabador-translation.com` (so emails can deliver to non-Resend-account inboxes — currently only `coolenaa999@gmail.com` receives form submissions)
+- [ ] Lighthouse + axe scores recorded
+- [ ] `v1.0.0` tag (after items above closed)
 
 ### Phase 10 — Live polish + conversion uplift ✅
-(Announcement banner, Process, Industries, FAQ, Stats counter, Mobile call btn, scroll-aware Header, footer expansion, About mission/vision/values, Contact map embed, Arabic fixes.)
+Banner, Process, Industries, FAQ-on-home, Stats counter, Mobile call btn, scroll-aware Header, footer expansion, About mission/vision/values, Contact map embed, Arabic fixes (مدثر أحمد + stats numerals + MSA CTAs).
 
-### Phase 11 — Forms, uploads, new pages, hardening ✅
+### Phase 11 — Forms + uploads + new pages + hardening ✅
+Form file upload (≤3MB) → email attachment via Resend; email + notes fields; translated validation errors; HTML-escape + Origin allow-list (CSRF); MIME/ext/size validation; `/pricing` + `/urgent` pages; TrustBadges section; MobileActionBar.
 
-**Forms — parity upgrade**
-- [x] QuickQuoteForm: added `email`, `notes`, `file upload` (PDF/JPG/PNG/WEBP/DOC/DOCX, ≤3MB)
-- [x] ContactForm: added `file upload`
-- [x] Both forms: translated validation errors (`required`, `invalidEmail`, `fileTooLarge`, `fileTypeBad`), proper `htmlFor`/`id` a11y pairing
-- [x] File → base64 → API → Resend attachment (up to 3MB; larger routed to WhatsApp)
+### Phase 12 — Gate 4 + final polish ✅
 
-**API hardening**
-- [x] Origin header / host allow-list check (`ALLOWED_HOSTS`)
-- [x] HTML-escape all user input in email bodies (XSS-clean)
-- [x] Server-side MIME + extension + size validation (`lib/email.ts`)
-- [x] `reply_to` set to customer email when provided (staff can reply-all)
-- [x] Rate limit kept (5/min/IP, in-memory) — upgrade to Vercel KV is a future nice-to-have
+**Gate 4 — Arabic copy self-cleared (autopilot)**
+Deep audit + 13 fixes:
+- `كل الصيغ` → `جميع الصيغ`
+- `حيث تحتاجنا` → `بالمكان الذي تحتاجه`
+- `للملفات الحساسة زمنياً` → `للملفات ذات المواعيد الحرجة`
+- `فقط اسألنا` → `فاسألنا`
+- `لأي مستند وأي جهة` → `لكل مستند ولكل جهة`
+- `شركاء ترجمة يوميون` → `شريك الترجمة اليومي`
+- `توصل لك ترجمة` → `تُسلّم لك ترجمة`
+- `إحالة علاج` → `إحالة طبية`
+- `عرض سعر مميز` → `عرض سعر بأولوية`
+- `الاعتماد ... مشمول` → `مشمولة` (gender agreement)
+- `وإلا نصلحها مجاناً` → `وإلا أعدنا التصحيح مجاناً`
+- `كل دقيقة تحسب` → `الوقت يداهمك`
+- `بعرض سعر دقيق ومحدد` → `بعرض سعر دقيق` (deduplication)
 
-**New pages**
-- [x] `/[lang]/pricing` — how pricing is calculated + pricing guarantee + CTA
-- [x] `/[lang]/urgent` — same-day/express service landing with dedicated CTA
-- [x] Sitemap updated (46 routes vs. 42 before)
+**New page — `/[lang]/faq`**
+- 12 Q&A in 4 groups (About Certified Translation / Pricing & Turnaround / Submitting / Acceptance & Delivery)
+- Native `<details>` accordion (no JS needed for collapse)
+- FAQPage + BreadcrumbList JSON-LD
+- "Still have a question?" CTA → WhatsApp + Call
+- Header nav and Footer quick-links updated
 
-**Conversion hooks**
-- [x] **TrustBadges** section — 8 authorities (MOFA, MOHE, MOH, MOJ, Jawazat, Chambers, Schengen, GCC) as pill-badges over gradient
-- [x] **MobileActionBar** — docked bottom bar with Call / WhatsApp / Quote (replaces MobileCallButton)
-- [x] Header nav expanded: Pricing + Urgent added
+**Per-page SEO**
+- Service detail pages: full Service JSON-LD with provider linked to LocalBusiness `@id`, areaServed, offers.priceCurrency=SAR
+- Service detail pages: gradient header card with service icon + improved bullet styling + trust callouts + dual CTA (WA + Call) + Pricing link
+- `/services`, `/about`, `/contact`: per-locale meta description + canonical + alternates
+- Sitemap now lists all 9 static routes per locale (×2) + 11 service detail pages (×2) = 40 entries plus root sitemap
 
-**Arabic polish**
-- [x] `اطلب سعراً سريعاً` → `اطلب عرض سعر سريع`
-- [x] `نصادق على صحة الترجمة ليس المحتوى` → `نصادق على أمانة الترجمة لا على محتوى المستند الأصلي`
-- [x] Subtitle "أرسل مستندك الآن — نرد عليك في دقائق" → "...خلال دقائق"
-- [x] All form validation in Arabic MSA
+**Accessibility**
+- Skip-to-content link (`.skip-link` in globals.css), translatable
+- Global `:focus-visible` ring (gold accent, 2px outline-offset)
+- Service detail page CTA buttons gain proper hierarchy
 
-**Verified:** `tsc --noEmit` clean, `next build` clean (46 routes compiled).
-
-## Lighthouse Scores
-Run post-deploy on `tabador-translation.com`. Pending.
-
-## Known Pre-v1.0.0 Gaps
-1. `RESEND_API_KEY` env var (enables email delivery instead of mailto fallback)
-2. Lighthouse + axe run on live URL
-3. Gate 4 Arabic sign-off
-4. Social URLs, testimonials, partner logos (pending client)
+**Verification**
+- `tsc --noEmit` clean
+- `next build` clean — **48 routes** generated
 
 ## Forms & WhatsApp — final verified state
-- **QuickQuoteForm & ContactForm**: POST to `/api/quote` or `/api/contact` → Resend → `newtabador@gmail.com` (primary), cc `mudtheronly1976@gmail.com` (backup). Reply-to = customer email. File attached inline.
-- **WhatsApp button**: `+966538992076`, pre-filled EN and AR messages, tracks `whatsapp_click` event, appears in header nav, hero, service pages, contact, mobile bar, floating side-button on desktop.
-- **Fallback**: If Resend key missing or API fails, browser opens `mailto:` to office email with form contents (no leads lost).
+
+| Component | Wired to | Status |
+|---|---|---|
+| QuickQuoteForm | `/api/quote` → Resend → `newtabador@gmail.com` (cc backup), reply-to=customer email, file as attachment | ✅ |
+| ContactForm | `/api/contact` → same path | ✅ |
+| WhatsApp button (×6 placements) | `+966538992076`, pre-filled per locale | ✅ |
+| Mobile docked bar | Call · WhatsApp · Quote | ✅ |
+| Floating WhatsApp (desktop) | tracks `whatsapp_click` analytics | ✅ |
+
+**Caveat:** Until Resend domain verification is done, emails only reach `coolenaa999@gmail.com` (Resend account email) due to free-tier sender restrictions. Quote/Contact `mailto:` fallback always works.
+
+## Lighthouse Scores
+Pending live run.

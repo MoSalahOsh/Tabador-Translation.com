@@ -106,6 +106,7 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <a href="#main-content" className="skip-link">{dict.a11y.skipToContent}</a>
       <AnnouncementBanner
         text={dict.banner.text}
         ctaText={dict.banner.cta}
@@ -113,7 +114,7 @@ export default async function LocaleLayout({
         dismissLabel={dict.banner.dismiss}
       />
       <Header lang={lang} dict={dict} site={site} />
-      <main className="flex-1 pb-16 md:pb-0">{children}</main>
+      <main id="main-content" className="flex-1 pb-16 md:pb-0">{children}</main>
       <Footer lang={lang} dict={dict} site={site} />
       <WhatsAppButton lang={lang} dict={dict} whatsapp={site.contact.whatsapp} message={site.contact.whatsappMessage} />
       <MobileActionBar lang={lang} phone={site.contact.phone} whatsappHref={waHref} labels={dict.mobileBar} />

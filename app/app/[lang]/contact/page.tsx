@@ -6,10 +6,20 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import enSite from '../../../content/en/site.json'
 import arSite from '../../../content/ar/site.json'
 
+const BASE_URL = 'https://tabador-translation.com'
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
+  const isAr = lang === 'ar'
   return {
-    title: lang === 'ar' ? 'تواصل معنا | مؤسسة دار تبادر للترجمة' : 'Contact Us | Tabador Translation Est.',
+    title: isAr ? 'تواصل معنا | مؤسسة دار تبادر للترجمة' : 'Contact Us | Tabador Translation Est.',
+    description: isAr
+      ? 'تواصل مع مؤسسة دار تبادر للترجمة في الدمام — هاتف وواتساب على +966 53 899 2076. مفتوح الأحد إلى الخميس، 8 صباحاً – 10 مساءً.'
+      : 'Contact Tabador Translation Est. in Dammam — phone and WhatsApp on +966 53 899 2076. Open Sunday–Thursday, 8 AM – 10 PM.',
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/contact`,
+      languages: { en: `${BASE_URL}/en/contact`, ar: `${BASE_URL}/ar/contact` },
+    },
   }
 }
 

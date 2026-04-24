@@ -42,6 +42,7 @@ export function Header({ lang, dict, site }: Props) {
     { key: 'services', href: `/${lang}/services` },
     { key: 'pricing', href: `/${lang}/pricing` },
     { key: 'urgent', href: `/${lang}/urgent` },
+    { key: 'faq', href: `/${lang}/faq` },
     { key: 'about', href: `/${lang}/about` },
     { key: 'contact', href: `/${lang}/contact` },
   ]
