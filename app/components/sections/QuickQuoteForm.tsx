@@ -240,7 +240,7 @@ export function QuickQuoteForm({ lang, dict, site }: Props) {
         href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full flex justify-center py-3 rounded-xl border border-[#128C7E] text-[#128C7E] font-semibold hover:bg-[#128C7E]/10 transition-colors text-sm"
+        className="w-full flex justify-center py-3 rounded-xl border border-brand-navy text-brand-navy font-semibold hover:bg-brand-navy/10 transition-colors text-sm"
       >
         {q.submitWhatsApp}
       </a>

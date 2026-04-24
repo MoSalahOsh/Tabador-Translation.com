@@ -44,7 +44,7 @@ export function Footer({ lang, dict, site }: Props) {
               <span className="font-bold text-white leading-tight">{site.brand.name}</span>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">{site.brand.certNote}</p>
-            <div className="flex gap-3 flex-wrap text-xs text-white/50">
+            <div className="flex gap-3 flex-wrap text-xs text-white/75">
               <span>C.R. {site.brand.cr}</span>
             </div>
             <div className="flex gap-3">
@@ -131,7 +131,7 @@ export function Footer({ lang, dict, site }: Props) {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/75">
           <p>© {year} {site.brand.name}. {dict.footer.rights}</p>
           <div className="flex gap-4">
             <Link href={`/${lang}/privacy`} className="hover:text-white/80 transition-colors">{dict.footer.privacy}</Link>

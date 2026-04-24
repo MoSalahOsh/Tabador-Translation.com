@@ -121,10 +121,9 @@ export default async function HomePage({
               </a>
               <Link
                 href={`/${lang}/services`}
-                aria-label={`${dict.hero.ctaSecondary} — ${dict.nav.services}`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass text-white font-semibold text-base hover:bg-white/20 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-colors"
               >
-                {dict.hero.ctaSecondary}
+                {dict.nav.services}
                 <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
               </Link>
             </div>
@@ -264,10 +263,9 @@ export default async function HomePage({
               </ul>
               <Link
                 href={`/${lang}/about`}
-                aria-label={`${dict.hero.ctaSecondary} — ${dict.nav.about}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-navy text-white font-semibold hover:bg-brand-navy-light transition-colors"
               >
-                {dict.hero.ctaSecondary}
+                {dict.nav.about}
                 <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
               </Link>
             </div>
