@@ -28,7 +28,7 @@ export function MobileActionBar({ lang, phone, whatsappHref, labels }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track('whatsapp_click', { source: 'mobile_bar' })}
-          className="flex flex-col items-center gap-1 py-2.5 text-[#128C7E] active:bg-muted transition-colors border-x border-border"
+          className="flex flex-col items-center gap-1 py-2.5 text-[#0a6855] active:bg-muted transition-colors border-x border-border"
         >
           <MessageCircle size={20} />
           <span className="text-[11px] font-semibold">{labels.whatsapp}</span>

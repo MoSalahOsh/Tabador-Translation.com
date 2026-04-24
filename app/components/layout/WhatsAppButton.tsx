@@ -20,7 +20,7 @@ export function WhatsAppButton({ lang, whatsapp, message, dict }: Props) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="float-cta group flex items-center gap-2 bg-[#128C7E] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#128C7E] focus-visible:ring-offset-2"
+      className="float-cta group flex items-center gap-2 bg-[#0a6855] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0a6855] focus-visible:ring-offset-2"
       aria-label={dict.whatsapp.ariaLabel}
       onClick={() => track('whatsapp_click', { lang })}
     >

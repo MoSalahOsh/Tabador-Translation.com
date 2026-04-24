@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
           <p className="text-white/80 mb-6 max-w-xl mx-auto">{dict.urgent.ctaBody}</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a href={waHref} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#128C7E] text-white font-bold hover:bg-[#0a6855] transition">
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0a6855] text-white font-bold hover:bg-[#075144] transition">
               <MessageCircle size={18} /> {dict.hero.whatsappCta}
             </a>
             <a href={`tel:${site.contact.phone}`}

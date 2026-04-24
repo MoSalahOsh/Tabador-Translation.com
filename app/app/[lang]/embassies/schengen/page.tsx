@@ -152,7 +152,7 @@ export default async function SchengenPage({ params }: { params: Promise<{ lang:
           <p className="text-white/80 mb-6 max-w-xl mx-auto px-4">{s.ctaBody}</p>
           <div className="flex flex-wrap gap-3 justify-center px-4">
             <a href={waHref} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#128C7E] text-white font-bold hover:bg-[#0a6855] transition">
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0a6855] text-white font-bold hover:bg-[#075144] transition">
               <MessageCircle size={18} /> {dict.hero.whatsappCta}
             </a>
             <a href={`tel:${site.contact.phone}`}

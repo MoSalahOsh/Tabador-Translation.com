@@ -115,7 +115,7 @@ export default async function HomePage({
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#128C7E] text-white font-bold text-base hover:bg-[#0a6855] transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0a6855] text-white font-bold text-base hover:bg-[#075144] transition-colors shadow-lg"
               >
                 {dict.hero.cta}
               </a>
@@ -291,7 +291,7 @@ export default async function HomePage({
               href={waHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#128C7E] text-white font-bold text-base hover:bg-[#0a6855] transition-colors shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#0a6855] text-white font-bold text-base hover:bg-[#075144] transition-colors shadow-xl"
             >
               {dict.hero.cta}
             </a>

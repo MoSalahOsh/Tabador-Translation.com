@@ -109,7 +109,7 @@ export default async function FaqPage({ params }: { params: Promise<{ lang: stri
               href={waHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#128C7E] text-white font-bold hover:bg-[#0a6855] transition"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0a6855] text-white font-bold hover:bg-[#075144] transition"
             >
               <MessageCircle size={18} />
               {dict.hero.whatsappCta}

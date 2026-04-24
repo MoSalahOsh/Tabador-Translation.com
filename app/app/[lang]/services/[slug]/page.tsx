@@ -158,7 +158,7 @@ export default async function ServicePage({
             href={waHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#128C7E] text-white font-bold hover:bg-[#0a6855] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0a6855] text-white font-bold hover:bg-[#075144] transition-colors"
           >
             <MessageCircle size={20} />
             {dict.hero.cta}
