@@ -81,6 +81,17 @@ export default async function ServicePage({
         <h1 className="text-3xl md:text-4xl font-extrabold mb-4">{svc.title}</h1>
         <p className="text-lg text-muted-foreground mb-8">{svc.desc}</p>
 
+        {'bullets' in svc && Array.isArray(svc.bullets) && svc.bullets.length > 0 && (
+          <ul className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {(svc.bullets as string[]).map((b: string) => (
+              <li key={b} className="flex items-start gap-2 text-sm">
+                <span className="mt-1 text-brand-gold font-bold">✓</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <div className="p-6 rounded-2xl bg-secondary/30 border border-border space-y-4 mb-8">
           <p className="font-semibold">{dict.trust.certified}</p>
           <p className="text-sm text-muted-foreground">{dict.trust.firstTime}</p>

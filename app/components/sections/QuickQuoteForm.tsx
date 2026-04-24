@@ -13,6 +13,7 @@ const schema = z.object({
   langTo: z.string().min(2, 'Required'),
   name: z.string().min(2, 'Required'),
   phone: z.string().min(7, 'Required'),
+  honeypot: z.string().max(0).optional(),
 })
 
 type FormData = z.infer<typeof schema>
@@ -64,7 +65,8 @@ export function QuickQuoteForm({ lang, dict, site }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-card rounded-2xl p-6 shadow-md border border-border">
+    <form onSubmit={handleSubmit(onSubmit)} dir={lang === 'ar' ? 'rtl' : 'ltr'} className="space-y-4 bg-card rounded-2xl p-6 shadow-md border border-border">
+      <input type="text" {...register('honeypot')} className="hidden" aria-hidden="true" tabIndex={-1} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="text-sm font-medium mb-1 block">{q.docType}</label>

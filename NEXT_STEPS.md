@@ -1,6 +1,6 @@
 # NEXT_STEPS.md — Resume Here
 
-> Updated: 2026-04-24 — Phases 7 & 8 complete. Ready for Gate 4 + Deploy.
+> Updated: 2026-04-24 — Audit pass complete. Phases 5–8 + audit fixes pushed. Ready for Gate 4 + Deploy.
 
 ## Current status
 

@@ -37,47 +37,58 @@
     "categories": {
       "personal-official": {
         "title": "Personal & Official",
-        "desc": "National ID, birth certificates, family records, driving licences."
+        "desc": "National ID, birth certificates, family records, driving licences.",
+        "bullets": ["National ID card", "Birth & death certificates", "Passport & travel documents", "Marriage & divorce certificates", "Driving licence", "Family record (Civil Status)"]
       },
       "embassy-schengen": {
         "title": "Embassy & Schengen",
-        "desc": "Schengen documents, visa files, immigration, all embassy requirements."
+        "desc": "Schengen documents, visa files, immigration, all embassy requirements.",
+        "bullets": ["Schengen visa application files", "Work & residency permit documents", "Immigration & asylum papers", "Embassy-certified documents", "Powers of attorney for use abroad", "Criminal record clearances"]
       },
       "academic": {
         "title": "Academic & Education",
-        "desc": "Degrees, transcripts, acceptance letters, school certificates."
+        "desc": "Degrees, transcripts, acceptance letters, school certificates.",
+        "bullets": ["University degrees & diplomas", "Academic transcripts & grade reports", "School leaving certificates", "MOHE equivalency support documents", "Academic research papers", "Acceptance & enrollment letters"]
       },
       "contracts-business": {
         "title": "Contracts & Business",
-        "desc": "Marriage contracts, powers of attorney, employment, company bylaws."
+        "desc": "Marriage contracts, powers of attorney, employment, company bylaws.",
+        "bullets": ["Marriage & divorce contracts", "Powers of attorney (general & special)", "Employment & labour contracts", "Company articles & bylaws", "MoUs & commercial agreements", "Board resolutions & corporate documents"]
       },
       "medical": {
         "title": "Medical Translation",
-        "desc": "Medical reports, radiology, lab reports, overseas treatment files."
+        "desc": "Medical reports, radiology, lab reports, overseas treatment files.",
+        "bullets": ["Medical reports & diagnoses", "Radiology & imaging reports", "Laboratory & pathology results", "Surgical & discharge summaries", "Overseas treatment referral files", "Medical certificates & prescriptions"]
       },
       "legal-administrative": {
         "title": "Legal & Administrative",
-        "desc": "Official letters, government correspondence, legal documents."
+        "desc": "Official letters, government correspondence, legal documents.",
+        "bullets": ["Official government letters & circulars", "Court orders & judicial decisions", "Legal contracts & agreements", "Corporate governance documents", "Regulatory & compliance filings", "Certified true copy attestations"]
       },
       "trademark": {
         "title": "Trademark & SAIP",
-        "desc": "Trademark translation and filing with the Saudi IP Authority."
+        "desc": "Trademark translation and filing with the Saudi IP Authority.",
+        "bullets": ["Trademark registration applications", "SAIP filing documents", "Trademark classification descriptions", "Assignment & licensing agreements", "Priority claim documents", "Trademark certificates & renewals"]
       },
       "financial-commercial": {
         "title": "Financial & Commercial",
-        "desc": "Bank statements, financial reports, customs and trade documents."
+        "desc": "Bank statements, financial reports, customs and trade documents.",
+        "bullets": ["Bank statements & account certificates", "Audited financial statements", "Commercial invoices & contracts", "Import/export & customs documents", "Shareholder agreements", "Tax & regulatory documents"]
       },
       "technical-engineering": {
         "title": "Technical & Engineering",
-        "desc": "Manuals, specifications, engineering reports, patent documents."
+        "desc": "Manuals, specifications, engineering reports, patent documents.",
+        "bullets": ["Technical manuals & operating instructions", "Engineering specifications & drawings", "Inspection & testing reports", "Safety data sheets (SDS/MSDS)", "Patent applications & descriptions", "Project tender documents"]
       },
       "website-localization": {
         "title": "Website & App Localization",
-        "desc": "Arabic/English website localization, app translation, marketing content."
+        "desc": "Arabic/English website localization, app translation, marketing content.",
+        "bullets": ["Website content & UI strings", "Mobile app interface translation", "Software & SaaS localization", "Marketing & advertising copy", "Social media & digital content", "Localization quality assurance"]
       },
       "interpretation": {
         "title": "Interpretation",
-        "desc": "Simultaneous and consecutive interpretation for conferences and meetings."
+        "desc": "Simultaneous and consecutive interpretation for conferences and meetings.",
+        "bullets": ["Conference & event interpretation", "Medical consultation interpretation", "Legal proceeding interpretation", "Business meeting consecutive interpretation", "Remote & online interpretation", "Diplomatic & official visit support"]
       }
     }
   },

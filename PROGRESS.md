@@ -1,6 +1,6 @@
 # PROGRESS.md — Build Status
 
-> Updated: 2026-04-24
+> Updated: 2026-04-24 (post-audit pass)
 
 ## Current Phase: 9 — Deploy (next after Gate 4)
 
@@ -75,6 +75,15 @@
 - [x] EDITING_GUIDE.md written for non-dev edits
 - [ ] Lighthouse scores (run post-deploy on live URL)
 - [ ] axe a11y audit (run post-deploy)
+
+### Audit Pass ✅ (post Phase 8)
+- [x] `app/page.tsx` — replaced boilerplate with `redirect('/en')`
+- [x] `app/not-found.tsx` — created root 404 page
+- [x] `QuickQuoteForm.tsx` — added `dir` attribute + honeypot input
+- [x] `ContactForm.tsx` — fixed submit button label (`dict.contact.form`)
+- [x] `dictionaries/en.json` + `ar.json` — added `bullets[]` to all 11 services
+- [x] `services/[slug]/page.tsx` — renders bullets grid when present
+- [x] AR dict typo fixed: `المستنأدات` → `المستندات`
 
 ### Phase 9 — Deploy
 - [ ] Not started (GitHub push + Vercel Pro + env vars: RESEND_API_KEY, CONTACT_EMAIL_PRIMARY)

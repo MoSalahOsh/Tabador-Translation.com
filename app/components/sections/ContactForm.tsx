@@ -142,7 +142,7 @@ export function ContactForm({ lang, dict, emailContact }: Props) {
         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy-light transition-colors disabled:opacity-60"
       >
         <Send size={16} />
-        {status === 'sending' ? dict.quote.submitting : dict.quote.submit}
+        {status === 'sending' ? dict.quote.submitting : dict.contact.form}
       </button>
 
       {status === 'error' && (
