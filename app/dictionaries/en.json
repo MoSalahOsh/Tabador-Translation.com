@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "projects": "Projects",
+    "partners": "Partners",
+    "contact": "Contact",
+    "getQuote": "Get a Quote"
+  },
+  "hero": {
+    "badge": "Licence No. 317 · C.R. 2051221647",
+    "headline": "Certified Translation",
+    "headlineSub": "You Can Rely On",
+    "body": "Accepted by all government authorities and embassies inside and outside the Kingdom. Your documents right the first time.",
+    "cta": "Send Your Document Now",
+    "ctaSecondary": "Learn More",
+    "whatsappCta": "WhatsApp Us"
+  },
+  "trust": {
+    "title": "Why Clients Choose Tabador",
+    "firstTime": "First-Time Acceptance Guaranteed",
+    "firstTimeDesc": "Your certified translation accepted by authorities without resubmission.",
+    "allLanguages": "All Languages",
+    "allLanguagesDesc": "Over 100 language pairs for any document, any country.",
+    "certified": "Embassy & Government Certified",
+    "certifiedDesc": "Recognized by all Saudi authorities, foreign embassies, and official bodies.",
+    "fast": "Fast Turnaround",
+    "fastDesc": "Standard and express service. We respect your deadlines.",
+    "location": "Near Jawazat Dammam",
+    "locationDesc": "Located opposite the Passport Office — right where you need us."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "All certified translation services in one place",
+    "learnMore": "Learn More",
+    "categories": {
+      "personal-official": {
+        "title": "Personal & Official",
+        "desc": "National ID, birth certificates, family records, driving licences."
+      },
+      "embassy-schengen": {
+        "title": "Embassy & Schengen",
+        "desc": "Schengen documents, visa files, immigration, all embassy requirements."
+      },
+      "academic": {
+        "title": "Academic & Education",
+        "desc": "Degrees, transcripts, acceptance letters, school certificates."
+      },
+      "contracts-business": {
+        "title": "Contracts & Business",
+        "desc": "Marriage contracts, powers of attorney, employment, company bylaws."
+      },
+      "medical": {
+        "title": "Medical Translation",
+        "desc": "Medical reports, radiology, lab reports, overseas treatment files."
+      },
+      "legal-administrative": {
+        "title": "Legal & Administrative",
+        "desc": "Official letters, government correspondence, legal documents."
+      },
+      "trademark": {
+        "title": "Trademark & SAIP",
+        "desc": "Trademark translation and filing with the Saudi IP Authority."
+      },
+      "financial-commercial": {
+        "title": "Financial & Commercial",
+        "desc": "Bank statements, financial reports, customs and trade documents."
+      },
+      "technical-engineering": {
+        "title": "Technical & Engineering",
+        "desc": "Manuals, specifications, engineering reports, patent documents."
+      },
+      "website-localization": {
+        "title": "Website & App Localization",
+        "desc": "Arabic/English website localization, app translation, marketing content."
+      },
+      "interpretation": {
+        "title": "Interpretation",
+        "desc": "Simultaneous and consecutive interpretation for conferences and meetings."
+      }
+    }
+  },
+  "quote": {
+    "title": "Get a Quick Quote",
+    "subtitle": "Send your document now — we respond within minutes.",
+    "docType": "Document Type",
+    "docTypePlaceholder": "e.g. Birth certificate, Degree...",
+    "langFrom": "From Language",
+    "langTo": "To Language",
+    "upload": "Attach Document (optional)",
+    "uploadHint": "PDF, JPG, PNG, DOC, DOCX — max 10 MB",
+    "name": "Your Name",
+    "phone": "Phone / WhatsApp",
+    "submit": "Send My Document",
+    "submitWhatsApp": "Send via WhatsApp",
+    "submitting": "Sending...",
+    "successTitle": "Request Received!",
+    "successBody": "We will respond to you shortly.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Please try again or contact us via WhatsApp."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "certNote": "We certify the translation not the content."
+  },
+  "whatsapp": {
+    "ariaLabel": "Contact us on WhatsApp",
+    "tooltip": "Chat with us"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "toggle": "Toggle theme"
+  },
+  "locale": {
+    "switchTo": "العربية",
+    "switchToAriaLabel": "Switch to Arabic"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "body": "The page you are looking for does not exist.",
+    "cta": "Go Home"
+  },
+  "about": {
+    "title": "About Tabador",
+    "subtitle": "15+ Years of Certified Excellence in Dammam",
+    "body": "Tabador Translation Est. has been the trusted choice for certified translations in Dammam and the Eastern Province for over 15 years. Founded by Mudthar Ahmad, a professional translator, we built our reputation on a simple promise: your documents right the first time.",
+    "licence": "Translation Licence No. 317",
+    "cr": "Commercial Registration 2051221647",
+    "location": "Opposite Jawazat, Dammam"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here Sunday–Thursday, 8 AM–10 PM",
+    "phone": "Phone & WhatsApp",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Working Hours",
+    "form": "Send a Message",
+    "mapTitle": "Tabador Translation — Dammam"
+  }
+}

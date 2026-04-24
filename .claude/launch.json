@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tabador",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "D:\\Tabador-Translation.com\\app",
+      "port": 3000,
+      "autoPort": false
+    }
+  ]
+}

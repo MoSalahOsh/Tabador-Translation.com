@@ -1,0 +1,47 @@
+{
+  "brand": {
+    "name": "مؤسسة دار تبادر للترجمة",
+    "nameShort": "دار تبادر",
+    "tagline": "ترجمة معتمدة تعتمد عليها",
+    "taglineSub": "معاملتك تمشي من أول مرة — بدون تأخير، بدون إعادة، وبدون قلق.",
+    "description": "مؤسسة دار تبادر للترجمة مكتب ترجمة معتمد في الدمام، المملكة العربية السعودية. نقدم ترجمة دقيقة وسريعة ومعتمدة لدى جميع الجهات الحكومية والسفارات داخل المملكة وخارجها.",
+    "cr": "٢٠٥١٢٢١٦٤٧",
+    "licenceNo": "٣١٧",
+    "chamberNo": "٢٤٠٤٠٤",
+    "certNote": "نصادق على صحة الترجمة ليس المحتوى."
+  },
+  "contact": {
+    "phone": "+966538992076",
+    "phoneDisplay": "‎+966 53 899 2076",
+    "whatsapp": "+966538992076",
+    "whatsappMessage": "السلام عليكم، أود طلب ترجمة معتمدة. نوع المستند: ",
+    "email": "newtabador@gmail.com",
+    "emailContact": "mudtheronly1976@gmail.com",
+    "address": "مقابل الجوازات، الدمام ٣١٩٥٢، ص.ب ٧٣٦١٢، المملكة العربية السعودية",
+    "city": "الدمام",
+    "country": "المملكة العربية السعودية",
+    "mapsUrl": "https://maps.app.goo.gl/R2ZzbJcyCmNZHF7Y9",
+    "hours": {
+      "days": "الأحد – الخميس",
+      "time": "٨:٠٠ صباحاً – ١٠:٠٠ مساءً",
+      "timezone": "توقيت السعودية"
+    }
+  },
+  "social": {
+    "tiktok": "",
+    "instagram": "",
+    "linkedin": "",
+    "facebook": ""
+  },
+  "stats": [
+    { "value": "+15", "label": "سنة خبرة" },
+    { "value": "317", "label": "رقم ترخيص الترجمة" },
+    { "value": "+100", "label": "لغة" },
+    { "value": "✓", "label": "معتمدة لدى السفارات" }
+  ],
+  "values": [
+    { "key": "precision", "label": "دقـــة", "icon": "check-circle" },
+    { "key": "speed", "label": "سرعـة", "icon": "zap" },
+    { "key": "commitment", "label": "التـزام", "icon": "shield" }
+  ]
+}

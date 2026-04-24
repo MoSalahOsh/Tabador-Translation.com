@@ -1,0 +1,213 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Tabador Brand Tokens ─── */
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-arabic: var(--font-tajawal);
+  --font-mono: var(--font-geist-mono);
+
+  /* Brand colors */
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-navy-light: var(--brand-navy-light);
+
+  /* shadcn tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* Glass tiers */
+  --glass-blur-sm: blur(8px);
+  --glass-blur-md: blur(16px);
+  --glass-blur-lg: blur(24px);
+}
+
+/* ─── Light theme ─── */
+:root {
+  /* Brand */
+  --brand-navy: oklch(0.31 0.12 256);
+  --brand-gold: oklch(0.57 0.08 52);
+  --brand-navy-light: oklch(0.42 0.12 256);
+
+  /* Base palette */
+  --background: oklch(0.985 0.004 240);
+  --foreground: oklch(0.16 0.04 256);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.04 256);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.04 256);
+
+  --primary: oklch(0.31 0.12 256);
+  --primary-foreground: oklch(0.98 0 0);
+
+  --secondary: oklch(0.93 0.01 240);
+  --secondary-foreground: oklch(0.31 0.12 256);
+
+  --muted: oklch(0.94 0.005 240);
+  --muted-foreground: oklch(0.52 0.03 240);
+
+  --accent: oklch(0.57 0.08 52);
+  --accent-foreground: oklch(0.98 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.88 0.01 240);
+  --input: oklch(0.88 0.01 240);
+  --ring: oklch(0.31 0.12 256);
+
+  --radius: 0.75rem;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(30, 42, 110, 0.08);
+}
+
+/* ─── Dark theme ─── */
+.dark {
+  --brand-navy: oklch(0.52 0.12 256);
+  --brand-gold: oklch(0.68 0.08 52);
+  --brand-navy-light: oklch(0.62 0.10 256);
+
+  --background: oklch(0.12 0.02 256);
+  --foreground: oklch(0.95 0.005 240);
+
+  --card: oklch(0.17 0.025 256);
+  --card-foreground: oklch(0.95 0.005 240);
+
+  --popover: oklch(0.17 0.025 256);
+  --popover-foreground: oklch(0.95 0.005 240);
+
+  --primary: oklch(0.62 0.12 256);
+  --primary-foreground: oklch(0.12 0.02 256);
+
+  --secondary: oklch(0.22 0.02 256);
+  --secondary-foreground: oklch(0.95 0.005 240);
+
+  --muted: oklch(0.22 0.02 256);
+  --muted-foreground: oklch(0.65 0.02 240);
+
+  --accent: oklch(0.68 0.08 52);
+  --accent-foreground: oklch(0.12 0.02 256);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.62 0.12 256);
+
+  /* Glass */
+  --glass-bg: rgba(18, 26, 80, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ─── Base styles ─── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  html[lang="ar"] body,
+  html[dir="rtl"] body {
+    font-family: var(--font-tajawal), system-ui, sans-serif;
+    /* Arabic needs slightly larger base + more line height */
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+  html[lang="ar"] h1,
+  html[lang="ar"] h2,
+  html[lang="ar"] h3,
+  html[lang="ar"] h4,
+  html[lang="ar"] h5,
+  html[lang="ar"] h6 {
+    font-family: var(--font-tajawal), system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+}
+
+/* ─── Glass utility classes ─── */
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur-md) saturate(180%);
+    -webkit-backdrop-filter: var(--glass-blur-md) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  .glass-sm {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur-sm) saturate(160%);
+    -webkit-backdrop-filter: var(--glass-blur-sm) saturate(160%);
+    border: 1px solid var(--glass-border);
+  }
+  .glass-lg {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur-lg) saturate(200%);
+    -webkit-backdrop-filter: var(--glass-blur-lg) saturate(200%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Quill watermark motif */
+  .quill-watermark {
+    background-image: url('/images/quill-watermark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.04;
+  }
+}
+
+/* ─── RTL-aware directional utilities ─── */
+@layer utilities {
+  .float-cta {
+    position: fixed;
+    bottom: 1.5rem;
+    inset-inline-end: 1.5rem;
+    z-index: 50;
+  }
+}
+
+/* ─── Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

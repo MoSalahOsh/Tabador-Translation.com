@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"D:/Tabador-Translation.com/app/.claude\")",
+      "Bash(echo '{\"version\":\"0.0.1\",\"configurations\":[{\"name\":\"tabador\",\"runtimeExecutable\":\"npm\",\"runtimeArgs\":[\"run\",\"dev\"],\"port\":3000}]}')"
+    ]
+  }
+}

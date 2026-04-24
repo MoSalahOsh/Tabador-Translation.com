@@ -1,0 +1,47 @@
+{
+  "brand": {
+    "name": "Tabador Translation Est.",
+    "nameShort": "Tabador",
+    "tagline": "Certified Translation You Can Rely On",
+    "taglineSub": "Your documents accepted the first time — every time.",
+    "description": "Tabador Translation Est. is a certified translation office in Dammam, Saudi Arabia. We provide accurate, fast, and officially recognized translations accepted by all government authorities and embassies inside and outside the Kingdom.",
+    "cr": "2051221647",
+    "licenceNo": "317",
+    "chamberNo": "240404",
+    "certNote": "We certify the translation not the content."
+  },
+  "contact": {
+    "phone": "+966538992076",
+    "phoneDisplay": "+966 53 899 2076",
+    "whatsapp": "+966538992076",
+    "whatsappMessage": "Hello, I would like to request a certified translation. Document type: ",
+    "email": "newtabador@gmail.com",
+    "emailContact": "mudtheronly1976@gmail.com",
+    "address": "Opposite Jawazat (Passport Office), Dammam 31952, P.O. Box 73612, Kingdom of Saudi Arabia",
+    "city": "Dammam",
+    "country": "Saudi Arabia",
+    "mapsUrl": "https://maps.app.goo.gl/R2ZzbJcyCmNZHF7Y9",
+    "hours": {
+      "days": "Sunday – Thursday",
+      "time": "8:00 AM – 10:00 PM",
+      "timezone": "AST (UTC+3)"
+    }
+  },
+  "social": {
+    "tiktok": "",
+    "instagram": "",
+    "linkedin": "",
+    "facebook": ""
+  },
+  "stats": [
+    { "value": "15+", "label": "Years of Experience" },
+    { "value": "317", "label": "Translation Licence No." },
+    { "value": "100+", "label": "Language Pairs" },
+    { "value": "✓", "label": "Embassy Accepted" }
+  ],
+  "values": [
+    { "key": "precision", "label": "Precision", "icon": "check-circle" },
+    { "key": "speed", "label": "Speed", "icon": "zap" },
+    { "key": "commitment", "label": "Commitment", "icon": "shield" }
+  ]
+}
