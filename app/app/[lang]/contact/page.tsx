@@ -78,7 +78,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               href={waHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-2 px-5 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm hover:bg-[#1ebe5d] transition-colors"
+              className="inline-flex items-center gap-2 mt-2 px-5 py-3 rounded-xl bg-[#128C7E] text-white font-bold text-sm hover:bg-[#0a6855] transition-colors"
             >
               <MessageCircle size={18} />
               {dict.hero.whatsappCta}

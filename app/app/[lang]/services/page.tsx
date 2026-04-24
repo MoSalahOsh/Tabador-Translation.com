@@ -45,13 +45,14 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {entries.map(([slug, svc]) => (
             <Link key={slug} href={`/${lang}/services/${slug}`}
+              aria-label={`${dict.services.learnMore} — ${svc.title}`}
               className="group flex flex-col gap-3 p-6 rounded-2xl border border-border hover:border-brand-gold/40 hover:shadow-lg bg-card transition-all">
-              <span className="text-4xl">{SERVICE_ICONS[slug] ?? '📄'}</span>
+              <span className="text-4xl" aria-hidden="true">{SERVICE_ICONS[slug] ?? '📄'}</span>
               <h2 className="font-bold text-lg text-foreground group-hover:text-brand-navy dark:group-hover:text-brand-gold transition-colors">{svc.title}</h2>
               <p className="text-sm text-muted-foreground flex-1">{svc.desc}</p>
               <span className="text-xs font-medium text-brand-gold flex items-center gap-1">
                 {dict.services.learnMore}
-                <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} />
+                <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
               </span>
             </Link>
           ))}

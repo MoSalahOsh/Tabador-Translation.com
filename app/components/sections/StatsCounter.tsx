@@ -41,10 +41,10 @@ export function StatsCounter({ stats }: Props) {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       {stats.map((stat) => (
         <div key={stat.label} className="space-y-1">
-          <p className="text-3xl md:text-4xl font-extrabold text-brand-gold">
+          <p className="text-3xl md:text-4xl font-extrabold text-white">
             <Counter value={stat.value} />
           </p>
-          <p className="text-sm text-white/70">{stat.label}</p>
+          <p className="text-sm text-white/85">{stat.label}</p>
         </div>
       ))}
     </div>

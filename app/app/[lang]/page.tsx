@@ -115,7 +115,7 @@ export default async function HomePage({
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#1ebe5d] transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#128C7E] text-white font-bold text-base hover:bg-[#0a6855] transition-colors shadow-lg"
               >
                 {dict.hero.cta}
               </a>
@@ -205,16 +205,17 @@ export default async function HomePage({
               <Link
                 key={slug}
                 href={`/${lang}/services/${slug}`}
+                aria-label={`${dict.services.learnMore} — ${svc.title}`}
                 className="group flex flex-col gap-3 p-5 rounded-xl border border-border hover:border-brand-gold/40 hover:shadow-lg bg-card transition-all duration-200"
               >
-                <span className="text-3xl">{SERVICE_ICONS[slug] ?? '📄'}</span>
+                <span className="text-3xl" aria-hidden="true">{SERVICE_ICONS[slug] ?? '📄'}</span>
                 <h3 className="font-semibold text-foreground group-hover:text-brand-navy dark:group-hover:text-brand-gold transition-colors">
                   {svc.title}
                 </h3>
                 <p className="text-xs text-muted-foreground leading-relaxed flex-1">{svc.desc}</p>
                 <span className="text-xs font-medium text-brand-gold flex items-center gap-1">
                   {dict.services.learnMore}
-                  <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} />
+                  <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
                 </span>
               </Link>
             ))}
@@ -291,7 +292,7 @@ export default async function HomePage({
               href={waHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#1ebe5d] transition-colors shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#128C7E] text-white font-bold text-base hover:bg-[#0a6855] transition-colors shadow-xl"
             >
               {dict.hero.cta}
             </a>

@@ -24,7 +24,7 @@ export function LocaleToggle({ lang, dict }: Props) {
       hrefLang={otherLang}
       onClick={() => track('locale_toggle', { from: lang, to: otherLang })}
     >
-      {dict.locale.switchTo}
+      <span aria-hidden="true">{dict.locale.switchTo}</span>
     </Link>
   )
 }
