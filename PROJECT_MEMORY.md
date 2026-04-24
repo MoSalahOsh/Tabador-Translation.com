@@ -53,12 +53,13 @@
 
 | Platform | Handle / URL |
 |---|---|
-| TikTok | **Unknown — see OPEN_QUESTIONS.md #8** |
-| Instagram | **Unknown — see OPEN_QUESTIONS.md #9** |
-| LinkedIn | **Unknown — see OPEN_QUESTIONS.md #10** |
-| Facebook | **Unknown — see OPEN_QUESTIONS.md #11** |
+| TikTok | **Pending — user will provide later** |
+| Instagram | **Pending — user will provide later** |
+| LinkedIn | **Pending — user will provide later** |
+| Facebook | **Pending — user will provide later** |
 
-*Hashtags in ads suggest active social presence: #دار_تبادر #ترجمة_معتمدة #مكتب_ترجمة*
+*Hashtags in ads: #دار_تبادر #ترجمة_معتمدة #مكتب_ترجمة — social presence confirmed, URLs pending.*
+*Social icons will be wired in footer/contact; links will use `#` as placeholder until provided.*
 
 ## Service Catalog (complete — verified from marketing images)
 
@@ -104,6 +105,31 @@
 - SAIP filing (تجهيز وتقديم ملفات الهيئة السعودية للملكية الفكرية)
 
 *Also listed on business card: رخصة دولية (International licence), تمديد تأشيرة الزيارة (Visit visa extension)*
+
+---
+### Research-derived additions (user-approved 2026-04-24 — confirm details before publishing)
+
+### 8. ترجمة المستندات المالية والتجارية — Financial & Commercial
+- كشوف الحسابات البنكية (Bank statements)
+- القوائم المالية (Financial statements)
+- تقارير المراجعة والتدقيق (Audit reports)
+- المستندات الجمركية والتجارية (Customs & trade documents)
+
+### 9. ترجمة الوثائق التقنية والهندسية — Technical & Engineering
+- الأدلة والمواصفات التقنية (Technical manuals & specs)
+- مخططات المشاريع (Project drawings)
+- تقارير الفحص والسلامة (Inspection & safety reports)
+- براءات الاختراع (Patent documents)
+
+### 10. ترجمة وتعريب المواقع والتطبيقات — Website & App Localization
+- تعريب المواقع الإلكترونية (Website arabization)
+- ترجمة تطبيقات الجوال (Mobile app translation)
+- ترجمة المحتوى التسويقي (Marketing content)
+
+### 11. الترجمة الفورية والمرافقة — Interpretation
+- ترجمة فورية للمؤتمرات (Simultaneous conference interpretation)
+- ترجمة تتبعية (Consecutive interpretation)
+- مرافقة للاجتماعات الطبية والقانونية (Medical & legal escort interpretation)
 
 ## Key Selling Propositions (client's own words)
 
@@ -156,11 +182,17 @@
 
 ## Working Hours
 
-**Unknown — see OPEN_QUESTIONS.md #6**
+**Sunday–Thursday, 8:00 AM – 10:00 PM (Saudi Arabia time, AST / UTC+3)**
+Arabic: الأحد – الخميس، ٨ صباحاً – ١٠ مساءً
 
-## Google Maps / Coordinates
+## Google Maps
 
-**Unknown — see OPEN_QUESTIONS.md #7**
+**https://maps.app.goo.gl/R2ZzbJcyCmNZHF7Y9**
+(Opposite Jawazat, Dammam — confirmed by user)
+
+## Years in Business
+
+**15+ years** (exact founding year unknown; "15+ years" approved by user for use in trust row)
 
 ## Testimonials
 

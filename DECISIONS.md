@@ -22,6 +22,22 @@
 **Decision:** Push to existing repo https://github.com/MoSalahOsh/Tabador-Translation.com
 **Rationale:** User already has a repo; will add as remote `origin` and push `main`.
 
+### D-006: Gate 1 — Cleared
+**Decision:** Gate 1 passed. All Block A facts confirmed by user. Block B expanded to 11 service categories (7 confirmed + 4 research-derived, user-approved for inclusion). Working hours, Maps link, "15+" years confirmed. Social/backup/testimonials marked pending.
+**Rationale:** Proceed to Phase 3 (IA) immediately.
+
+### D-007: Service catalog expansion (autopilot)
+**Decision:** Added 4 research-derived service categories (Financial/Commercial, Technical/Engineering, Website Localization, Interpretation). Marked as research-derived in PROJECT_MEMORY.md; user to confirm/remove before Gate 4.
+**Rationale:** Standard Saudi translation agency offerings; user explicitly instructed to expand from research.
+
+### D-008: Phase 3 IA — Autopilot self-approval
+**Decision:** Site map: Home + Services index + 7 confirmed service sub-pages + About + Contact + Privacy + Terms + 404. Projects and Partners pages included as stubs (no confirmed content yet). Locale routing: `/en/` and `/ar/` via next-intl middleware.
+**Rationale:** Autopilot mode; standard corporate translation agency IA; records choice per §6.10.
+
+### D-009: Phase 4 Design System — Autopilot self-approval
+**Decision:** Hero Concept B (single strong hero + 5-reason strip). Fonts: Tajawal (Arabic) + Inter (Latin). Primary palette: Navy `#1E2A6E` + Gold `#A07850` + light base. Glass accents on header/hero overlay only. Motion: 150–300ms ease. Quill motif as watermark/divider element.
+**Rationale:** Concept B confirmed by MISSION.md autopilot rule. Font/color choices derived directly from client's own marketing materials for visual continuity.
+
 ### D-003: Skill availability
 **Decision:** Skills `research-assistant`, `corporate-website-builder`, `frontend-design`, `design-md-library`, `diagram-generator`, `visual-explainer`, `promptforge` are available in this session. Will copy them to SKILLS_SNAPSHOT/ before their respective phases.
 **Rationale:** Per §5 of MISSION.md — skill copies ensure future agents have same guidance.

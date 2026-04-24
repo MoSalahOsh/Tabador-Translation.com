@@ -1,0 +1,54 @@
+---
+title: Tabador Translation Est. — Site Map (EN + AR mirror)
+---
+flowchart TD
+    ROOT["/ (root)\nLocale middleware\nDetects browser language\nRedirects to /en or /ar"] --> EN & AR
+
+    EN["🇬🇧 /en/"] --> EN_HOME["/ Home\nHero · Trust row · Quick-quote\nServices grid · Why Tabador\nFeatured projects · CTA band"]
+    EN --> EN_SVC["services/\nServices Index\n(all 11 categories)"]
+    EN --> EN_ABOUT["/about/\nAbout · Why Tabador\nOwner · Office photo"]
+    EN --> EN_PROJ["/projects/\nProjects / Case Studies\n(stub — content pending)"]
+    EN --> EN_PART["/partners/\nPartners & Clients\n(stub — logos pending)"]
+    EN --> EN_CONTACT["/contact/\nMap · Phone · Email\nHours · Socials · Form"]
+    EN --> EN_PRIV["/privacy/\nPrivacy Policy\n(Saudi PDPL-aware)"]
+    EN --> EN_TERMS["/terms/\nTerms of Service"]
+    EN --> EN_404["/not-found\n404 page"]
+
+    EN_SVC --> S1["/personal-official/\nPersonal & Official"]
+    EN_SVC --> S2["/embassy-schengen/\nEmbassy & Schengen"]
+    EN_SVC --> S3["/academic/\nAcademic & Education"]
+    EN_SVC --> S4["/contracts-business/\nContracts & Business"]
+    EN_SVC --> S5["/medical/\nMedical Translation"]
+    EN_SVC --> S6["/legal-administrative/\nLegal & Administrative"]
+    EN_SVC --> S7["/trademark/\nTrademark & SAIP"]
+    EN_SVC --> S8["/financial-commercial/\nFinancial & Commercial"]
+    EN_SVC --> S9["/technical-engineering/\nTechnical & Engineering"]
+    EN_SVC --> S10["/website-localization/\nWebsite & App Localization"]
+    EN_SVC --> S11["/interpretation/\nInterpretation Services"]
+
+    AR["🇸🇦 /ar/ (RTL mirror)"] --> AR_HOME["/ الرئيسية"]
+    AR --> AR_SVC["services/ خدمات"]
+    AR --> AR_ABOUT["/about/ من نحن"]
+    AR --> AR_PROJ["/projects/ مشاريعنا"]
+    AR --> AR_PART["/partners/ شركاؤنا"]
+    AR --> AR_CONTACT["/contact/ تواصل معنا"]
+    AR --> AR_PRIV["/privacy/ سياسة الخصوصية"]
+    AR --> AR_TERMS["/terms/ الشروط والأحكام"]
+    AR --> AR_404["/not-found ٤٠٤"]
+
+    AR_SVC --> AS1["/personal-official/"]
+    AR_SVC --> AS2["/embassy-schengen/"]
+    AR_SVC --> AS3["/academic/"]
+    AR_SVC --> AS4["/contracts-business/"]
+    AR_SVC --> AS5["/medical/"]
+    AR_SVC --> AS6["/legal-administrative/"]
+    AR_SVC --> AS7["/trademark/"]
+    AR_SVC --> AS8["/financial-commercial/"]
+    AR_SVC --> AS9["/technical-engineering/"]
+    AR_SVC --> AS10["/website-localization/"]
+    AR_SVC --> AS11["/interpretation/"]
+
+    GLOBAL["🌐 Global Layout (all pages)"]
+    GLOBAL --> HDR["Header\nLogo · Nav · Locale toggle · Theme toggle"]
+    GLOBAL --> WA["Floating WhatsApp button\nbottom-right LTR / bottom-left RTL"]
+    GLOBAL --> FTR["Footer\nLogo · Links · Contact · Socials · Legal · CR 2051221647"]

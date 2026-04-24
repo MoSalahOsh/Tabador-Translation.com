@@ -1,37 +1,41 @@
 # NEXT_STEPS.md — Resume Here
 
-> Updated: 2026-04-24 after Phase 1 + Phase 2 completion.
+> Updated: 2026-04-24 — Gate 1 cleared, entering Phase 5.
 
-## Current status
+## Current action
 
-**Waiting at 🛑 Gate 1** — user must review extracted facts and answer open questions before Phase 3 begins.
+**Phase 5 — Scaffolding** is running now.
 
-## Immediate next actions (once Gate 1 is cleared)
+## Phase 5 checklist (in order)
 
-1. **Git remote + push** — add `https://github.com/MoSalahOsh/Tabador-Translation.com` as `origin` and push `main`.
-2. **Phase 3 — Information Architecture**
-   - Draft site map (EN + AR mirror routes).
-   - Autopilot self-approval: standard 8-page structure (Home, Services index + 7 sub-pages, Projects, Partners, About, Contact, Privacy, Terms, 404).
-   - Save `docs/ia.mmd` (Mermaid diagram).
-   - Record IA decisions in `DECISIONS.md`.
-3. **Phase 4 — Design System**
-   - Load `design-md-library` and `frontend-design` skills.
-   - Define token set: color (light/dark), spacing, radii, shadows, glass tiers, motion timing.
-   - Font selection: Tajawal (Arabic) + Inter (Latin).
-   - Build `app/design-system/` with hero preview (Concept B: single hero + 5-reason strip).
-   - Autopilot self-approval: Concept B confirmed.
-4. **Phase 5 — Scaffolding**
-   - `npx create-next-app@latest` with TS + Tailwind + App Router.
-   - Install all required packages.
-   - Configure i18n routing, layout, WhatsApp button.
+1. `npx create-next-app@latest app` — TypeScript, Tailwind, App Router, ESLint, src dir: no
+2. Install packages: `next-intl framer-motion lucide-react clsx tailwind-merge zod react-hook-form sharp @vercel/analytics @vercel/og`
+3. Install shadcn/ui: `npx shadcn@latest init`
+4. Configure `next-intl`:
+   - `messages/en.json` + `messages/ar.json` (site.json strings)
+   - `middleware.ts` (locale detection + redirect)
+   - `i18n/routing.ts` + `i18n/request.ts`
+5. Root layout: `<html lang dir>` switching, Inter + Tajawal fonts via `next/font`
+6. Global CSS: CSS variables for color tokens (light/dark), glass tiers, spacing scale
+7. Header component: logo, nav, locale toggle, theme toggle
+8. Footer component: contact block, social icons (placeholder hrefs), legal links, CR number
+9. WhatsApp floating button (locale-aware pre-filled message, RTL positioning)
+10. Wire `@vercel/analytics` + custom events skeleton
+11. Smoke test: `npm run dev`, visit `/en` and `/ar`, toggle theme, click WhatsApp
 
-## Gate 1 items being reviewed
+## After Phase 5 — Phase 6 page build order
 
-User should confirm / correct the facts in [PROJECT_MEMORY.md](PROJECT_MEMORY.md) and answer the questions in [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md).
+1. Homepage (hero + trust row + quick-quote + services grid + why-us + CTA)
+2. Services index + all 11 service sub-pages
+3. About page
+4. Contact page (map embed, form, hours, socials)
+5. Privacy + Terms
+6. 404 + loading + error states
+7. Projects + Partners (stubs with pending-content messages)
 
-The most critical missing items:
-- Working hours (#1)
-- Google Maps link (#2)
-- Social media handles (#3–6)
-- Years in business (#7)
-- Backup email (#11)
+## Pending from user (non-blocking until Phase 7)
+
+- Social media URLs → footer icons will be `href="#"` placeholders
+- Backup email → form sends to newtabador@gmail.com only
+- Testimonials → no testimonials section until provided
+- Research-derived services confirmation (items 8–11) → included as stubs

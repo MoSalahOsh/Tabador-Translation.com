@@ -1,62 +1,47 @@
 # PROGRESS.md — Build Status
 
-> Updated at the end of every response.
+> Updated: 2026-04-24
 
-## Current Phase: 2 — Asset & Brand Intake ✅ → Waiting for Gate 1 (user review)
+## Current Phase: 5 — Scaffolding (starting now)
 
 ## Phase Checklist
 
 ### Phase 0 — Bootstrap ✅
-- [x] MISSION.md read in full
-- [x] Source materials organized into `source-materials/`
-- [x] `PROJECT_MEMORY.md` created
-- [x] `OPEN_QUESTIONS.md` created
-- [x] `DECISIONS.md` initialized
-- [x] `PROGRESS.md` initialized
-- [x] `NEXT_STEPS.md` created
-- [x] `DEPLOYMENT.md` created
-- [x] `SKILLS_SNAPSHOT/` directory created
-- [x] Git initialized + first commit (`54cb0db`)
-- [x] Gate 0 answered (autopilot + repo URL confirmed)
+- [x] All memory files created, git initialized, Gate 0 answered
 
 ### Phase 1 — Research ✅
-- [x] ≥5 competitor sites analyzed (Tarjama, Al Salim, Shamil, Noor, Elite KSA)
-- [x] Industry UX patterns documented (quote flow, service cards, CTA copy)
-- [x] RTL/bilingual best practices documented
-- [x] Trust signals for Saudi/GCC buyers documented
-- [x] EN + AR SEO keyword map created
-- [x] Glassmorphism 2026 guidance documented
-- [x] 12 Tabador-specific recommendations written
-- [x] `RESEARCH.md` saved
+- [x] 5 competitors analyzed, RTL best practices, trust signals, SEO map, glassmorphism guide, 12 recommendations, RESEARCH.md saved
 
 ### Phase 2 — Asset & Brand Intake ✅
-- [x] All brand assets read (Logo, Stamp, Card, Letterhead)
-- [x] All 12 marketing images catalogued
-- [x] All 4 ad text files read
-- [x] Contact info fully extracted and verified
-- [x] C.R. 2051221647, Licence 317, Chamber 240404 extracted
-- [x] Owner name: مدثر احمد المترجم
-- [x] Full service catalog extracted (7 categories + all subtypes)
-- [x] Brand colors extracted (navy #1E2A6E + gold #A07850)
-- [x] Office storefront photo (IMG-10) and hero image (IMG-12) identified
-- [x] `PROJECT_MEMORY.md` fully populated
-- [x] `OPEN_QUESTIONS.md` updated (15 remaining gaps flagged)
-- [ ] **🛑 Gate 1 — User review of extracted facts (mandatory even in autopilot)**
+- [x] All assets read, 11 services extracted, brand colors confirmed, PROJECT_MEMORY.md complete
+- [x] 🛑 Gate 1 CLEARED — Block A confirmed, Block B expanded, working hours/map/years confirmed
 
-### Phase 3 — Information Architecture
-- [ ] Not started
+### Phase 3 — Information Architecture ✅ (autopilot self-approved)
+- [x] Site map: Home + Services index + 11 service pages + About + Projects + Partners + Contact + Privacy + Terms + 404
+- [x] EN + AR mirror routes (`/en/`, `/ar/`) via next-intl middleware
+- [x] `docs/ia.mmd` Mermaid diagram saved
+- [x] Decisions logged in DECISIONS.md (D-008)
 
-### Phase 4 — Design System
-- [ ] Not started
+### Phase 4 — Design System ✅ (autopilot self-approved)
+- [x] Hero: Concept B (single hero + 5-reason strip) — D-009
+- [x] Fonts: Tajawal (AR) + Inter (Latin) — D-009
+- [x] Palette: Navy #1E2A6E + Gold #A07850 + light base — D-009
+- [x] Glass: header/hero overlay only — D-009
+- [x] Decisions logged in DECISIONS.md
 
-### Phase 5 — Scaffolding
-- [ ] Not started
+### Phase 5 — Scaffolding 🔄 IN PROGRESS
+- [ ] `npx create-next-app@latest` (TS, Tailwind, App Router, ESLint)
+- [ ] Install all required packages
+- [ ] Configure i18n routing + middleware
+- [ ] Global layout (header, footer, WhatsApp button)
+- [ ] Wire Vercel Analytics
+- [ ] Shell runs + both locales route + theme toggle + WhatsApp opens
 
 ### Phase 6 — Page Build
 - [ ] Not started
 
 ### Phase 7 — Bilingual Content Pass
-- [ ] Not started
+- [ ] Not started (pending social/backup/testimonials from user)
 
 ### Phase 8 — QA / Performance / Accessibility / SEO
 - [ ] Not started

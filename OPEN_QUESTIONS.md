@@ -1,60 +1,53 @@
 # OPEN_QUESTIONS.md — Unresolved Questions
 
-> Gate 0 is cleared. Items below are blocking specific phases.
-> Answered questions have been moved to PROJECT_MEMORY.md.
+> Updated: 2026-04-24 after Gate 1 clearance.
 
 ---
 
-## ✅ RESOLVED (Gate 0)
+## ✅ RESOLVED
 
-- ~~Mode?~~ → **Autopilot**
-- ~~GitHub repo?~~ → **https://github.com/MoSalahOsh/Tabador-Translation.com**
-- ~~WhatsApp same as phone?~~ → **Yes, confirmed (0538992076)**
-- ~~Phone number~~ → **0538992076 / +966 53 899 2076**
-- ~~Primary email~~ → **mudtheronly1976@gmail.com**
-- ~~Official business email~~ → **newtabador@gmail.com**
-- ~~Address~~ → **مقابل الجوازات، الدمام ٣١٩٥٢، ص.ب ٧٣٦١٢**
-- ~~C.R., Licence, Chamber~~ → **C.R. 2051221647 | Lic. 317 | CoC 240404**
-- ~~Owner name~~ → **مدثر احمد المترجم (Mudthar Ahmad)**
-- ~~Office photos approved?~~ → **IMG-10 (storefront) and IMG-12 (hero) are clearly intended for public use**
-- ~~Arabic numerals preference~~ → **Defaulting to Western Arabic (0–9) per MISSION.md — will confirm if needed**
-- ~~Hero concept~~ → **Autopilot: Concept B (single hero + 5-reason strip)**
+- Mode → **Autopilot**
+- GitHub repo → **https://github.com/MoSalahOsh/Tabador-Translation.com**
+- WhatsApp = phone → **Confirmed (0538992076)**
+- Block A facts → **All confirmed**
+- Block B services → **Confirmed + expanded with research-derived services**
+- Working hours → **Sun–Thu, 8 AM – 10 PM**
+- Google Maps → **https://maps.app.goo.gl/R2ZzbJcyCmNZHF7Y9**
+- Years in business → **15+ years**
+- Arabic numerals → **Defaulting to Western Arabic (0–9)**
+- Hero concept → **Concept B (single hero + 5-reason strip)**
 
 ---
 
-## 🔴 Still Blocking (needed before Gate 1 / Phase 3)
+## 🔴 Pending — Provide when ready (will not block Phase 3–5)
 
-### Contact
+These items have placeholder values in the build. Provide any time before Phase 7 (content pass):
 
-1. **Working hours** — days and times (e.g., Sun–Thu 9 AM–5 PM). Needed for Contact page and JSON-LD.
-2. **Google Maps link or coordinates** — for the Contact page embedded map. Can be a Google Maps share link.
+1. **Social media URLs** — TikTok, Instagram, LinkedIn, Facebook handles/URLs.
+   *(Footer icons ship as unlinked placeholders until provided.)*
 
-### Social Media (needed for footer and Contact page)
+2. **Backup email** — second email to CC on all contact form submissions.
+   *(Form will send to `newtabador@gmail.com` only until provided.)*
 
-3. **TikTok** — account URL or @handle.
-4. **Instagram** — account URL or @handle.
-5. **LinkedIn** — account URL or @handle.
-6. **Facebook** — account URL or @handle.
-
-### Trust & Proof
-
-7. **Years in business** — founding year (for "X years of experience" trust badge). When was the establishment registered/founded?
-8. **Volume claim** — "X documents translated" or similar stat (even a rounded number is fine; will show as "10,000+" etc.).
-9. **Partner / client logos** — any organizations, companies, or embassies whose logos you have permission to display.
-
-### Pricing
-
-10. **Pricing policy** — do you display prices publicly, or prefer "contact for quote"? If public, please provide a price list or starting-from prices.
-
-### Content
-
-11. **Backup email** — a second email to CC on every form submission so no lead is ever lost if one inbox misses it.
-12. **Testimonials** — do you have any client praise messages (WhatsApp screenshots or written reviews) you'd like to include? Each one needs your individual approval before publishing.
+3. **Testimonials** — any client praise (WhatsApp screenshots, written reviews).
+   *(Each one needs individual approval before publishing per MISSION.md §4.)*
 
 ---
 
-## 🟡 Optional (nice-to-have)
+## 🟡 Optional — Nice-to-have before Gate 4
 
-13. **Additional services** — Are there services beyond the 7 catalogued categories + visit visa extension + international licence that should be listed?
-14. **Certifications** — Any specific certifying bodies beyond the C.R. and Licence No. 317? (Ministry of Justice approval, ISO, etc.?)
-15. **Languages offered** — Do you want to list specific language pairs prominently, or keep it as "جميع اللغات / All languages"?
+4. **Partner / client logos** — organizations, companies, embassies whose logos you have permission to display. *(Partners page will be placeholder until provided.)*
+
+5. **Exact founding year** — if you want "since 2009" instead of "15+ years."
+
+6. **Research-derived services (8–11)** — please confirm which of these Tabador actually offers:
+   - Financial & Commercial documents
+   - Technical & Engineering documents
+   - Website & App Localization
+   - Interpretation (simultaneous / consecutive)
+   *(They're included in the build; confirm or remove before Gate 4 Arabic content pass.)*
+
+7. **Pricing policy** — display prices publicly, or "contact for quote"?
+   *(Default: "quick quote" form with no price display.)*
+
+8. **Languages offered** — list specific pairs prominently, or keep "جميع اللغات / All languages"?
