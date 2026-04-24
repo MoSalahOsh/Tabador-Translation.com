@@ -1,6 +1,6 @@
 # OPEN_QUESTIONS.md — Unresolved Questions
 
-> Updated: 2026-04-24 after Gate 1 clearance.
+> Updated: 2026-04-24 after Phase 10 polish pass.
 
 ---
 

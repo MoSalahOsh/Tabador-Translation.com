@@ -34,10 +34,10 @@
     "facebook": ""
   },
   "stats": [
-    { "value": "+15", "label": "سنة خبرة" },
+    { "value": "15+", "label": "سنة خبرة" },
     { "value": "317", "label": "رقم ترخيص الترجمة" },
-    { "value": "+100", "label": "لغة" },
-    { "value": "✓", "label": "معتمدة لدى السفارات" }
+    { "value": "100+", "label": "زوج لغوي" },
+    { "value": "100%", "label": "قبول من أول مرة" }
   ],
   "values": [
     { "key": "precision", "label": "دقـــة", "icon": "check-circle" },

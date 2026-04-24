@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 import { LocaleToggle } from './LocaleToggle'
@@ -26,6 +26,16 @@ type Props = {
 export function Header({ lang, dict, site }: Props) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  const isHome = pathname === `/${lang}`
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 32)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const nav = [
     { key: 'home', href: `/${lang}` },
@@ -34,15 +44,18 @@ export function Header({ lang, dict, site }: Props) {
     { key: 'contact', href: `/${lang}/contact` },
   ]
 
+  const transparent = isHome && !scrolled && !open
+
   return (
     <header
       className={cn(
-        'sticky top-0 z-40 w-full transition-all duration-200',
-        'glass border-b border-border/40'
+        'sticky top-0 z-40 w-full transition-all duration-300',
+        transparent
+          ? 'bg-transparent border-b border-transparent'
+          : 'glass border-b border-border/40'
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Logo */}
         <Link href={`/${lang}`} className="flex items-center gap-3 shrink-0">
           <Image
             src="/images/logo.jpeg"
@@ -52,12 +65,14 @@ export function Header({ lang, dict, site }: Props) {
             className="rounded-full"
             priority
           />
-          <span className="font-bold text-sm md:text-base text-brand-navy dark:text-brand-navy leading-tight hidden sm:block">
+          <span className={cn(
+            'font-bold text-sm md:text-base leading-tight hidden sm:block transition-colors',
+            transparent ? 'text-white' : 'text-brand-navy dark:text-brand-gold'
+          )}>
             {lang === 'ar' ? site.brand.name : site.brand.nameShort}
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
           {nav.map(({ key, href }) => (
             <Link
@@ -65,10 +80,16 @@ export function Header({ lang, dict, site }: Props) {
               href={href}
               className={cn(
                 'px-3 py-2 rounded-md text-sm font-medium transition-colors',
-                'hover:bg-accent/10 hover:text-accent',
+                transparent
+                  ? 'text-white/85 hover:text-white hover:bg-white/10'
+                  : 'hover:bg-accent/10 hover:text-accent',
                 pathname === href
-                  ? 'text-brand-navy dark:text-brand-navy font-semibold'
-                  : 'text-foreground/80'
+                  ? transparent
+                    ? 'text-white font-semibold'
+                    : 'text-brand-navy dark:text-brand-gold font-semibold'
+                  : transparent
+                    ? ''
+                    : 'text-foreground/80'
               )}
             >
               {dict.nav[key]}
@@ -76,22 +97,27 @@ export function Header({ lang, dict, site }: Props) {
           ))}
         </nav>
 
-        {/* Right side controls */}
         <div className="flex items-center gap-2">
           <ThemeToggle dict={dict} />
           <LocaleToggle lang={lang} dict={dict} />
 
-          {/* Desktop CTA */}
           <Link
             href={`/${lang}/contact`}
-            className="hidden md:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold bg-brand-navy text-white hover:bg-brand-navy-light transition-colors"
+            className={cn(
+              'hidden md:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold transition-colors',
+              transparent
+                ? 'bg-brand-gold text-white hover:brightness-110'
+                : 'bg-brand-navy text-white hover:bg-brand-navy-light'
+            )}
           >
             {dict.nav.getQuote}
           </Link>
 
-          {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-md text-foreground/70 hover:bg-muted"
+            className={cn(
+              'md:hidden p-2 rounded-md transition-colors',
+              transparent ? 'text-white hover:bg-white/10' : 'text-foreground/70 hover:bg-muted'
+            )}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -101,7 +127,6 @@ export function Header({ lang, dict, site }: Props) {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-sm">
           <nav className="container mx-auto flex flex-col px-4 py-3 gap-1">
@@ -113,7 +138,7 @@ export function Header({ lang, dict, site }: Props) {
                 className={cn(
                   'px-3 py-2.5 rounded-md text-sm font-medium transition-colors',
                   'hover:bg-accent/10',
-                  pathname === href ? 'text-brand-navy font-semibold' : 'text-foreground/80'
+                  pathname === href ? 'text-brand-navy dark:text-brand-gold font-semibold' : 'text-foreground/80'
                 )}
               >
                 {dict.nav[key]}

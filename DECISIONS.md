@@ -38,6 +38,26 @@
 **Decision:** Hero Concept B (single strong hero + 5-reason strip). Fonts: Tajawal (Arabic) + Inter (Latin). Primary palette: Navy `#1E2A6E` + Gold `#A07850` + light base. Glass accents on header/hero overlay only. Motion: 150–300ms ease. Quill motif as watermark/divider element.
 **Rationale:** Concept B confirmed by MISSION.md autopilot rule. Font/color choices derived directly from client's own marketing materials for visual continuity.
 
+---
+
+## 2026-04-24 — Phase 10 (live polish + conversion uplift)
+
+### D-010: Add conversion sections on the homepage
+**Decision:** Added four new homepage sections — Process (4 steps), Industries (8 sectors), FAQ (6 Q&A with FAQPage JSON-LD), and animated stats counters. Final CTA band now has dual CTAs (WhatsApp + Call).
+**Rationale:** Audit of competitors + conversion heuristics flagged missing "how it works", missing FAQ (SEO + objection handling), no sector proof, no animated social-proof. All four are low-risk, high-impact additions content-driven from dictionaries (no folder-as-truth violations).
+
+### D-011: Dismissible announcement banner + mobile call button
+**Decision:** Added top announcement banner (opening hours / first-time-acceptance message) and a floating mobile click-to-call button opposite the WhatsApp button.
+**Rationale:** Banner surfaces operating hours without competing with hero. Mobile users on Saudi market prefer phone call alongside WhatsApp; click-to-call is a measured lift. `inset-inline-start` keeps RTL correct.
+
+### D-012: Header becomes transparent over the hero, glass on scroll
+**Decision:** Home route renders a transparent header while scroll is <32px; glass on scroll and on all non-home routes.
+**Rationale:** Lets the full-bleed hero image breathe and increases the perceived quality of the landing experience, while preserving legibility and brand presence on content pages.
+
+### D-013: Arabic copy polish — formal MSA for CTAs
+**Decision:** Replaced colloquial `ابعت مستندك` → MSA `أرسل مستندك` in hero CTA and quick-quote subtitle. Fixed `مدثر احمد` → `مدثر أحمد`. Reformatted Arabic stats from `+15` → `15+` and added `100%` first-time-acceptance stat.
+**Rationale:** Certified translation office's brand voice should default to formal MSA on primary CTAs while retaining one colloquial empathy line (`معاملتك تمشي من أول مرة`). Numerals written LTR-first for correct visual rendering inside RTL blocks.
+
 ### D-003: Skill availability
 **Decision:** Skills `research-assistant`, `corporate-website-builder`, `frontend-design`, `design-md-library`, `diagram-generator`, `visual-explainer`, `promptforge` are available in this session. Will copy them to SKILLS_SNAPSHOT/ before their respective phases.
 **Rationale:** Per §5 of MISSION.md — skill copies ensure future agents have same guidance.

@@ -37,7 +37,7 @@
     { "value": "15+", "label": "Years of Experience" },
     { "value": "317", "label": "Translation Licence No." },
     { "value": "100+", "label": "Language Pairs" },
-    { "value": "✓", "label": "Embassy Accepted" }
+    { "value": "100%", "label": "First-Time Acceptance" }
   ],
   "values": [
     { "key": "precision", "label": "Precision", "icon": "check-circle" },

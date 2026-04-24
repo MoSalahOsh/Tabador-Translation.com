@@ -8,6 +8,11 @@
     "contact": "Contact",
     "getQuote": "Get a Quote"
   },
+  "banner": {
+    "text": "Open Sunday–Thursday · 8 AM – 10 PM · Certified translation accepted first time",
+    "cta": "WhatsApp Us",
+    "dismiss": "Dismiss"
+  },
   "hero": {
     "badge": "Licence No. 317 · C.R. 2051221647",
     "headline": "Certified Translation",
@@ -15,7 +20,8 @@
     "body": "Accepted by all government authorities and embassies inside and outside the Kingdom. Your documents right the first time.",
     "cta": "Send Your Document Now",
     "ctaSecondary": "Learn More",
-    "whatsappCta": "WhatsApp Us"
+    "whatsappCta": "WhatsApp Us",
+    "callCta": "Call Now"
   },
   "trust": {
     "title": "Why Clients Choose Tabador",
@@ -30,10 +36,74 @@
     "location": "Near Jawazat Dammam",
     "locationDesc": "Located opposite the Passport Office — right where you need us."
   },
+  "process": {
+    "title": "How It Works",
+    "subtitle": "From document to certified translation in four simple steps",
+    "steps": [
+      { "n": "01", "title": "Send Your Document", "desc": "Upload a scan or photo via WhatsApp, email, or the quote form. Any format welcome." },
+      { "n": "02", "title": "Get a Free Quote", "desc": "We reply within minutes with a fixed price and accurate delivery time — no hidden fees." },
+      { "n": "03", "title": "Professional Translation", "desc": "A certified human translator produces your document with stamp, signature, and official seal." },
+      { "n": "04", "title": "Delivery & Acceptance", "desc": "Pick up in Dammam or receive by email/courier. Accepted by authorities the first time — guaranteed." }
+    ]
+  },
+  "industries": {
+    "title": "Trusted Across Sectors",
+    "subtitle": "Daily translation partners for individuals, corporates, and government stakeholders",
+    "items": [
+      { "key": "government", "label": "Government & Ministries" },
+      { "key": "embassies", "label": "Embassies & Consulates" },
+      { "key": "legal", "label": "Courts & Law Firms" },
+      { "key": "medical", "label": "Hospitals & Clinics" },
+      { "key": "academic", "label": "Universities & Schools" },
+      { "key": "corporate", "label": "Companies & SMEs" },
+      { "key": "individuals", "label": "Individuals & Families" },
+      { "key": "banking", "label": "Banks & Finance" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Quick answers to the most common questions we receive",
+    "items": [
+      {
+        "q": "What is a certified translation?",
+        "a": "A certified translation is produced by a licensed translator and carries the translator's official stamp, signature, and certification statement. It is legally accepted by Saudi ministries, courts, embassies, and foreign authorities as an accurate rendering of the source document."
+      },
+      {
+        "q": "Are your translations accepted by embassies and government bodies?",
+        "a": "Yes. Tabador Translation Est. holds Translation Licence No. 317 and is accepted by all Saudi government authorities (Jawazat, MOHE, MOFA, MOH, MOJ, Chambers of Commerce) and by foreign embassies inside and outside the Kingdom — including full Schengen file acceptance."
+      },
+      {
+        "q": "How fast can you deliver?",
+        "a": "Standard turnaround for most personal documents is same-day or next business day. We also offer an express service for time-sensitive filings. Timing is confirmed with your quote."
+      },
+      {
+        "q": "Which languages do you cover?",
+        "a": "More than 100 language pairs, including Arabic ⇄ English, French, German, Spanish, Italian, Urdu, Turkish, Farsi, Tagalog, Chinese, Russian, and more. If you need a specific pair, ask us."
+      },
+      {
+        "q": "Can I submit documents remotely?",
+        "a": "Absolutely. Send a clear scan or photo via WhatsApp, email, or the quick-quote form on this page. You do not need to visit the office unless you prefer to."
+      },
+      {
+        "q": "How is pricing calculated?",
+        "a": "Pricing is based on the document type, length, language pair, and urgency. We send you a fixed quote before any work starts — no surprises."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real feedback from individuals, law firms, and embassies we serve"
+  },
   "services": {
     "title": "Our Services",
     "subtitle": "All certified translation services in one place",
     "learnMore": "Learn More",
+    "groups": {
+      "documents": "Personal & Official Documents",
+      "business": "Business & Legal",
+      "specialized": "Specialized Fields",
+      "language": "Language Services"
+    },
     "categories": {
       "personal-official": {
         "title": "Personal & Official",
@@ -115,7 +185,10 @@
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "certNote": "We certify the translation not the content."
+    "certNote": "We certify the translation not the content.",
+    "servicesCol1": "Core Services",
+    "servicesCol2": "Specialized",
+    "quickLinks": "Quick Links"
   },
   "whatsapp": {
     "ariaLabel": "Contact us on WhatsApp",
@@ -141,7 +214,18 @@
     "body": "Tabador Translation Est. has been the trusted choice for certified translations in Dammam and the Eastern Province for over 15 years. Founded by Mudthar Ahmad, a professional translator, we built our reputation on a simple promise: your documents right the first time.",
     "licence": "Translation Licence No. 317",
     "cr": "Commercial Registration 2051221647",
-    "location": "Opposite Jawazat, Dammam"
+    "location": "Opposite Jawazat, Dammam",
+    "missionTitle": "Our Mission",
+    "missionBody": "Deliver certified translations that are accepted on the first submission — saving our clients time, cost, and stress.",
+    "visionTitle": "Our Vision",
+    "visionBody": "To be the Eastern Province's most trusted translation partner for individuals, businesses, and government.",
+    "valuesTitle": "Our Values",
+    "values": [
+      { "title": "Precision", "desc": "Every term, number, and stamp rendered exactly." },
+      { "title": "Speed", "desc": "Standard and express service that respects your deadlines." },
+      { "title": "Commitment", "desc": "We stand behind every translation — with our licence and our name." },
+      { "title": "Confidentiality", "desc": "Your documents are handled privately and never shared." }
+    ]
   },
   "contact": {
     "title": "Contact Us",
@@ -151,6 +235,7 @@
     "address": "Address",
     "hours": "Working Hours",
     "form": "Send a Message",
-    "mapTitle": "Tabador Translation — Dammam"
+    "mapTitle": "Tabador Translation — Dammam",
+    "openInMaps": "Open in Google Maps"
   }
 }

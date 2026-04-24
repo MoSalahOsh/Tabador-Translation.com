@@ -7,6 +7,12 @@ import { getDictionary, hasLocale } from './dictionaries'
 import enSite from '../../content/en/site.json'
 import arSite from '../../content/ar/site.json'
 import { QuickQuoteForm } from '@/components/sections/QuickQuoteForm'
+import { ProcessSection } from '@/components/sections/ProcessSection'
+import { IndustriesStrip } from '@/components/sections/IndustriesStrip'
+import { FAQSection } from '@/components/sections/FAQSection'
+import { StatsCounter } from '@/components/sections/StatsCounter'
+
+const BASE_URL = 'https://tabador-translation.com'
 
 export async function generateMetadata({
   params,
@@ -51,11 +57,27 @@ export default async function HomePage({
 
   const serviceEntries = Object.entries(dict.services.categories) as [string, { title: string; desc: string }][]
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: dict.faq.items.map((it: { q: string; a: string }) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  }
+
+  const waHref = `https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero.jpg"
@@ -65,18 +87,17 @@ export default async function HomePage({
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/80 via-brand-navy/60 to-brand-navy/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/85 via-brand-navy/65 to-brand-navy/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,157,82,0.18),transparent_55%)]" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 py-20">
           <div className="max-w-2xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 glass-sm rounded-full px-4 py-1.5 text-xs text-white/80 mb-6">
+            <div className="inline-flex items-center gap-2 glass-sm rounded-full px-4 py-1.5 text-xs text-white/85 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
               {dict.hero.badge}
             </div>
 
-            {/* Headline */}
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-2">
               {dict.hero.headline}
             </h1>
@@ -84,15 +105,13 @@ export default async function HomePage({
               {dict.hero.headlineSub}
             </p>
 
-            {/* Body */}
             <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
               {dict.hero.body}
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-wrap gap-3">
               <a
-                href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`}
+                href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#1ebe5d] transition-colors shadow-lg"
@@ -107,21 +126,24 @@ export default async function HomePage({
                 <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} />
               </Link>
             </div>
+
+            {/* Trust hint under hero */}
+            <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-white/70">
+              <span className="inline-flex items-center gap-1.5"><CheckCircle size={14} className="text-brand-gold" />{dict.trust.firstTime}</span>
+              <span className="inline-flex items-center gap-1.5"><Zap size={14} className="text-brand-gold" />{dict.trust.fast}</span>
+              <span className="inline-flex items-center gap-1.5"><Shield size={14} className="text-brand-gold" />{dict.trust.certified}</span>
+            </div>
           </div>
         </div>
+
+        {/* Gold accent bar */}
+        <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" />
       </section>
 
-      {/* ── TRUST STRIP ─────────────────────────────────────── */}
-      <section className="bg-brand-navy py-8">
+      {/* ── ANIMATED STATS ─────────────────────────────── */}
+      <section className="bg-brand-navy py-10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {site.stats.map((stat) => (
-              <div key={stat.label} className="space-y-1">
-                <p className="text-3xl font-extrabold text-brand-gold">{stat.value}</p>
-                <p className="text-sm text-white/70">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+          <StatsCounter stats={site.stats} />
         </div>
       </section>
 
@@ -139,7 +161,7 @@ export default async function HomePage({
               { icon: <span className="text-2xl">🌐</span>, title: dict.trust.allLanguages, desc: dict.trust.allLanguagesDesc },
               { icon: <MapPin className="text-brand-gold" size={28} />, title: dict.trust.location, desc: dict.trust.locationDesc },
             ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center text-center p-5 rounded-xl border border-border hover:border-brand-gold/30 hover:shadow-md transition-all">
+              <div key={item.title} className="flex flex-col items-center text-center p-5 rounded-xl border border-border bg-card hover:border-brand-gold/40 hover:shadow-md transition-all">
                 <div className="mb-3">{item.icon}</div>
                 <h3 className="font-semibold text-sm mb-1 text-foreground">{item.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -149,8 +171,15 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
+      <ProcessSection
+        title={dict.process.title}
+        subtitle={dict.process.subtitle}
+        steps={dict.process.steps}
+      />
+
       {/* ── QUICK-QUOTE FORM ─────────────────────────────────── */}
-      <section className="py-16 bg-secondary/30">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">{dict.quote.title}</h2>
@@ -161,7 +190,7 @@ export default async function HomePage({
       </section>
 
       {/* ── SERVICES GRID ────────────────────────────────────── */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">{dict.services.title}</h2>
@@ -188,6 +217,13 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      {/* ── INDUSTRIES / SECTORS ─────────────────────────────── */}
+      <IndustriesStrip
+        title={dict.industries.title}
+        subtitle={dict.industries.subtitle}
+        items={dict.industries.items}
+      />
 
       {/* ── OFFICE PHOTO + LOCATION CTA ─────────────────────── */}
       <section className="py-16 bg-secondary/30">
@@ -233,19 +269,35 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      <FAQSection
+        title={dict.faq.title}
+        subtitle={dict.faq.subtitle}
+        items={dict.faq.items}
+      />
+
       {/* ── FINAL CTA BAND ──────────────────────────────────── */}
-      <section className="py-16 bg-brand-navy text-white text-center">
-        <div className="container mx-auto px-4 md:px-6 max-w-2xl space-y-5">
+      <section className="py-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05] quill-watermark" />
+        <div className="container mx-auto px-4 md:px-6 max-w-2xl space-y-5 relative">
           <h2 className="text-2xl md:text-3xl font-extrabold">{site.brand.tagline}</h2>
           <p className="text-white/75">{site.brand.taglineSub}</p>
-          <a
-            href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#1ebe5d] transition-colors shadow-xl"
-          >
-            {dict.hero.cta}
-          </a>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#1ebe5d] transition-colors shadow-xl"
+            >
+              {dict.hero.cta}
+            </a>
+            <a
+              href={`tel:${site.contact.phone}`}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-brand-navy font-bold text-base hover:bg-white/90 transition-colors shadow-xl"
+            >
+              {dict.hero.callCta}
+            </a>
+          </div>
         </div>
       </section>
     </>

@@ -5,6 +5,8 @@ import { getDictionary, hasLocale, locales } from './dictionaries'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton'
+import { AnnouncementBanner } from '@/components/layout/AnnouncementBanner'
+import { MobileCallButton } from '@/components/layout/MobileCallButton'
 import enSite from '../../content/en/site.json'
 import arSite from '../../content/ar/site.json'
 
@@ -59,6 +61,8 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang)
   const site = lang === 'ar' ? arSite : enSite
 
+  const waHref = `https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -102,10 +106,17 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <AnnouncementBanner
+        text={dict.banner.text}
+        ctaText={dict.banner.cta}
+        ctaHref={waHref}
+        dismissLabel={dict.banner.dismiss}
+      />
       <Header lang={lang} dict={dict} site={site} />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} dict={dict} site={site} />
       <WhatsAppButton lang={lang} dict={dict} whatsapp={site.contact.whatsapp} message={site.contact.whatsappMessage} />
+      <MobileCallButton phone={site.contact.phone} ariaLabel={dict.hero.callCta} />
       <Analytics />
     </>
   )

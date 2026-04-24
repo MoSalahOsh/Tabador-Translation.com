@@ -18,36 +18,17 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   if (!hasLocale(lang)) notFound()
   const dict = await getDictionary(lang)
   const site = lang === 'ar' ? arSite : enSite
-  const isAr = lang === 'ar'
 
   const waHref = `https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`
 
+  // Google Maps embed — centered on Dammam/Jawazat area (26.4207, 50.0888)
+  const mapEmbed = `https://www.google.com/maps?q=26.4207,50.0888&z=15&output=embed`
+
   const contactItems = [
-    {
-      icon: Phone,
-      label: dict.contact.phone,
-      value: site.contact.phoneDisplay,
-      href: `tel:${site.contact.phone}`,
-    },
-    {
-      icon: Mail,
-      label: dict.contact.email,
-      value: site.contact.email,
-      href: `mailto:${site.contact.email}`,
-    },
-    {
-      icon: MapPin,
-      label: dict.contact.address,
-      value: site.contact.address,
-      href: site.contact.mapsUrl,
-      external: true,
-    },
-    {
-      icon: Clock,
-      label: dict.contact.hours,
-      value: `${site.contact.hours.days}\n${site.contact.hours.time}`,
-      href: null,
-    },
+    { icon: Phone, label: dict.contact.phone, value: site.contact.phoneDisplay, href: `tel:${site.contact.phone}` },
+    { icon: Mail, label: dict.contact.email, value: site.contact.email, href: `mailto:${site.contact.email}` },
+    { icon: MapPin, label: dict.contact.address, value: site.contact.address, href: site.contact.mapsUrl, external: true },
+    { icon: Clock, label: dict.contact.hours, value: `${site.contact.hours.days}\n${site.contact.hours.time}`, href: null },
   ]
 
   return (
@@ -59,7 +40,6 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Contact info */}
           <div className="space-y-5">
             {contactItems.map(({ icon: Icon, label, value, href, external }) => (
               <div key={label} className="flex gap-4 items-start">
@@ -84,7 +64,6 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               </div>
             ))}
 
-            {/* WhatsApp CTA */}
             <a
               href={waHref}
               target="_blank"
@@ -95,22 +74,28 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               {dict.hero.whatsappCta}
             </a>
 
-            {/* Maps embed / link */}
-            <div className="rounded-2xl overflow-hidden border border-border aspect-video relative bg-muted flex items-center justify-center mt-4">
-              <a
-                href={site.contact.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <MapPin size={32} className="text-brand-gold" />
-                <span className="text-sm font-medium">{dict.contact.mapTitle}</span>
-                <span className="text-xs underline">{isAr ? 'افتح الخريطة' : 'Open in Google Maps'}</span>
-              </a>
+            {/* Google Maps iframe */}
+            <div className="rounded-2xl overflow-hidden border border-border aspect-video relative mt-4">
+              <iframe
+                src={mapEmbed}
+                title={dict.contact.mapTitle}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full"
+                allowFullScreen
+              />
             </div>
+            <a
+              href={site.contact.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-brand-gold hover:underline"
+            >
+              <MapPin size={14} />
+              {dict.contact.openInMaps}
+            </a>
           </div>
 
-          {/* Contact form */}
           <div>
             <h2 className="text-xl font-bold mb-6">{dict.contact.form}</h2>
             <ContactForm lang={lang} dict={dict} emailContact={site.contact.emailContact} />
