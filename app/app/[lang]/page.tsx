@@ -121,10 +121,11 @@ export default async function HomePage({
               </a>
               <Link
                 href={`/${lang}/services`}
+                aria-label={`${dict.hero.ctaSecondary} — ${dict.nav.services}`}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass text-white font-semibold text-base hover:bg-white/20 transition-colors"
               >
                 {dict.hero.ctaSecondary}
-                <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} />
+                <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
               </Link>
             </div>
 
@@ -205,7 +206,6 @@ export default async function HomePage({
               <Link
                 key={slug}
                 href={`/${lang}/services/${slug}`}
-                aria-label={`${dict.services.learnMore} — ${svc.title}`}
                 className="group flex flex-col gap-3 p-5 rounded-xl border border-border hover:border-brand-gold/40 hover:shadow-lg bg-card transition-all duration-200"
               >
                 <span className="text-3xl" aria-hidden="true">{SERVICE_ICONS[slug] ?? '📄'}</span>
@@ -264,10 +264,11 @@ export default async function HomePage({
               </ul>
               <Link
                 href={`/${lang}/about`}
+                aria-label={`${dict.hero.ctaSecondary} — ${dict.nav.about}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-navy text-white font-semibold hover:bg-brand-navy-light transition-colors"
               >
                 {dict.hero.ctaSecondary}
-                <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} />
+                <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
               </Link>
             </div>
           </div>

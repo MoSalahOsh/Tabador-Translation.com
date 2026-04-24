@@ -54,7 +54,7 @@ export function Header({ lang, dict, site }: Props) {
       className={cn(
         'sticky top-0 z-40 w-full transition-all duration-300',
         transparent
-          ? 'bg-transparent border-b border-transparent'
+          ? 'bg-gradient-to-b from-black/35 via-black/15 to-transparent border-b border-transparent'
           : 'glass border-b border-border/40'
       )}
     >
