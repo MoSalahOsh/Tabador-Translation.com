@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton'
 import { AnnouncementBanner } from '@/components/layout/AnnouncementBanner'
-import { MobileCallButton } from '@/components/layout/MobileCallButton'
+import { MobileActionBar } from '@/components/layout/MobileActionBar'
 import enSite from '../../content/en/site.json'
 import arSite from '../../content/ar/site.json'
 
@@ -113,10 +113,10 @@ export default async function LocaleLayout({
         dismissLabel={dict.banner.dismiss}
       />
       <Header lang={lang} dict={dict} site={site} />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pb-16 md:pb-0">{children}</main>
       <Footer lang={lang} dict={dict} site={site} />
       <WhatsAppButton lang={lang} dict={dict} whatsapp={site.contact.whatsapp} message={site.contact.whatsappMessage} />
-      <MobileCallButton phone={site.contact.phone} ariaLabel={dict.hero.callCta} />
+      <MobileActionBar lang={lang} phone={site.contact.phone} whatsappHref={waHref} labels={dict.mobileBar} />
       <Analytics />
     </>
   )

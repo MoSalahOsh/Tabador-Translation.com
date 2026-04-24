@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { esc, isSameOrigin, validateAttachment, type AttachmentInput } from '@/lib/email'
 
 const schema = z.object({
   docType: z.string().min(1).max(200),
@@ -7,11 +8,22 @@ const schema = z.object({
   langTo: z.string().min(1).max(100),
   name: z.string().min(1).max(200),
   phone: z.string().min(5).max(30),
+  email: z.string().email().optional().or(z.literal('')),
+  notes: z.string().max(2000).optional().or(z.literal('')),
   lang: z.enum(['en', 'ar']),
   honeypot: z.string().max(0).optional(),
+  file: z
+    .object({
+      filename: z.string().max(200),
+      mimetype: z.string().max(200),
+      contentBase64: z.string().max(6_000_000),
+    })
+    .optional(),
 })
 
-let requestCount: Map<string, { count: number; reset: number }> = new Map()
+const ALLOWED_HOSTS = new Set(['tabador-translation.com', 'www.tabador-translation.com', 'tabador-translation.vercel.app', 'localhost:3000'])
+
+const requestCount = new Map<string, { count: number; reset: number }>()
 
 function rateLimit(ip: string): boolean {
   const now = Date.now()
@@ -26,6 +38,12 @@ function rateLimit(ip: string): boolean {
 }
 
 export async function POST(request: NextRequest) {
+  // CSRF / Origin hardening
+  const host = request.headers.get('host') ?? ''
+  if (!ALLOWED_HOSTS.has(host) && !isSameOrigin(request, host)) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  }
+
   const ip = request.headers.get('x-forwarded-for') ?? 'unknown'
   if (!rateLimit(ip)) {
     return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
@@ -43,55 +61,64 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Validation failed' }, { status: 422 })
   }
 
-  // Honeypot check
   if (parsed.data.honeypot) {
-    return NextResponse.json({ ok: true }) // Silent reject bots
+    return NextResponse.json({ ok: true })
   }
 
-  const { docType, langFrom, langTo, name, phone, lang } = parsed.data
+  const { docType, langFrom, langTo, name, phone, email, notes, lang, file } = parsed.data
+
+  const fileErr = validateAttachment(file as AttachmentInput | undefined)
+  if (fileErr) {
+    return NextResponse.json({ error: fileErr }, { status: 415 })
+  }
+
   const emailTo = process.env.CONTACT_EMAIL_PRIMARY ?? 'newtabador@gmail.com'
   const emailCC = process.env.CONTACT_EMAIL_BACKUP ?? ''
   const resendKey = process.env.RESEND_API_KEY
 
-  const subject = `[Tabador] Quote Request — ${docType} (${langFrom} → ${langTo})`
+  const waLink = `https://wa.me/${phone.replace(/\D/g, '')}`
+
+  const subject = `[Tabador] Quote — ${esc(docType)} (${esc(langFrom)} → ${esc(langTo)})`
   const htmlBody = `
     <h2>New Quote Request</h2>
-    <table>
-      <tr><td><strong>Name</strong></td><td>${name}</td></tr>
-      <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
-      <tr><td><strong>Document</strong></td><td>${docType}</td></tr>
-      <tr><td><strong>From</strong></td><td>${langFrom}</td></tr>
-      <tr><td><strong>To</strong></td><td>${langTo}</td></tr>
-      <tr><td><strong>Locale</strong></td><td>${lang}</td></tr>
+    <table style="border-collapse:collapse">
+      <tr><td><strong>Name</strong></td><td>${esc(name)}</td></tr>
+      <tr><td><strong>Phone</strong></td><td><a href="tel:${esc(phone)}">${esc(phone)}</a> · <a href="${esc(waLink)}">WhatsApp</a></td></tr>
+      ${email ? `<tr><td><strong>Email</strong></td><td><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>` : ''}
+      <tr><td><strong>Document</strong></td><td>${esc(docType)}</td></tr>
+      <tr><td><strong>From</strong></td><td>${esc(langFrom)}</td></tr>
+      <tr><td><strong>To</strong></td><td>${esc(langTo)}</td></tr>
+      <tr><td><strong>Locale</strong></td><td>${esc(lang)}</td></tr>
+      ${notes ? `<tr><td valign="top"><strong>Notes</strong></td><td><pre style="white-space:pre-wrap;margin:0;font-family:inherit">${esc(notes)}</pre></td></tr>` : ''}
+      ${file ? `<tr><td><strong>Attachment</strong></td><td>${esc(file.filename)}</td></tr>` : ''}
     </table>
   `
 
-  if (resendKey) {
-    try {
-      const payload: Record<string, unknown> = {
-        from: 'Tabador Website <onboarding@resend.dev>',
-        to: [emailTo],
-        subject,
-        html: htmlBody,
-      }
-      if (emailCC) payload.cc = [emailCC]
-
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-      if (!res.ok) throw new Error('Resend error')
-    } catch {
-      // Fall through — return 500 so client triggers mailto fallback
-      return NextResponse.json({ error: 'Email service unavailable' }, { status: 500 })
-    }
-  } else {
-    // No API key configured — return 500 so client uses mailto fallback
+  if (!resendKey) {
     return NextResponse.json({ error: 'Not configured' }, { status: 500 })
+  }
+
+  try {
+    const payload: Record<string, unknown> = {
+      from: 'Tabador Website <onboarding@resend.dev>',
+      to: [emailTo],
+      subject,
+      html: htmlBody,
+      reply_to: email ? email : undefined,
+    }
+    if (emailCC) payload.cc = [emailCC]
+    if (file) {
+      payload.attachments = [{ filename: file.filename, content: file.contentBase64 }]
+    }
+
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    if (!res.ok) throw new Error('Resend error')
+  } catch {
+    return NextResponse.json({ error: 'Email service unavailable' }, { status: 500 })
   }
 
   return NextResponse.json({ ok: true })

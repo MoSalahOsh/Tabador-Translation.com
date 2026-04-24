@@ -2,6 +2,8 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "pricing": "Pricing",
+    "urgent": "Urgent",
     "about": "About Us",
     "projects": "Projects",
     "partners": "Partners",
@@ -169,26 +171,110 @@
     "docTypePlaceholder": "e.g. Birth certificate, Degree...",
     "langFrom": "From Language",
     "langTo": "To Language",
-    "upload": "Attach Document (optional)",
-    "uploadHint": "PDF, JPG, PNG, DOC, DOCX — max 10 MB",
+    "upload": "Attach Document",
+    "uploadHint": "PDF, JPG, PNG, DOC, DOCX — max 3 MB. For larger files, send via WhatsApp.",
+    "fileTooLarge": "File is too large. Maximum 3 MB.",
+    "fileTypeBad": "Unsupported file type. Allowed: PDF, JPG, PNG, WEBP, DOC, DOCX.",
+    "removeFile": "Remove file",
     "name": "Your Name",
     "phone": "Phone / WhatsApp",
+    "email": "Email",
+    "emailOptional": "optional",
+    "notes": "Additional Notes",
+    "notesOptional": "optional",
+    "serviceLabel": "Service needed",
+    "serviceOptional": "optional",
+    "messageLabel": "Your message",
     "submit": "Send My Document",
     "submitWhatsApp": "Send via WhatsApp",
     "submitting": "Sending...",
     "successTitle": "Request Received!",
-    "successBody": "We will respond to you shortly.",
+    "successBody": "We will respond to you shortly via phone, WhatsApp, or email.",
     "errorTitle": "Something went wrong",
-    "errorBody": "Please try again or contact us via WhatsApp."
+    "errorBody": "Please try again or contact us via WhatsApp.",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email"
   },
   "footer": {
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "certNote": "We certify the translation not the content.",
+    "certNote": "We certify the fidelity of the translation, not the content of the original document.",
     "servicesCol1": "Core Services",
     "servicesCol2": "Specialized",
     "quickLinks": "Quick Links"
+  },
+  "trustBadges": {
+    "title": "Accepted by",
+    "items": [
+      "Ministry of Foreign Affairs (MOFA)",
+      "Ministry of Education (MOHE)",
+      "Ministry of Health",
+      "Ministry of Justice",
+      "Jawazat (Passport Dept.)",
+      "Chambers of Commerce",
+      "Schengen Embassies",
+      "GCC Authorities"
+    ]
+  },
+  "mobileBar": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "quote": "Quote"
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "Fixed price, agreed before any work starts",
+    "intro": "We don't publish a fixed rate card because every document is different. What we do promise: a precise, fixed quote within minutes of seeing your document — with no hidden fees.",
+    "howTitle": "How pricing is calculated",
+    "howItems": [
+      { "title": "Document type", "desc": "Personal docs (IDs, certificates) are priced per-document; long reports are priced per-word." },
+      { "title": "Language pair", "desc": "English ⇄ Arabic is the most common; rarer pairs (Farsi, Chinese, Tagalog) are slightly higher." },
+      { "title": "Turnaround", "desc": "Standard (next business day) vs. express (same-day) — you choose." },
+      { "title": "Volume", "desc": "Batch discounts for multiple documents, embassy files, and corporate clients." }
+    ],
+    "guaranteeTitle": "Our pricing guarantee",
+    "guaranteeItems": [
+      "Fixed quote before we start — never pay more than the number we sent you.",
+      "No hidden fees for certification stamp, signature, or second copy.",
+      "Re-translation or minor corrections within scope are free.",
+      "Quotes are free and carry no obligation."
+    ],
+    "ctaTitle": "Get your quote now",
+    "ctaBody": "Send us the document — we reply within minutes with a fixed price and delivery time.",
+    "ctaButton": "Request a Free Quote"
+  },
+  "urgent": {
+    "title": "Express / Same-Day Translation",
+    "subtitle": "Certified translation delivered in hours, not days",
+    "intro": "When a court date, flight, embassy appointment, or filing deadline is hours away, our express service gets you a certified, embassy-ready translation the same day.",
+    "whenTitle": "When you need us",
+    "whenItems": [
+      "Embassy or consulate appointment tomorrow",
+      "Court hearing or legal filing deadline",
+      "Flight with an embassy requirement in-hand",
+      "Hospital or overseas treatment referral",
+      "MOHE equivalency last step",
+      "Urgent corporate bid or tender documents"
+    ],
+    "howTitle": "How it works",
+    "howItems": [
+      { "title": "Send your document now", "desc": "WhatsApp, email, or upload through the quote form." },
+      { "title": "Priority quote in 15 minutes", "desc": "We confirm exact price and delivery time before work starts." },
+      { "title": "Dedicated express track", "desc": "Your document jumps the standard queue and goes to a certified translator immediately." },
+      { "title": "Pickup or instant email delivery", "desc": "Same-day pickup from our office opposite Jawazat — or certified scan by email." }
+    ],
+    "guaranteeTitle": "Express service guarantee",
+    "guaranteeItems": [
+      "Same-day delivery for most personal documents (submitted before noon).",
+      "Next-morning delivery for items submitted after 5 PM.",
+      "Full certification, stamp, and signature included.",
+      "First-time acceptance guaranteed — or we fix it free."
+    ],
+    "ctaTitle": "Send your urgent document now",
+    "ctaBody": "Every minute counts. Tap below and we'll get back to you immediately.",
+    "ctaWhatsApp": "WhatsApp Now",
+    "ctaCall": "Call Now"
   },
   "whatsapp": {
     "ariaLabel": "Contact us on WhatsApp",

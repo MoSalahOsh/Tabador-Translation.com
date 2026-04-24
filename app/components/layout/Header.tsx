@@ -40,6 +40,8 @@ export function Header({ lang, dict, site }: Props) {
   const nav = [
     { key: 'home', href: `/${lang}` },
     { key: 'services', href: `/${lang}/services` },
+    { key: 'pricing', href: `/${lang}/pricing` },
+    { key: 'urgent', href: `/${lang}/urgent` },
     { key: 'about', href: `/${lang}/about` },
     { key: 'contact', href: `/${lang}/contact` },
   ]

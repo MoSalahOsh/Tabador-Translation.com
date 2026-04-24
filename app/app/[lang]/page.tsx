@@ -11,6 +11,7 @@ import { ProcessSection } from '@/components/sections/ProcessSection'
 import { IndustriesStrip } from '@/components/sections/IndustriesStrip'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { StatsCounter } from '@/components/sections/StatsCounter'
+import { TrustBadges } from '@/components/sections/TrustBadges'
 
 const BASE_URL = 'https://tabador-translation.com'
 
@@ -146,6 +147,9 @@ export default async function HomePage({
           <StatsCounter stats={site.stats} />
         </div>
       </section>
+
+      {/* ── TRUST BADGES (authorities accepted) ─────────── */}
+      <TrustBadges title={dict.trustBadges.title} items={dict.trustBadges.items} />
 
       {/* ── WHY TABADOR – 5-REASON STRIP ────────────────────── */}
       <section className="py-16 bg-background">

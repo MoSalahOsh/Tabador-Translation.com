@@ -58,6 +58,26 @@
 **Decision:** Replaced colloquial `ابعت مستندك` → MSA `أرسل مستندك` in hero CTA and quick-quote subtitle. Fixed `مدثر احمد` → `مدثر أحمد`. Reformatted Arabic stats from `+15` → `15+` and added `100%` first-time-acceptance stat.
 **Rationale:** Certified translation office's brand voice should default to formal MSA on primary CTAs while retaining one colloquial empathy line (`معاملتك تمشي من أول مرة`). Numerals written LTR-first for correct visual rendering inside RTL blocks.
 
+---
+
+## 2026-04-24 — Phase 11 (forms, uploads, new pages, hardening)
+
+### D-014: File upload via base64 + Resend attachment (no blob storage)
+**Decision:** Accept file uploads up to 3MB as base64 inside the JSON body, forward to Resend as an email attachment. Larger files are directed to WhatsApp via the `uploadHint` text.
+**Rationale:** Resend accepts base64 attachments; 3MB raw ≈ 4MB base64 fits under Vercel's 4.5MB request body cap with margin. Avoids adding Vercel Blob or S3 dependency for what is realistically a small-document workflow (certified translation documents are almost always <3MB scans/PDFs). Upgrade path: if demand surfaces, swap to Vercel Blob client-upload with a blob URL fetched by the API.
+
+### D-015: CSRF hardening via Origin/host allow-list, not tokens
+**Decision:** API routes check `Host` header is in `ALLOWED_HOSTS` or `Origin`/`Referer` matches. No CSRF tokens.
+**Rationale:** Public marketing forms with no auth cookies; `SameSite=Lax` default + Origin check closes the attack surface without session-management complexity.
+
+### D-016: Add `/pricing` and `/urgent` as dedicated landing pages
+**Decision:** Two net-new pages. `/pricing` explains pricing factors + guarantee (no hard prices). `/urgent` is a conversion-focused express-service landing targeting high-intent queries like "urgent translation dammam".
+**Rationale:** Pricing is the top friction question in the translation industry; even without published numbers, a transparent "how pricing works" page reduces bounce. Urgent is an ad-targetable landing page with its own CTAs; addresses the "I have 6 hours before my embassy appointment" persona directly.
+
+### D-017: Docked mobile action bar replaces floating call button
+**Decision:** Fixed three-column bottom bar (Call · WhatsApp · Quote) on mobile only. Retired the floating call button; floating WhatsApp side-bubble remains on desktop.
+**Rationale:** A docked bar is a stronger primary-action surface on mobile than two floating dots; three actions are tappable without overlap; `pb-16 md:pb-0` on `main` prevents content from being hidden behind the bar.
+
 ### D-003: Skill availability
 **Decision:** Skills `research-assistant`, `corporate-website-builder`, `frontend-design`, `design-md-library`, `diagram-generator`, `visual-explainer`, `promptforge` are available in this session. Will copy them to SKILLS_SNAPSHOT/ before their respective phases.
 **Rationale:** Per §5 of MISSION.md — skill copies ensure future agents have same guidance.
