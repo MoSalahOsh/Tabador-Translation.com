@@ -6,6 +6,8 @@ import { getDictionary, hasLocale } from '../../dictionaries'
 import enSite from '../../../../content/en/site.json'
 import arSite from '../../../../content/ar/site.json'
 
+const BASE_URL = 'https://tabador-translation.com'
+
 export async function generateStaticParams() {
   const slugs = [
     'personal-official','embassy-schengen','academic','contracts-business',
@@ -21,7 +23,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(lang)
   const svc = dict.services.categories[slug as keyof typeof dict.services.categories]
   if (!svc) return {}
-  return { title: `${svc.title} | Tabador Translation Est.`, description: svc.desc }
+  return {
+    title: `${svc.title} | Tabador Translation Est.`,
+    description: svc.desc,
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/services/${slug}`,
+      languages: {
+        en: `${BASE_URL}/en/services/${slug}`,
+        ar: `${BASE_URL}/ar/services/${slug}`,
+      },
+    },
+  }
 }
 
 export default async function ServicePage({
@@ -40,16 +52,30 @@ export default async function ServicePage({
 
   const waHref = `https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`${site.contact.whatsappMessage}${svc.title}`)}`
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: dict.nav.home, item: `${BASE_URL}/${lang}` },
+      { '@type': 'ListItem', position: 2, name: dict.nav.services, item: `${BASE_URL}/${lang}/services` },
+      { '@type': 'ListItem', position: 3, name: svc.title, item: `${BASE_URL}/${lang}/services/${slug}` },
+    ],
+  }
+
   return (
     <div className="py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8" aria-label="breadcrumb">
           <Link href={`/${lang}`} className="hover:text-foreground">{dict.nav.home}</Link>
-          <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} />
+          <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
           <Link href={`/${lang}/services`} className="hover:text-foreground">{dict.nav.services}</Link>
-          <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} />
-          <span className="text-foreground">{svc.title}</span>
+          <ChevronRight size={12} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
+          <span className="text-foreground" aria-current="page">{svc.title}</span>
         </nav>
 
         <h1 className="text-3xl md:text-4xl font-extrabold mb-4">{svc.title}</h1>

@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { Sun, Moon } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { track } from '@vercel/analytics'
 
 type Props = {
   dict: { theme: { light: string; dark: string; toggle: string } }
@@ -19,7 +20,7 @@ export function ThemeToggle({ dict }: Props) {
   const isDark = theme === 'dark'
   return (
     <button
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      onClick={() => { const next = isDark ? 'light' : 'dark'; setTheme(next); track('theme_toggle', { theme: next }) }}
       className="p-2 rounded-md text-foreground/70 hover:bg-muted hover:text-foreground transition-colors"
       aria-label={dict.theme.toggle}
       title={isDark ? dict.theme.light : dict.theme.dark}

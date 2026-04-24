@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { track } from '@vercel/analytics'
 
 type Props = {
   lang: string
@@ -21,6 +22,7 @@ export function LocaleToggle({ lang, dict }: Props) {
       className="px-2.5 py-1.5 rounded-md text-sm font-medium border border-border text-foreground/70 hover:bg-muted hover:text-foreground transition-colors"
       aria-label={dict.locale.switchToAriaLabel}
       hrefLang={otherLang}
+      onClick={() => track('locale_toggle', { from: lang, to: otherLang })}
     >
       {dict.locale.switchTo}
     </Link>

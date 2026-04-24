@@ -12,6 +12,8 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
+const BASE_URL = 'https://tabador-translation.com'
+
 export async function generateMetadata({
   params,
 }: {
@@ -19,15 +21,26 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params
   const isAr = lang === 'ar'
+  const site = isAr ? arSite : enSite
   return {
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: `/${lang}`,
-      languages: { en: '/en', ar: '/ar' },
+      canonical: `${BASE_URL}/${lang}`,
+      languages: {
+        'en': `${BASE_URL}/en`,
+        'ar': `${BASE_URL}/ar`,
+        'x-default': `${BASE_URL}/en`,
+      },
     },
     openGraph: {
       locale: isAr ? 'ar_SA' : 'en_US',
       alternateLocale: isAr ? 'en_US' : 'ar_SA',
-      siteName: isAr ? arSite.brand.name : enSite.brand.name,
+      siteName: site.brand.name,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@tabador',
     },
   }
 }
@@ -46,8 +59,49 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang)
   const site = lang === 'ar' ? arSite : enSite
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': ['LocalBusiness', 'ProfessionalService'],
+        '@id': `${BASE_URL}/${lang}#business`,
+        name: site.brand.name,
+        description: site.brand.description,
+        url: `${BASE_URL}/${lang}`,
+        telephone: site.contact.phone,
+        email: site.contact.email,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: lang === 'ar' ? 'مقابل الجوازات' : 'Opposite Jawazat (Passport Office)',
+          addressLocality: site.contact.city,
+          postalCode: '31952',
+          addressCountry: 'SA',
+        },
+        geo: { '@type': 'GeoCoordinates', latitude: 26.4207, longitude: 50.0888 },
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+          opens: '08:00',
+          closes: '22:00',
+        },
+        hasMap: site.contact.mapsUrl,
+        priceRange: '$$',
+        serviceArea: { '@type': 'Country', name: 'Saudi Arabia' },
+        knowsLanguage: ['ar', 'en'],
+        identifier: [
+          { '@type': 'PropertyValue', name: 'CR', value: '2051221647' },
+          { '@type': 'PropertyValue', name: 'Licence', value: '317' },
+        ],
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header lang={lang} dict={dict} site={site} />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} dict={dict} site={site} />
