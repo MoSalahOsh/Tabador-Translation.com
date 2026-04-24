@@ -1,10 +1,10 @@
 # MISSION — TABADOR TRANSLATION WEBSITE (v3)
 
 ## §0. PRIME DIRECTIVE
-Build a bilingual (English + Arabic), light/dark, accessibly-glassmorphic corporate website for **Tabador Translation Est.** at **tabador-translation.com**, optimized to convert visitors into paying customers within the first minute. Use the files in this project folder as the single source of truth for all client facts and copy. Persist full state inside the folder so any future Claude Code session can resume without re-briefing.
+Build a bilingual (English + Arabic), light/dark, accessibly-glassmorphic corporate website for **Tabador Translation Est.** at **tabador-translation.com**, optimized to convert visitors into paying customers within the first minute. Use the files in this project folder as the single source of truth for all client facts and copy. Persist full state inside the folder so any future coding session can resume without re-briefing.
 
 ## §1. HOW TO READ THIS FILE
-This file is your mission. Read it fully before acting. When you finish, write your condensed understanding to `CLAUDE.md` in your own words — that becomes the bootstrap for any future agent.
+This file is your mission. Read it fully before acting. When you finish, write your condensed understanding to `AGENT.md` in your own words — that becomes the bootstrap for any future agent.
 
 ## §2. ROLE STACK
 You are ONE agent with FOUR integrated expertises:
@@ -60,7 +60,7 @@ If a skill is missing, log in `DECISIONS.md` and proceed with best practice.
 9. **Leave the campsite cleaner.** End every response with updated `PROGRESS.md` + `NEXT_STEPS.md`, and a git commit if code changed.
 10. **No silent decisions.** Non-obvious choices go in `DECISIONS.md` with a one-line rationale.
 11. **Propose variants at creative forks.** At each major creative decision (hero concept, color scheme, type pairing), present 2 options with trade-offs before committing.
-12. **Concurrency rule.** Only one Claude Code session edits this folder at a time. If two sessions collide, surface the conflict to the user.
+12. **Concurrency rule.** Only one coding session edits this folder at a time. If two sessions collide, surface the conflict to the user.
 
 ## §7. MODES
 The user declares a mode in their first reply. Default is `review`.
@@ -73,7 +73,7 @@ Create and maintain these files in the project root:
 ```
 Tabador-Translation.com/
 ├── MISSION.md              # This file (do not modify)
-├── CLAUDE.md               # Your condensed bootstrap for future agents
+├── AGENT.md               # Your condensed bootstrap for future agents
 ├── PROJECT_MEMORY.md       # Extracted client facts (NAP, services, socials, quotes)
 ├── RESEARCH.md             # Phase 1 synthesized research
 ├── DECISIONS.md            # Dated ADR-style decision log
@@ -91,9 +91,9 @@ Tabador-Translation.com/
 1. Update `PROGRESS.md` with what you did.
 2. Write a precise enumerated resume plan in `NEXT_STEPS.md`.
 3. Commit: `chore: checkpoint — session handoff`.
-4. Reply: "Safe to start a new session — next agent resumes from `CLAUDE.md` + `NEXT_STEPS.md`."
+4. Reply: "Safe to start a new session — next agent resumes from `AGENT.md` + `NEXT_STEPS.md`."
 
-**`CLAUDE.md` is the master briefing** — must always be current enough that a fresh agent, given only the folder, needs zero re-explanation.
+**`AGENT.md` is the master briefing** — must always be current enough that a fresh agent, given only the folder, needs zero re-explanation.
 
 ## §9. PHASE-BY-PHASE EXECUTION
 Each phase has entry criteria (must be true to start) and exit criteria (must be true to finish). Do not skip. 🛑 = mandatory user approval.
@@ -328,7 +328,7 @@ No code dumps in chat if they can go to files. Memory files hold detail.
 - [ ] Lighthouse mobile targets met on home + 2 service pages + contact
 - [ ] axe: 0 critical, 0 serious
 - [ ] Deployed on `tabador-translation.com` with HTTPS
-- [ ] All memory files current; `CLAUDE.md` bootstrap-ready
+- [ ] All memory files current; `AGENT.md` bootstrap-ready
 - [ ] `SKILLS_SNAPSHOT/` populated
 - [ ] `EDITING_GUIDE.md` written for non-dev edits
 - [ ] `v1.0.0` tag pushed

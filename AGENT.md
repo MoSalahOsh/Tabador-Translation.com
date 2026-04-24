@@ -1,14 +1,14 @@
-# CLAUDE.md — Agent Bootstrap
+# AGENT.md — Project Bootstrap
 
-> This file is the entry point for any Claude Code session working on this project. It is intentionally short. Your first action is to read `MISSION.md` in full.
+> Entry point for any AI coding agent (or developer) opening this project. It is intentionally short. First action: read `MISSION.md` in full.
 
 ## Project
 **Tabador Translation Est. website** — bilingual (EN + AR), light/dark, glassmorphic, conversion-optimized corporate site for `tabador-translation.com`, deployed via GitHub → Vercel Pro.
 
 ## Your first 3 actions on any session
 
-1. **Read `MISSION.md`** — it contains the full brief, rules, phases, gates, checklists, and definitions.
-2. **Read `NEXT_STEPS.md`** — it tells you exactly where to resume. If it doesn't exist, you are starting a new project and must execute **Phase 0** in `MISSION.md`.
+1. **Read `MISSION.md`** — full brief, rules, phases, gates, checklists, and definitions.
+2. **Read `NEXT_STEPS.md`** — exactly where to resume. If it doesn't exist, you are starting a new project and must execute **Phase 0** in `MISSION.md`.
 3. **Read `PROGRESS.md`** — current status and Lighthouse / audit scores.
 
 ## Critical infrastructure facts
@@ -36,7 +36,7 @@
 | File | Purpose |
 |---|---|
 | `MISSION.md` | The brief. Read-only. |
-| `CLAUDE.md` | This file. Bootstrap for future agents. |
+| `AGENT.md` | This file. Bootstrap for future agents. |
 | `PROJECT_MEMORY.md` | Extracted client facts. |
 | `RESEARCH.md` | Phase 1 research synthesis. |
 | `DECISIONS.md` | Dated ADR-style log. |
@@ -45,7 +45,7 @@
 | `OPEN_QUESTIONS.md` | Gaps needing the user's input. |
 | `DEPLOYMENT.md` | Env vars, DNS, Vercel notes. |
 | `EDITING_GUIDE.md` | Post-launch user guide. |
-| `SKILLS_SNAPSHOT/` | Copies of every SKILL.md used. |
+| `SKILLS_SNAPSHOT/` | Copies of every reference SKILL.md used. |
 
 ## Context handoff
 
@@ -53,8 +53,8 @@ If the context window is nearing full or the user says "pause":
 
 1. Update `PROGRESS.md` and `NEXT_STEPS.md`.
 2. Commit: `chore: checkpoint — session handoff`.
-3. Tell the user: *"Safe to start a new session — next agent resumes from `CLAUDE.md` + `NEXT_STEPS.md`."*
+3. Tell the user: *"Safe to start a new session — next agent resumes from `AGENT.md` + `NEXT_STEPS.md`."*
 
-## If you are a brand-new Claude Code agent reading this for the first time
+## If you are a brand-new agent reading this for the first time
 
 Go read `MISSION.md` now. Everything you need is there.

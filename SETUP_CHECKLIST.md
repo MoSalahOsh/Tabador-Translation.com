@@ -1,6 +1,6 @@
-# SETUP_CHECKLIST.md — Before You Kick Off Claude Code
+# SETUP_CHECKLIST.md — Before You Kick Off the coding agent
 
-> Complete this checklist BEFORE running Claude Code. The quality of the final site is directly tied to the quality of what you put in this folder.
+> Complete this checklist BEFORE running the coding agent. The quality of the final site is directly tied to the quality of what you put in this folder.
 
 ---
 
@@ -11,7 +11,7 @@ Inside the `Tabador-Translation.com` project folder, create these three files + 
 ```
 Tabador-Translation.com/
 ├── MISSION.md              ← provided (drop in)
-├── CLAUDE.md               ← provided (drop in)
+├── AGENT.md               ← provided (drop in)
 ├── SETUP_CHECKLIST.md      ← this file (you can delete after reading)
 └── source-materials/       ← create this folder and fill it (see below)
 ```
@@ -20,7 +20,7 @@ Tabador-Translation.com/
 
 ## 2. Fill `source-materials/` with everything the client has sent you
 
-Inside `source-materials/`, create the following subfolders and drop in what you have. Missing items are fine — Claude will flag them as open questions, and you can answer later.
+Inside `source-materials/`, create the following subfolders and drop in what you have. Missing items are fine — the agent will flag them as open questions, and you can answer later.
 
 ```
 source-materials/
@@ -67,7 +67,7 @@ Before Phase 1, the agent will expect at least these facts. If you don't have th
 
 The agent will need these at Phase 9 (deploy). Have them ready:
 
-- [ ] GitHub account connected to Claude Code
+- [ ] GitHub account connected to the coding agent
 - [ ] Vercel account (Pro plan)
 - [ ] DNS access for `tabador-translation.com` (to point it at Vercel)
 - [ ] A form-provider account: **Resend** (recommended) OR Web3Forms OR Formspree
@@ -88,24 +88,24 @@ You don't have to decide these, but if you do, the agent moves faster:
 
 ## 6. How to kick off
 
-1. Drop `MISSION.md` + `CLAUDE.md` into the `Tabador-Translation.com` folder.
+1. Drop `MISSION.md` + `AGENT.md` into the `Tabador-Translation.com` folder.
 2. Fill `source-materials/` with everything you have from the client.
-3. Open Claude Code in the folder.
+3. Open the coding agent in the folder.
 4. Send exactly this message:
 
 ```
 Read MISSION.md and begin Phase 0.
 ```
 
-That's it. Claude Code will bootstrap the memory files, copy relevant skills into `SKILLS_SNAPSHOT/`, initialize git, and ask you the two Gate-0 questions (mode + repo).
+That's it. the coding agent will bootstrap the memory files, copy relevant skills into `SKILLS_SNAPSHOT/`, initialize git, and ask you the two Gate-0 questions (mode + repo).
 
 ---
 
 ## 7. During the build
 
-- **Every response** from Claude Code ends with an updated `PROGRESS.md` + a "Next action" line. You'll always know where things stand.
-- **If context runs out,** Claude will commit a handoff and tell you to start a new session. The next agent reads `CLAUDE.md` and resumes without you repeating anything.
-- **At each 🛑 gate,** Claude stops and asks for your input. You can approve, correct, or provide missing info.
+- **Every response** from the coding agent ends with an updated `PROGRESS.md` + a "Next action" line. You'll always know where things stand.
+- **If context runs out,** the agent will commit a handoff and tell you to start a new session. The next agent reads `AGENT.md` and resumes without you repeating anything.
+- **At each 🛑 gate,** the agent stops and asks for your input. You can approve, correct, or provide missing info.
 
 ---
 

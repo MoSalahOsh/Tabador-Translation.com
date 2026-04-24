@@ -44,7 +44,7 @@ git push --tags
 
 ## How to continue this project (for any agent picking up)
 
-1. Read [CLAUDE.md](CLAUDE.md) and [MISSION.md](MISSION.md) first.
+1. Read [AGENT.md](AGENT.md) and [MISSION.md](MISSION.md) first.
 2. Read this file + [PROGRESS.md](PROGRESS.md).
 3. Read [DECISIONS.md](DECISIONS.md) — D-001 through D-021 capture the architectural choices.
 4. Code lives in `/app`. **Vercel rootDirectory is `app`** — never run `npm install` from repo root.

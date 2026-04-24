@@ -339,6 +339,34 @@
     "servicesCol2": "Specialized",
     "quickLinks": "Quick Links"
   },
+  "carousel": {
+    "label": "Tabador in action",
+    "slides": [
+      { "headline": "Certified Translation You Can Rely On", "body": "Official translations accepted by all embassies and government bodies — inside and outside the Kingdom." },
+      { "headline": "Every Document, Translated With Precision", "body": "From IDs and birth certificates to contracts, Schengen files, and all official paperwork — accepted the first time." },
+      { "headline": "Any Official Matter Needs an Accurate, Certified Translation", "body": "A small mistake can mean delay or rejection. We deliver precision, speed, and commitment for total peace of mind." },
+      { "headline": "All Types of Translation, All Languages", "body": "Personal, official, educational, embassy, contracts, medical, legal & administrative — handled by certified translators." }
+    ]
+  },
+  "sectorsServed": {
+    "title": "Sectors We Serve Daily",
+    "subtitle": "Documents we translate every week, across every sector in the Eastern Province",
+    "items": [
+      { "key": "hospitals", "label": "Hospitals & Medical Centers", "desc": "Medical reports, radiology, lab results, overseas treatment files" },
+      { "key": "universities", "label": "Universities & Schools", "desc": "Degrees, transcripts, MOHE equivalency, acceptance letters" },
+      { "key": "government", "label": "Government & Ministries", "desc": "Official correspondence, civil status, MOFA, MOJ, MOH" },
+      { "key": "embassies", "label": "Embassies & Consulates", "desc": "Schengen, Asian, North American, GCC consular files" },
+      { "key": "petrochemical", "label": "Petrochemical & Industrial", "desc": "Technical specs, safety data sheets, contracts, tenders" },
+      { "key": "legal", "label": "Law Firms & Courts", "desc": "Court orders, legal contracts, powers of attorney, judgments" },
+      { "key": "banking", "label": "Banks & Finance", "desc": "Statements, audited reports, KYC documents" },
+      { "key": "corporate", "label": "Corporates & SMEs", "desc": "Articles of association, MoUs, board resolutions, tenders" }
+    ]
+  },
+  "partners": {
+    "title": "Trusted by Organizations Across the Eastern Province",
+    "subtitle": "Hospitals, universities, ministries, and corporates we serve in the Dammam metro area and beyond",
+    "emptyNote": "Partner logos are confirmed on a case-by-case basis with each organization's prior written consent."
+  },
   "trustBadges": {
     "title": "Accepted by",
     "items": [

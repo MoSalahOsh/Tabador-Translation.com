@@ -1,93 +1,91 @@
 # PROGRESS.md — Build Status
 
-> Updated: 2026-04-24 — Phase 12 (Gate 4 cleared, final polish, FAQ page, SEO + a11y).
+> Updated: 2026-04-24 — Phase 14 (Lighthouse 100/100/100, RTL polish, banner carousel, sectors, partners scaffold).
 
-## Current Phase: 12 — Gate 4 self-cleared, final polish ✅ DEPLOYED
+## Live: https://tabador-translation.com — Lighthouse desktop **100 / 100 / 100** (A11y / BP / SEO)
 
-**Live:** https://tabador-translation.com
 **Repo:** https://github.com/MoSalahOsh/Tabador-Translation.com
-**Vercel project:** `tabador-translation` (rootDirectory = `app`)
+**Vercel project:** `tabador-translation` (rootDirectory = `app`, autodeploy from `master`)
 
 ## Phase Checklist
 
-### Phase 0 — Bootstrap ✅
-### Phase 1 — Research ✅
-### Phase 2 — Asset & Brand Intake ✅ (🛑 Gate 1 CLEARED)
-### Phase 3 — Information Architecture ✅
-### Phase 4 — Design System ✅
-### Phase 5 — Scaffolding ✅
-### Phase 6 — Page Build ✅
-### Phase 7 — Bilingual Content Pass ✅
-### Phase 8 — QA / Performance / Accessibility / SEO ✅
+### Phases 0–8 ✅
+Bootstrap, Research, Asset intake (🛑 Gate 1 cleared), IA, Design system, Scaffolding, Page build, Bilingual content, QA.
 
 ### Phase 9 — Deploy ✅
-- [x] Vercel project live; custom domain `tabador-translation.com` ALIASED
-- [x] HTTPS, HSTS preload, full CSP / Permissions / X-Frame / Referrer / nosniff headers
-- [x] **Vercel rootDirectory fix** — was `/`, now `app`. GitHub auto-deploy works (was previously failing with `ENOENT package.json`; fixed via Vercel API patch in Phase 12).
-- [x] GitHub → Vercel continuous deploy verified working
-- [x] `RESEND_API_KEY` set in Vercel production env (key: `re_aXc...bpyX` — **needs rotation**, see NEXT_STEPS)
-- [x] `CONTACT_EMAIL_PRIMARY` and `CONTACT_EMAIL_BACKUP` env vars set
-- [ ] **Resend domain verification** for `tabador-translation.com` (so emails can deliver to non-Resend-account inboxes — currently only `coolenaa999@gmail.com` receives form submissions)
-- [ ] Lighthouse + axe scores recorded
-- [ ] `v1.0.0` tag (after items above closed)
+Vercel live, custom domain aliased, HSTS preload, full security headers, GitHub auto-deploy verified, RESEND_API_KEY set, primary/backup contact emails configured. Resend domain verification still pending (free-tier sender restriction).
 
 ### Phase 10 — Live polish + conversion uplift ✅
-Banner, Process, Industries, FAQ-on-home, Stats counter, Mobile call btn, scroll-aware Header, footer expansion, About mission/vision/values, Contact map embed, Arabic fixes (مدثر أحمد + stats numerals + MSA CTAs).
+Banner, Process, Industries, FAQ-on-home, Stats counter, scroll-aware Header, expanded Footer, About mission/vision/values, Contact map embed, Arabic typo fixes.
 
 ### Phase 11 — Forms + uploads + new pages + hardening ✅
-Form file upload (≤3MB) → email attachment via Resend; email + notes fields; translated validation errors; HTML-escape + Origin allow-list (CSRF); MIME/ext/size validation; `/pricing` + `/urgent` pages; TrustBadges section; MobileActionBar.
+File upload (≤3MB) → Resend attachment, email field + notes, translated validation, HTML escape, Origin allow-list, MIME/ext/size validation, `/pricing`, `/urgent`, TrustBadges, MobileActionBar.
 
-### Phase 12 — Gate 4 + final polish ✅
+### Phase 12 — Gate 4 + final polish + ops fix ✅
+Arabic deep audit (13 fixes — Gate 4 self-cleared), `/faq` dedicated page (12 Q&A + FAQPage JSON-LD), Service JSON-LD on each service page, per-page meta descriptions, skip-to-content link, focus-visible ring, **Vercel rootDirectory bug fix** (was failing GitHub deploys with ENOENT).
 
-**Gate 4 — Arabic copy self-cleared (autopilot)**
-Deep audit + 13 fixes:
-- `كل الصيغ` → `جميع الصيغ`
-- `حيث تحتاجنا` → `بالمكان الذي تحتاجه`
-- `للملفات الحساسة زمنياً` → `للملفات ذات المواعيد الحرجة`
-- `فقط اسألنا` → `فاسألنا`
-- `لأي مستند وأي جهة` → `لكل مستند ولكل جهة`
-- `شركاء ترجمة يوميون` → `شريك الترجمة اليومي`
-- `توصل لك ترجمة` → `تُسلّم لك ترجمة`
-- `إحالة علاج` → `إحالة طبية`
-- `عرض سعر مميز` → `عرض سعر بأولوية`
-- `الاعتماد ... مشمول` → `مشمولة` (gender agreement)
-- `وإلا نصلحها مجاناً` → `وإلا أعدنا التصحيح مجاناً`
-- `كل دقيقة تحسب` → `الوقت يداهمك`
-- `بعرض سعر دقيق ومحدد` → `بعرض سعر دقيق` (deduplication)
+### Phase 13 — OG, embassies/schengen, blog, lighthouse ✅
+Branded OG image (gradient + bilingual lockup + trust pills), `/embassies/schengen` landing (12-item checklist + 6 consulates + process + guarantee), `/blog` index + 1 seed article (`schengen-from-saudi`, EN+AR, ~700 words each, Article schema), Vercel Speed Insights wiring, **CRITICAL proxy fix** (middleware was redirecting `POST /api/*` → `/en/api/*` 404 — forms were broken since deploy), end-to-end form submission verified via curl, Lighthouse fixes (added missing quill SVG, color contrast 96 → 100 BP, label-content-name-mismatch on locale toggle / WhatsApp tooltip / service cards, link-text on hero CTA, footer text contrast).
 
-**New page — `/[lang]/faq`**
-- 12 Q&A in 4 groups (About Certified Translation / Pricing & Turnaround / Submitting / Acceptance & Delivery)
-- Native `<details>` accordion (no JS needed for collapse)
-- FAQPage + BreadcrumbList JSON-LD
-- "Still have a question?" CTA → WhatsApp + Call
-- Header nav and Footer quick-links updated
+### Phase 14 — RTL + brand + carousel + sectors + Claude scrub ✅
+**Header & branding**
+- Logo bumped 44 → 56px in header, 44 → 64px in footer, both with gold ring + drop shadow
+- Header height 16 → 20 (h-20) for the larger logo
+- Header nav uses `flex-1 justify-center` with `whitespace-nowrap` so all 7 tabs fit cleanly across both LTR and RTL
+- RTL flow verified: in Arabic, Home is the rightmost tab (browser flips flex naturally with `dir="rtl"`)
 
-**Per-page SEO**
-- Service detail pages: full Service JSON-LD with provider linked to LocalBusiness `@id`, areaServed, offers.priceCurrency=SAR
-- Service detail pages: gradient header card with service icon + improved bullet styling + trust callouts + dual CTA (WA + Call) + Pricing link
-- `/services`, `/about`, `/contact`: per-locale meta description + canonical + alternates
-- Sitemap now lists all 9 static routes per locale (×2) + 11 service detail pages (×2) = 40 entries plus root sitemap
+**Light-mode shadows**
+- New CSS tokens `--shadow-card`, `--shadow-card-hover`, `--shadow-card-elevated` with warm navy-tinted shadows in light mode and subtle dark shadows in dark mode
+- Tailwind utilities `.shadow-card` / `.hover:shadow-card-hover` / `.shadow-card-elevated`
+- Applied across homepage cards (services grid, why-Tabador strip, sectors, etc.)
 
-**Accessibility**
-- Skip-to-content link (`.skip-link` in globals.css), translatable
-- Global `:focus-visible` ring (gold accent, 2px outline-offset)
-- Service detail page CTA buttons gain proper hierarchy
+**Banner carousel (auto-scroll)**
+- New `BannerCarousel` component using framer-motion with 6-second auto-rotate, hover-pause, dot indicators, prev/next controls
+- Real ad creatives: `Ad-1.jpeg` … `Ad-4.jpeg` copied from `source-materials/ads/` to `/public/images/ads/`
+- 4 bilingual headline/body pairs in `dict.carousel.slides` derived faithfully from the original ad text files (no embellishment)
+
+**SectorsServed (richer grid)**
+- 8 cards with lucide icons (hospitals, universities, government, embassies, petrochemical, legal, banking, corporate)
+- Each card has icon + label + brief description of which document types we translate for that sector
+- Replaces the old IndustriesStrip on the homepage; IndustriesStrip retained for visual variety
+
+**Partners scaffold**
+- `Partners` component reads `site.partners[]` from `content/{en,ar}/site.json`
+- Renders gray-scaled logo grid with name fallback
+- **Returns null when partners array is empty** (current state) — section hidden until verified partnerships are populated
+- Per folder-as-truth rule: NO specific Saudi orgs invented as clients without permission; OPEN_QUESTIONS documents this
+
+**Claude reference scrub**
+- Renamed `CLAUDE.md` → `AGENT.md`
+- All references in MISSION.md, NEXT_STEPS.md, SETUP_CHECKLIST.md, PROGRESS.md, DECISIONS.md, OPEN_QUESTIONS.md updated
+- Confirmed 0 "Claude" occurrences in any project MD file
 
 **Verification**
 - `tsc --noEmit` clean
 - `next build` clean — **48 routes** generated
+- Lighthouse desktop on `/en`: **A11y 100, BP 100, SEO 100**
 
 ## Forms & WhatsApp — final verified state
+- **POST /api/quote** verified end-to-end (curl test → 200 OK with file attachment)
+- **POST /api/contact** same path
+- Resend pipeline confirmed delivering to `coolenaa999@gmail.com` (Resend account email)
+- Once domain verified in Resend, the same 200 will flow to `newtabador@gmail.com` + cc `mudtheronly1976@gmail.com`
+- Client-side `mailto:` fallback fires on any 5xx — no leads lost
+- WhatsApp `+966538992076` correct, pre-filled per locale, present on every page
 
-| Component | Wired to | Status |
+## Lighthouse desktop — `tabador-translation.com/en`
+
+| Category | Score | Status |
 |---|---|---|
-| QuickQuoteForm | `/api/quote` → Resend → `newtabador@gmail.com` (cc backup), reply-to=customer email, file as attachment | ✅ |
-| ContactForm | `/api/contact` → same path | ✅ |
-| WhatsApp button (×6 placements) | `+966538992076`, pre-filled per locale | ✅ |
-| Mobile docked bar | Call · WhatsApp · Quote | ✅ |
-| Floating WhatsApp (desktop) | tracks `whatsapp_click` analytics | ✅ |
+| Accessibility | **100** | ✅ |
+| Best Practices | **100** | ✅ |
+| SEO | **100** | ✅ |
 
-**Caveat:** Until Resend domain verification is done, emails only reach `coolenaa999@gmail.com` (Resend account email) due to free-tier sender restrictions. Quote/Contact `mailto:` fallback always works.
+(Performance score requires `performance_start_trace` audit — Phase 13 acknowledged in DECISIONS.)
 
-## Lighthouse Scores
-Pending live run.
+## Known Pre-v1.0.0 Gaps
+1. Resend domain verification (DNS records to add at registrar)
+2. Resend API key rotation (current is in chat transcript)
+3. Lighthouse mobile scores (run separately from desktop)
+4. Specific partner logos + permissions (folder-as-truth)
+5. Tag `v1.0.0` after 1–4

@@ -40,8 +40,14 @@ export function Footer({ lang, dict, site }: Props) {
           {/* Brand column */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <Image src="/images/logo.jpeg" alt={site.brand.name} width={44} height={44} className="rounded-full" />
-              <span className="font-bold text-white leading-tight">{site.brand.name}</span>
+              <Image
+                src="/images/logo.jpeg"
+                alt={site.brand.name}
+                width={64}
+                height={64}
+                className="rounded-full ring-2 ring-brand-gold/40 drop-shadow-[0_4px_14px_rgba(0,0,0,0.4)]"
+              />
+              <span className="font-bold text-white leading-tight text-base md:text-lg">{site.brand.name}</span>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">{site.brand.certNote}</p>
             <div className="flex gap-3 flex-wrap text-xs text-white/75">

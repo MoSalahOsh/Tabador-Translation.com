@@ -12,6 +12,9 @@ import { IndustriesStrip } from '@/components/sections/IndustriesStrip'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { StatsCounter } from '@/components/sections/StatsCounter'
 import { TrustBadges } from '@/components/sections/TrustBadges'
+import { BannerCarousel } from '@/components/sections/BannerCarousel'
+import { SectorsServed } from '@/components/sections/SectorsServed'
+import { Partners } from '@/components/sections/Partners'
 
 const BASE_URL = 'https://tabador-translation.com'
 
@@ -165,7 +168,7 @@ export default async function HomePage({
               { icon: <span className="text-2xl">🌐</span>, title: dict.trust.allLanguages, desc: dict.trust.allLanguagesDesc },
               { icon: <MapPin className="text-brand-gold" size={28} />, title: dict.trust.location, desc: dict.trust.locationDesc },
             ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center text-center p-5 rounded-xl border border-border bg-card hover:border-brand-gold/40 hover:shadow-md transition-all">
+              <div key={item.title} className="flex flex-col items-center text-center p-5 rounded-xl border border-border bg-card hover:border-brand-gold/40 shadow-card hover:shadow-card-hover transition-all">
                 <div className="mb-3">{item.icon}</div>
                 <h3 className="font-semibold text-sm mb-1 text-foreground">{item.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -180,6 +183,15 @@ export default async function HomePage({
         title={dict.process.title}
         subtitle={dict.process.subtitle}
         steps={dict.process.steps}
+      />
+
+      {/* ── AUTO-SCROLL BANNER CAROUSEL (uses real ad creatives) ── */}
+      <BannerCarousel
+        lang={lang}
+        label={dict.carousel.label}
+        slides={dict.carousel.slides}
+        cta={dict.hero.whatsappCta}
+        ctaHref={waHref}
       />
 
       {/* ── QUICK-QUOTE FORM ─────────────────────────────────── */}
@@ -205,7 +217,7 @@ export default async function HomePage({
               <Link
                 key={slug}
                 href={`/${lang}/services/${slug}`}
-                className="group flex flex-col gap-3 p-5 rounded-xl border border-border hover:border-brand-gold/40 hover:shadow-lg bg-card transition-all duration-200"
+                className="group flex flex-col gap-3 p-5 rounded-xl border border-border hover:border-brand-gold/40 shadow-card hover:shadow-card-hover bg-card transition-all duration-200"
               >
                 <span className="text-3xl" aria-hidden="true">{SERVICE_ICONS[slug] ?? '📄'}</span>
                 <h3 className="font-semibold text-foreground group-hover:text-brand-navy dark:group-hover:text-brand-gold transition-colors">
@@ -222,7 +234,22 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── INDUSTRIES / SECTORS ─────────────────────────────── */}
+      {/* ── SECTORS WE SERVE (rich grid) ─────────────────────── */}
+      <SectorsServed
+        title={dict.sectorsServed.title}
+        subtitle={dict.sectorsServed.subtitle}
+        items={dict.sectorsServed.items}
+      />
+
+      {/* ── PARTNERS (renders only when site.partners is populated) ── */}
+      <Partners
+        title={dict.partners.title}
+        subtitle={dict.partners.subtitle}
+        emptyNote={dict.partners.emptyNote}
+        partners={site.partners}
+      />
+
+      {/* ── INDUSTRIES STRIP (compact icons) ─────────────────── */}
       <IndustriesStrip
         title={dict.industries.title}
         subtitle={dict.industries.subtitle}

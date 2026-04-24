@@ -99,6 +99,34 @@
 **Decision:** Each `/[lang]/services/[slug]` page now ships a `Service` schema with `provider` linked by `@id` to the LocalBusiness graph node (declared in the locale layout).
 **Rationale:** Google's rich results require the link between Service and Provider; sharing the `@id` rather than redeclaring saves bytes and avoids duplication risk.
 
+---
+
+## 2026-04-24 — Phase 14 (RTL polish, brand, carousel, sectors, scrub)
+
+### D-022: Auto-scroll banner carousel using real ad creatives
+**Decision:** Built `BannerCarousel` (framer-motion, 6s auto-rotate, hover-pause, dot+arrow controls). Slides driven by `dict.carousel` and the 4 real `Ad-N.jpeg` images copied from `source-materials/ads/`. Slide copy derived faithfully from the original ad text files — no embellishment, no invention.
+**Rationale:** Each ad already has approved messaging. Reusing the creative respects the client's tone and avoids inventing marketing copy. The auto-rotate keeps the homepage feeling alive without overwhelming first-time visitors.
+
+### D-023: Partners section returns null when empty (no fabrication)
+**Decision:** Built a `Partners` grid scaffold driven by `site.partners[]`. Returns `null` while the array is empty — the section literally does not render. Will populate only after the user provides a verified list of organizations whose logo we have written permission to display.
+**Rationale:** User asked for specific Saudi clients (hospitals, universities, petrochemicals) but we cannot verify Tabador's actual relationships from this environment, and using trademarked logos without permission is legally risky in Saudi Arabia and elsewhere. Better to ship a fully-built component that activates once real data is in `site.json` than to invent client claims that could expose the agency to liability.
+
+### D-024: SectorsServed replaces IndustriesStrip on homepage (richer card with description)
+**Decision:** New `SectorsServed` component shows 8 sector cards (hospital, university, government, embassy, petrochemical, legal, banking, corporate) with lucide icon + label + 1-line description of the actual document types translated for that sector. The smaller `IndustriesStrip` is kept further down the page for variety.
+**Rationale:** Generic sector claims are factually accurate (we serve any of these on demand), don't claim specific named clients, and give visitors a stronger answer to "do you handle MY type of paperwork?" than icons alone.
+
+### D-025: Logo upgrade — bigger + ringed + drop-shadowed
+**Decision:** Header logo 44 → 56px, footer logo 44 → 64px. Both gain `ring-2 ring-brand-gold/40` and a `drop-shadow-[0_4px_12px_rgba(30,42,110,0.35)]`. Header height bumped 16 → 20 to fit the larger mark. Footer brand text size up to text-base/text-lg.
+**Rationale:** Brand recall is dominant on a small-business marketing site; the previous logo size was timid. The gold ring ties the logo to the accent palette and the shadow lifts it off the navy header on hero pages.
+
+### D-026: Light-mode shadow token system
+**Decision:** Defined `--shadow-card`, `--shadow-card-hover`, `--shadow-card-elevated` in both themes (warmer navy-tinted in light, subtle in dark) and matching utility classes. Applied to homepage card grids.
+**Rationale:** Tailwind's default `shadow-md`/`shadow-lg` are too gray and flat for a brand with a strong navy/gold palette. Custom tokens land softer and more intentional.
+
+### D-027: CLAUDE.md → AGENT.md rename + project-wide "Claude" scrub
+**Decision:** Renamed root `CLAUDE.md` to `AGENT.md` and stripped all references to "Claude" / "Claude Code" / "Claude Code session" from MISSION.md, NEXT_STEPS.md, SETUP_CHECKLIST.md, PROGRESS.md, DECISIONS.md, OPEN_QUESTIONS.md. The remaining `app/CLAUDE.md` is a thin pointer to `app/AGENTS.md` and was left as-is for the Next.js authoring guide.
+**Rationale:** User asked to remove tool-vendor terminology from project files. AGENT.md works as a generic-agent bootstrap convention (also the Anthropic-recommended AGENT.md/AGENTS.md naming). Past commit trailers (Co-Authored-By) are git history and were not rewritten.
+
 ### D-003: Skill availability
 **Decision:** Skills `research-assistant`, `corporate-website-builder`, `frontend-design`, `design-md-library`, `diagram-generator`, `visual-explainer`, `promptforge` are available in this session. Will copy them to SKILLS_SNAPSHOT/ before their respective phases.
 **Rationale:** Per §5 of MISSION.md — skill copies ensure future agents have same guidance.
