@@ -40,10 +40,14 @@ export async function generateMetadata({
       alternateLocale: isAr ? 'en_US' : 'ar_SA',
       siteName: site.brand.name,
       type: 'website',
+      images: [
+        { url: `${BASE_URL}/opengraph-image`, width: 1200, height: 630, alt: site.brand.name },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       site: '@tabador',
+      images: [`${BASE_URL}/opengraph-image`],
     },
   }
 }
