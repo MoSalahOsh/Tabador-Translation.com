@@ -10,7 +10,8 @@ const serviceSlugs = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/services', '/about', '/contact', '/pricing', '/urgent', '/faq']
+  const staticRoutes = ['', '/services', '/about', '/contact', '/pricing', '/urgent', '/faq', '/blog', '/embassies/schengen']
+  const blogSlugs = ['schengen-from-saudi']
 
   const entries: MetadataRoute.Sitemap = []
 
@@ -40,6 +41,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             en: `${BASE_URL}/en/services/${slug}`,
             ar: `${BASE_URL}/ar/services/${slug}`,
+          },
+        },
+      })
+    }
+
+    for (const slug of blogSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${lang}/blog/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/blog/${slug}`,
+            ar: `${BASE_URL}/ar/blog/${slug}`,
           },
         },
       })

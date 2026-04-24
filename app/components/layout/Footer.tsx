@@ -100,6 +100,8 @@ export function Footer({ lang, dict, site }: Props) {
               <li><Link href={`/${lang}/pricing`} className="text-sm text-white/70 hover:text-white transition-colors">{dict.nav.pricing}</Link></li>
               <li><Link href={`/${lang}/urgent`} className="text-sm text-white/70 hover:text-white transition-colors">{dict.nav.urgent}</Link></li>
               <li><Link href={`/${lang}/faq`} className="text-sm text-white/70 hover:text-white transition-colors">{dict.nav.faq}</Link></li>
+              <li><Link href={`/${lang}/blog`} className="text-sm text-white/70 hover:text-white transition-colors">{dict.nav.blog}</Link></li>
+              <li><Link href={`/${lang}/embassies/schengen`} className="text-sm text-white/70 hover:text-white transition-colors">Schengen</Link></li>
               <li><Link href={`/${lang}/about`} className="text-sm text-white/70 hover:text-white transition-colors">{dict.nav.about}</Link></li>
             </ul>
             <ul className="space-y-3">

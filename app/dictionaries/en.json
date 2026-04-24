@@ -5,6 +5,7 @@
     "pricing": "Pricing",
     "urgent": "Urgent",
     "faq": "FAQ",
+    "blog": "Blog",
     "about": "About Us",
     "projects": "Projects",
     "partners": "Partners",
@@ -96,6 +97,99 @@
   "testimonials": {
     "title": "What Our Clients Say",
     "subtitle": "Real feedback from individuals, law firms, and embassies we serve"
+  },
+  "schengen": {
+    "title": "Schengen Visa Translation",
+    "subtitle": "Every document the consulates expect — translated, certified, and accepted",
+    "intro": "Tabador Translation Est. has prepared Schengen visa files for thousands of applicants from the Eastern Province. Whether you're applying through France, Germany, Italy, Spain, the Netherlands, or any other Schengen state, every required document is translated, certified, and ready to submit.",
+    "checklistTitle": "Standard Schengen document checklist",
+    "checklistNote": "Exact requirements vary by consulate. We translate every document on this list — and any extras your specific consulate asks for.",
+    "checklistItems": [
+      "Passport (photo page + previous Schengen visas)",
+      "National ID / Iqama",
+      "Family record (Civil Status booklet)",
+      "Marriage certificate (if applicable)",
+      "Bank statements (last 3–6 months)",
+      "Salary certificate / employment letter",
+      "Commercial Register (for business owners)",
+      "Property ownership documents",
+      "Travel insurance certificate",
+      "Hotel reservations and flight bookings",
+      "Invitation letter (if applicable)",
+      "Tax certificates (Zakat / GAZT)"
+    ],
+    "consulatesTitle": "Consulates we serve",
+    "consulates": [
+      "France (Riyadh / Jeddah)",
+      "Germany (Riyadh)",
+      "Italy (Riyadh / Jeddah)",
+      "Spain (Riyadh)",
+      "Netherlands (Riyadh)",
+      "Belgium · Switzerland · Greece · Portugal · Austria · Czech Republic · and others"
+    ],
+    "processTitle": "How a Schengen file is handled",
+    "processItems": [
+      { "title": "Send your full document set", "desc": "WhatsApp or email — we'll review and tell you instantly if anything is missing." },
+      { "title": "Fixed quote for the bundle", "desc": "Per-file pricing with a bundle discount — no surprises after we start." },
+      { "title": "Certified translation, ready in 24–48 hours", "desc": "Standard. Same-day express available for last-minute appointments." },
+      { "title": "Pickup or courier delivery", "desc": "Local pickup in Dammam, or courier anywhere in the Kingdom." }
+    ],
+    "guaranteeTitle": "Schengen-specific guarantee",
+    "guaranteeItems": [
+      "Every document carries the official Tabador stamp and signature.",
+      "Translations are formatted exactly the way consulates expect them.",
+      "If a consulate rejects a translation we issued, we re-do it for free.",
+      "We've handled this exact paperwork thousands of times — we know what works."
+    ],
+    "ctaTitle": "Submitting a Schengen application?",
+    "ctaBody": "Send us your full document set today — we'll have your certified file ready before your appointment."
+  },
+  "blog": {
+    "title": "Notes & Guides",
+    "subtitle": "Practical guides on certified translation in Saudi Arabia",
+    "readingTime": "min read",
+    "publishedOn": "Published",
+    "moreArticles": "More articles coming soon",
+    "moreArticlesBody": "We're building a library of practical guides on Saudi-to-international document translation. Subscribe for updates by following our social channels.",
+    "posts": {
+      "schengen-from-saudi": {
+        "title": "How to translate Schengen visa documents from Saudi Arabia",
+        "excerpt": "A step-by-step guide for Saudi residents applying for Schengen visas: which documents need certified translation, what consulates expect, and how to avoid common rejection causes.",
+        "minutes": 6,
+        "date": "2026-04-24",
+        "body": [
+          { "type": "p", "text": "Applying for a Schengen visa from Saudi Arabia means handling documents in Arabic that the consulate of France, Germany, Italy, Spain, or another Schengen state needs to read in their own language. Every document submitted with the application — bank statements, marriage certificates, employment letters — must be officially translated by a licensed translator." },
+          { "type": "h2", "text": "Which documents need certified translation?" },
+          { "type": "p", "text": "Every consulate has its own checklist, but the core list is consistent across the Schengen area:" },
+          { "type": "ul", "items": [
+            "Passport — biographical page",
+            "National ID or Iqama",
+            "Family record (Civil Status booklet)",
+            "Marriage certificate (for spousal travel)",
+            "Bank statements covering the last 3–6 months",
+            "Salary certificate or employment letter from your employer",
+            "Commercial Register (business owners)",
+            "Travel insurance certificate"
+          ] },
+          { "type": "h2", "text": "What makes a translation acceptable to a consulate?" },
+          { "type": "p", "text": "Three things, every time: an official stamp from a licensed translation office, the translator's signature, and a statement of fidelity (a one-line declaration that the translation accurately reflects the source). Without all three, the document is treated as informal and the application is paused or rejected." },
+          { "type": "h2", "text": "The most common rejection causes" },
+          { "type": "ol", "items": [
+            "Using an uncertified translator (machine translation, freelance translation without a licence) — automatic rejection.",
+            "Missing pages — a single missing page in a bank statement can void the entire submission.",
+            "Wrong format — Schengen consulates expect a side-by-side or cleanly formatted document with the original layout preserved.",
+            "Outdated documents — most financial documents must be no older than 30 days at submission.",
+            "Translator inconsistency — names spelled differently across documents in the same file is a red flag."
+          ] },
+          { "type": "h2", "text": "How long does it take?" },
+          { "type": "p", "text": "A standard Schengen file (10–15 documents) takes 24–48 hours at standard turnaround. Same-day delivery is possible if you submit the full set before noon and we have no clarifications to send back. For appointments tomorrow, our express service is the safe choice." },
+          { "type": "h2", "text": "What does it cost?" },
+          { "type": "p", "text": "Pricing is per-document with a bundle discount when the entire Schengen file is submitted together. We send a fixed quote within minutes of seeing your set — no hidden fees, no surcharges for the certification stamp, and corrections within scope are free." },
+          { "type": "h2", "text": "Where to start" },
+          { "type": "p", "text": "Send your document set via WhatsApp or the quick-quote form on this site. We'll tell you immediately if anything is missing, give you a fixed quote, and confirm a delivery time that fits your appointment date." }
+        ]
+      }
+    }
   },
   "faqPage": {
     "title": "Help Center",

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { getDictionary, hasLocale, locales } from './dictionaries'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -119,6 +120,7 @@ export default async function LocaleLayout({
       <WhatsAppButton lang={lang} dict={dict} whatsapp={site.contact.whatsapp} message={site.contact.whatsappMessage} />
       <MobileActionBar lang={lang} phone={site.contact.phone} whatsappHref={waHref} labels={dict.mobileBar} />
       <Analytics />
+      <SpeedInsights />
     </>
   )
 }
