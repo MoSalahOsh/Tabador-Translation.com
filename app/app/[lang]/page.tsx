@@ -80,19 +80,20 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden">
+      {/* ── HERO (pure CSS — no photo, no text-on-text conflict) ── */}
+      <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-brand-navy">
+        {/* Layered gradient background */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero.jpg"
-            alt=""
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/85 via-brand-navy/65 to-brand-navy/90" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,157,82,0.18),transparent_55%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,157,82,0.28),transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,rgba(201,157,82,0.15),transparent_50%)]" />
+          {/* Subtle quill watermark */}
+          <div className="absolute inset-0 quill-watermark opacity-[0.04]" />
+          {/* Grid texture */}
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }} />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 py-20">

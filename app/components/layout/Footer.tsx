@@ -50,9 +50,6 @@ export function Footer({ lang, dict, site }: Props) {
               <span className="font-bold text-white leading-tight text-base md:text-lg">{site.brand.name}</span>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">{site.brand.certNote}</p>
-            <div className="flex gap-3 flex-wrap text-xs text-white/75">
-              <span>C.R. {site.brand.cr}</span>
-            </div>
             <div className="flex gap-3">
               {(['tiktok', 'instagram', 'linkedin', 'facebook'] as const).map((platform) => (
                 site.social[platform] ? (

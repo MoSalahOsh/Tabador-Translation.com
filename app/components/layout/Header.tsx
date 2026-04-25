@@ -63,22 +63,33 @@ export function Header({ lang, dict, site }: Props) {
           : 'glass border-b border-border/40 shadow-sm'
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6 gap-4">
-        {/* Logo + brand — uses logical "start" so it follows the writing direction */}
+      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6 gap-4 relative">
+        {/* Logo + brand — large circular halo for brand prominence */}
         <Link href={`/${lang}`} className="flex items-center gap-3 shrink-0 group">
-          <span className="relative inline-block transition-transform group-hover:scale-105">
+          <span className="relative inline-block w-20 h-20 transition-transform group-hover:scale-105">
+            {/* Halo ring + drop shadow */}
+            <span
+              aria-hidden="true"
+              className={cn(
+                'absolute inset-0 rounded-full transition-colors',
+                transparent
+                  ? 'bg-white/95 ring-4 ring-brand-gold/50'
+                  : 'bg-card ring-4 ring-brand-gold/40'
+              )}
+              style={{ boxShadow: '0 10px 30px rgba(30,42,110,0.35), 0 4px 12px rgba(30,42,110,0.25)' }}
+            />
             <Image
               src="/images/logo.jpeg"
               alt={site.brand.name}
-              width={56}
-              height={56}
-              className="rounded-full ring-2 ring-brand-gold/40 drop-shadow-[0_4px_12px_rgba(30,42,110,0.35)]"
+              width={80}
+              height={80}
+              className="relative rounded-full p-1"
               priority
             />
           </span>
           <span className={cn(
             'font-bold text-base md:text-lg leading-tight hidden sm:block transition-colors',
-            transparent ? 'text-white drop-shadow' : 'text-brand-navy dark:text-brand-gold'
+            transparent ? 'text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]' : 'text-brand-navy dark:text-brand-gold'
           )}>
             {isAr ? site.brand.name : site.brand.nameShort}
           </span>
