@@ -63,18 +63,18 @@ export function Header({ lang, dict, site }: Props) {
           : 'glass border-b border-border/40 shadow-sm'
       )}
     >
-      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6 gap-4 relative">
+      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6 gap-4 relative">
         {/* Logo + brand — large circular halo for brand prominence */}
         <Link href={`/${lang}`} className="flex items-center gap-3 shrink-0 group">
-          <span className="relative inline-block w-20 h-20 transition-transform group-hover:scale-105">
+          <span className="relative inline-block w-16 h-16 md:w-20 md:h-20 transition-transform group-hover:scale-105">
             {/* Halo ring + drop shadow */}
             <span
               aria-hidden="true"
               className={cn(
                 'absolute inset-0 rounded-full transition-colors',
                 transparent
-                  ? 'bg-white/95 ring-4 ring-brand-gold/50'
-                  : 'bg-card ring-4 ring-brand-gold/40'
+                  ? 'bg-white/95 ring-2 md:ring-4 ring-brand-gold/50'
+                  : 'bg-card ring-2 md:ring-4 ring-brand-gold/40'
               )}
               style={{ boxShadow: '0 10px 30px rgba(30,42,110,0.35), 0 4px 12px rgba(30,42,110,0.25)' }}
             />
@@ -83,7 +83,7 @@ export function Header({ lang, dict, site }: Props) {
               alt={site.brand.name}
               width={80}
               height={80}
-              className="relative rounded-full p-1"
+              className="relative rounded-full p-1 w-full h-full"
               priority
             />
           </span>

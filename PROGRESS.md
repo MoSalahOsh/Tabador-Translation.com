@@ -1,6 +1,6 @@
 # PROGRESS.md — Build Status
 
-> Updated: 2026-04-24 — Phase 14 (Lighthouse 100/100/100, RTL polish, banner carousel, sectors, partners scaffold).
+> Updated: 2026-04-24 — Phase 16 (mobile-first refinements, dual email visibility, psychological hooks).
 
 ## Live: https://tabador-translation.com — Lighthouse desktop **100 / 100 / 100** (A11y / BP / SEO)
 
@@ -83,9 +83,21 @@ Branded OG image (gradient + bilingual lockup + trust pills), `/embassies/scheng
 
 (Performance score requires `performance_start_trace` audit — Phase 13 acknowledged in DECISIONS.)
 
+## Phase 16 — Mobile-first refinement + dual email + conversion hook ✅
+- Both office emails now visible across the site:
+  - `newtabador@gmail.com` (primary inbox)
+  - `mudtheronly1976@gmail.com` (owner/direct)
+  - Shown stacked in the footer Contact column, in the contact page Email row, and in the About page contact list
+- Header logo responsive: 64px mobile / 80px desktop, halo ring 2 → 4 from md up
+- Header height responsive: h-20 mobile / h-24 desktop
+- Hero min-height responsive: 72vh mobile / 88vh desktop (CTAs reach above fold on small phones)
+- Hero headline scale responsive: text-3xl / sm:text-4xl / md:text-6xl (was text-4xl / md:text-6xl)
+- Hero body padding tightened on mobile
+- QuickQuoteForm now shows a reassurance line under the submit CTA: "We typically reply within minutes during working hours" / "نرد عادةً خلال دقائق خلال أوقات الدوام" — psychological hook against hesitation
+
 ## Known Pre-v1.0.0 Gaps
 1. Resend domain verification (DNS records to add at registrar)
 2. Resend API key rotation (current is in chat transcript)
-3. Lighthouse mobile scores (run separately from desktop)
+3. Lighthouse mobile scores (run separately from desktop) — last desktop run on `5a320a8`/`72e02f1` was 100/100/100
 4. Specific partner logos + permissions (folder-as-truth)
 5. Tag `v1.0.0` after 1–4

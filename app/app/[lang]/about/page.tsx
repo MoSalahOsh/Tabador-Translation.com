@@ -53,9 +53,12 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <Phone size={16} className="text-brand-gold" />
                 <a href={`tel:${site.contact.phone}`} className="hover:text-brand-gold">{site.contact.phoneDisplay}</a>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail size={16} className="text-brand-gold" />
-                <a href={`mailto:${site.contact.email}`} className="hover:text-brand-gold">{site.contact.email}</a>
+              <li className="flex items-start gap-2">
+                <Mail size={16} className="text-brand-gold mt-1" />
+                <div className="flex flex-col">
+                  <a href={`mailto:${site.contact.email}`} className="hover:text-brand-gold">{site.contact.email}</a>
+                  <a href={`mailto:${site.contact.emailContact}`} className="hover:text-brand-gold">{site.contact.emailContact}</a>
+                </div>
               </li>
             </ul>
           </div>

@@ -81,7 +81,7 @@ export default async function HomePage({
       />
 
       {/* ── HERO (pure CSS — no photo, no text-on-text conflict) ── */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-brand-navy">
+      <section className="relative min-h-[72vh] md:min-h-[88vh] flex items-center overflow-hidden bg-brand-navy">
         {/* Layered gradient background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy" />
@@ -96,21 +96,21 @@ export default async function HomePage({
           }} />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 md:px-6 py-20">
+        <div className="relative z-10 container mx-auto px-4 md:px-6 py-14 md:py-20">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 glass-sm rounded-full px-4 py-1.5 text-xs text-white/85 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
               {dict.hero.badge}
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-2">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-2">
               {dict.hero.headline}
             </h1>
-            <p className="text-3xl md:text-5xl font-bold text-brand-gold mb-6">
+            <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-brand-gold mb-5 md:mb-6">
               {dict.hero.headlineSub}
             </p>
 
-            <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+            <p className="text-base md:text-lg text-white/85 leading-relaxed mb-6 md:mb-8 max-w-xl">
               {dict.hero.body}
             </p>
 

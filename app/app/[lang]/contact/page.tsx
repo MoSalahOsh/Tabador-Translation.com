@@ -36,7 +36,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
   const contactItems = [
     { icon: Phone, label: dict.contact.phone, value: site.contact.phoneDisplay, href: `tel:${site.contact.phone}` },
-    { icon: Mail, label: dict.contact.email, value: site.contact.email, href: `mailto:${site.contact.email}` },
+    { icon: Mail, label: dict.contact.email, value: `${site.contact.email}\n${site.contact.emailContact}`, href: `mailto:${site.contact.email}` },
     { icon: MapPin, label: dict.contact.address, value: site.contact.address, href: site.contact.mapsUrl, external: true },
     { icon: Clock, label: dict.contact.hours, value: `${site.contact.hours.days}\n${site.contact.hours.time}`, href: null },
   ]

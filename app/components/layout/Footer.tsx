@@ -8,6 +8,7 @@ type SiteData = {
     phoneDisplay: string
     phone: string
     email: string
+    emailContact: string
     address: string
     hours: { days: string; time: string }
     mapsUrl: string
@@ -116,9 +117,14 @@ export function Footer({ lang, dict, site }: Props) {
               </li>
               <li className="flex items-start gap-2.5 text-sm text-white/70">
                 <Mail size={15} className="shrink-0 mt-0.5" />
-                <a href={`mailto:${site.contact.email}`} className="hover:text-white transition-colors break-all">
-                  {site.contact.email}
-                </a>
+                <div className="flex flex-col gap-1 min-w-0">
+                  <a href={`mailto:${site.contact.email}`} className="hover:text-white transition-colors break-all">
+                    {site.contact.email}
+                  </a>
+                  <a href={`mailto:${site.contact.emailContact}`} className="hover:text-white transition-colors break-all">
+                    {site.contact.emailContact}
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2.5 text-sm text-white/70">
                 <MapPin size={15} className="shrink-0 mt-0.5" />

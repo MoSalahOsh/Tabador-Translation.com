@@ -127,6 +127,22 @@
 **Decision:** Renamed root `CLAUDE.md` to `AGENT.md` and stripped all references to "Claude" / "Claude Code" / "Claude Code session" from MISSION.md, NEXT_STEPS.md, SETUP_CHECKLIST.md, PROGRESS.md, DECISIONS.md, OPEN_QUESTIONS.md. The remaining `app/CLAUDE.md` is a thin pointer to `app/AGENTS.md` and was left as-is for the Next.js authoring guide.
 **Rationale:** User asked to remove tool-vendor terminology from project files. AGENT.md works as a generic-agent bootstrap convention (also the Anthropic-recommended AGENT.md/AGENTS.md naming). Past commit trailers (Co-Authored-By) are git history and were not rewritten.
 
+---
+
+## 2026-04-25 — Phase 16 (mobile-first refinement, dual email, hook)
+
+### D-028: Both office emails surfaced on the website
+**Decision:** Display both `newtabador@gmail.com` (primary) and `mudtheronly1976@gmail.com` (owner direct) in the footer contact column, contact page Email row, and about page contact list. The two are stacked, both clickable as `mailto:`. Form submissions still send `to: primary` and CC `backup`.
+**Rationale:** Per user direction. Increases customer trust (two real-looking inboxes signal an actual operation), and gives the owner a direct address visitors can use when they want a private channel.
+
+### D-029: Mobile-first responsive header + hero
+**Decision:** Header height now `h-20 md:h-24`. Logo halo `w-16 h-16 md:w-20 md:h-20` with `ring-2 md:ring-4`. Hero `min-h-[72vh] md:min-h-[88vh]`, body padding `py-14 md:py-20`, headline `text-3xl sm:text-4xl md:text-6xl`.
+**Rationale:** Most visitors will arrive on mobile. The previous fixed 88vh hero plus an 80px logo took up the entire screen on small phones, pushing CTAs below the fold. The responsive pass keeps the desktop "wow" while making mobile feel intentional rather than oversized.
+
+### D-030: Response-time reassurance line under form CTA
+**Decision:** Added a subtle "We typically reply within minutes during working hours" / "نرد عادةً خلال دقائق خلال أوقات الدوام" line directly under the QuickQuoteForm submit button.
+**Rationale:** A common form-abandonment cause is uncertainty about response time. A one-line, factual reassurance reduces hesitation without making promises we can't keep ("typically" + "during working hours" hedges honestly).
+
 ### D-003: Skill availability
 **Decision:** Skills `research-assistant`, `corporate-website-builder`, `frontend-design`, `design-md-library`, `diagram-generator`, `visual-explainer`, `promptforge` are available in this session. Will copy them to SKILLS_SNAPSHOT/ before their respective phases.
 **Rationale:** Per §5 of MISSION.md — skill copies ensure future agents have same guidance.

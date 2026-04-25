@@ -26,6 +26,7 @@ type Dict = {
     removeFile: string
     submit: string
     submitWhatsApp: string
+    responseTime: string
     submitting: string
     successTitle: string
     successBody: string
@@ -235,6 +236,8 @@ export function QuickQuoteForm({ lang, dict, site }: Props) {
       >
         {status === 'loading' ? q.submitting : q.submit}
       </button>
+
+      <p className="text-xs text-center text-muted-foreground -mt-2">{q.responseTime}</p>
 
       <a
         href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`}
