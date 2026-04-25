@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
 
   const waLink = `https://wa.me/${phone.replace(/\D/g, '')}`
 
-  const subject = `[Tabador] Contact — ${esc(name)}`
+  const subject = `[Tabador] Contact · ${esc(name)}`
   const htmlBody = `
     <h2>New Contact Message</h2>
     <table style="border-collapse:collapse">

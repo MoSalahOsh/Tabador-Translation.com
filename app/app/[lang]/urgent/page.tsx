@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isAr ? 'ترجمة عاجلة نفس اليوم | مؤسسة دار تبادر' : 'Express / Same-Day Translation | Tabador Translation Est.',
     description: isAr
-      ? 'خدمة ترجمة معتمدة عاجلة نفس اليوم في الدمام — للسفارات والمحاكم والمستشفيات والمواعيد الحرجة.'
-      : 'Same-day certified translation in Dammam — for embassy, court, hospital, and deadline-critical filings.',
+      ? 'خدمة ترجمة معتمدة عاجلة نفس اليوم في الدمام · للسفارات والمحاكم والمستشفيات والمواعيد الحرجة.'
+      : 'Same-day certified translation in Dammam · for embassy, court, hospital, and deadline-critical filings.',
     alternates: {
       canonical: `${BASE_URL}/${lang}/urgent`,
       languages: { en: `${BASE_URL}/en/urgent`, ar: `${BASE_URL}/ar/urgent` },

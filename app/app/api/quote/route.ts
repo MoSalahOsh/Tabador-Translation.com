@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
 
   const waLink = `https://wa.me/${phone.replace(/\D/g, '')}`
 
-  const subject = `[Tabador] Quote — ${esc(docType)} (${esc(langFrom)} → ${esc(langTo)})`
+  const subject = `[Tabador] Quote · ${esc(docType)} (${esc(langFrom)} → ${esc(langTo)})`
   const htmlBody = `
     <h2>New Quote Request</h2>
     <table style="border-collapse:collapse">

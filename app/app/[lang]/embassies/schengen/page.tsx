@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isAr ? 'ترجمة وثائق الشنغن | مؤسسة دار تبادر للترجمة' : 'Schengen Visa Translation | Tabador Translation Est.',
     description: isAr
-      ? 'ترجمة معتمدة لجميع وثائق ملف تأشيرة الشنغن في الدمام: كشوف بنكية، عقود زواج، شهادات راتب، سجل تجاري — معتمدة لدى جميع قنصليات الشنغن.'
-      : 'Certified translation for every Schengen visa document in Dammam: bank statements, marriage certificates, salary letters, commercial register — accepted by all Schengen consulates.',
+      ? 'ترجمة معتمدة لجميع وثائق ملف تأشيرة الشنغن في الدمام: كشوف بنكية، عقود زواج، شهادات راتب، سجل تجاري · معتمدة لدى جميع قنصليات الشنغن.'
+      : 'Certified translation for every Schengen visa document in Dammam: bank statements, marriage certificates, salary letters, commercial register · accepted by all Schengen consulates.',
     alternates: {
       canonical: `${BASE_URL}/${lang}/embassies/schengen`,
       languages: {

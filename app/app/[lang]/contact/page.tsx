@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isAr ? 'تواصل معنا | مؤسسة دار تبادر للترجمة' : 'Contact Us | Tabador Translation Est.',
     description: isAr
-      ? 'تواصل مع مؤسسة دار تبادر للترجمة في الدمام — هاتف وواتساب على +966 53 899 2076. مفتوح الأحد إلى الخميس، 8 صباحاً – 10 مساءً.'
-      : 'Contact Tabador Translation Est. in Dammam — phone and WhatsApp on +966 53 899 2076. Open Sunday–Thursday, 8 AM – 10 PM.',
+      ? 'تواصل مع مؤسسة دار تبادر للترجمة في الدمام · هاتف وواتساب على +966 53 899 2076. مفتوح الأحد إلى الخميس، 8 صباحاً – 10 مساءً.'
+      : 'Contact Tabador Translation Est. in Dammam · phone and WhatsApp on +966 53 899 2076. Open Sunday–Thursday, 8 AM – 10 PM.',
     alternates: {
       canonical: `${BASE_URL}/${lang}/contact`,
       languages: { en: `${BASE_URL}/en/contact`, ar: `${BASE_URL}/ar/contact` },
@@ -31,7 +31,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
   const waHref = `https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(site.contact.whatsappMessage)}`
 
-  // Google Maps embed — centered on Dammam/Jawazat area (26.4207, 50.0888)
+  // Google Maps embed · centered on Dammam/Jawazat area (26.4207, 50.0888)
   const mapEmbed = `https://www.google.com/maps?q=26.4207,50.0888&z=15&output=embed`
 
   const contactItems = [
