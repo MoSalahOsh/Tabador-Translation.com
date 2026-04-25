@@ -15,7 +15,6 @@ type Props = {
     nav: Record<string, string>
     theme: { light: string; dark: string; toggle: string }
     locale: { switchTo: string; switchToAriaLabel: string }
-    hero: Record<string, string>
   }
   site: {
     brand: { name: string; nameShort: string }
@@ -63,7 +62,7 @@ export function Header({ lang, dict, site }: Props) {
           : 'glass border-b border-border/40 shadow-sm'
       )}
     >
-      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6 gap-4 relative">
+      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6 gap-4 relative" dir={isAr ? 'rtl' : 'ltr'}>
         {/* Logo + brand — large circular halo for brand prominence */}
         <Link href={`/${lang}`} className="flex items-center gap-3 shrink-0 group">
           <span className="relative inline-block w-16 h-16 md:w-20 md:h-20 transition-transform group-hover:scale-105">

@@ -8,13 +8,12 @@ import enSite from '../../content/en/site.json'
 import arSite from '../../content/ar/site.json'
 import { QuickQuoteForm } from '@/components/sections/QuickQuoteForm'
 import { ProcessSection } from '@/components/sections/ProcessSection'
-import { IndustriesStrip } from '@/components/sections/IndustriesStrip'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { StatsCounter } from '@/components/sections/StatsCounter'
 import { TrustBadges } from '@/components/sections/TrustBadges'
-import { BannerCarousel } from '@/components/sections/BannerCarousel'
 import { SectorsServed } from '@/components/sections/SectorsServed'
 import { Partners } from '@/components/sections/Partners'
+import { HeroCarousel } from '@/components/sections/HeroCarousel'
 
 const BASE_URL = 'https://tabador-translation.com'
 
@@ -80,70 +79,24 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ── HERO (pure CSS — no photo, no text-on-text conflict) ── */}
-      <section className="relative min-h-[72vh] md:min-h-[88vh] flex items-center overflow-hidden bg-brand-navy">
-        {/* Layered gradient background */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,157,82,0.28),transparent_55%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,rgba(201,157,82,0.15),transparent_50%)]" />
-          {/* Subtle quill watermark */}
-          <div className="absolute inset-0 quill-watermark opacity-[0.04]" />
-          {/* Grid texture */}
-          <div className="absolute inset-0 opacity-[0.06]" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-            backgroundSize: '64px 64px',
-          }} />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 md:px-6 py-14 md:py-20">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 glass-sm rounded-full px-4 py-1.5 text-xs text-white/85 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
-              {dict.hero.badge}
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-2">
-              {dict.hero.headline}
-            </h1>
-            <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-brand-gold mb-5 md:mb-6">
-              {dict.hero.headlineSub}
-            </p>
-
-            <p className="text-base md:text-lg text-white/85 leading-relaxed mb-6 md:mb-8 max-w-xl">
-              {dict.hero.body}
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={waHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0a6855] text-white font-bold text-base hover:bg-[#075144] transition-colors shadow-lg"
-              >
-                {dict.hero.cta}
-              </a>
-              <Link
-                href={`/${lang}/services`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-colors"
-              >
-                {dict.nav.services}
-                <ChevronRight size={16} className={isAr ? 'rotate-180' : ''} aria-hidden="true" />
-              </Link>
-            </div>
-
-            {/* Trust hint under hero */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-white/70">
-              <span className="inline-flex items-center gap-1.5"><CheckCircle size={14} className="text-brand-gold" />{dict.trust.firstTime}</span>
-              <span className="inline-flex items-center gap-1.5"><Zap size={14} className="text-brand-gold" />{dict.trust.fast}</span>
-              <span className="inline-flex items-center gap-1.5"><Shield size={14} className="text-brand-gold" />{dict.trust.certified}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Gold accent bar */}
-        <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" />
-      </section>
+      {/* ── HERO (auto-rotating image carousel — Saudi guy first) ── */}
+      <HeroCarousel
+        lang={lang}
+        badge={dict.hero.badge}
+        slides={[
+          { ...dict.hero.slides[0], image: '/images/ads/Ad-1.jpeg' },
+          { ...dict.hero.slides[1], image: '/images/ads/Ad-3.jpeg' },
+          { ...dict.hero.slides[2], image: '/images/ads/Ad-4.jpeg' },
+          { ...dict.hero.slides[3], image: '/images/ads/Ad-2.jpeg' },
+        ]}
+        cta={dict.hero.cta}
+        ctaSecondary={dict.hero.ctaSecondary}
+        ctaSecondaryHref={`/${lang}/services`}
+        callCta={dict.hero.callCta}
+        whatsappHref={waHref}
+        callHref={`tel:${site.contact.phone}`}
+        trust={{ firstTime: dict.trust.firstTime, fast: dict.trust.fast, certified: dict.trust.certified }}
+      />
 
       {/* ── ANIMATED STATS ─────────────────────────────── */}
       <section className="bg-brand-navy py-10">
@@ -186,15 +139,6 @@ export default async function HomePage({
         steps={dict.process.steps}
       />
 
-      {/* ── AUTO-SCROLL BANNER CAROUSEL (uses real ad creatives) ── */}
-      <BannerCarousel
-        lang={lang}
-        label={dict.carousel.label}
-        slides={dict.carousel.slides}
-        cta={dict.hero.whatsappCta}
-        ctaHref={waHref}
-      />
-
       {/* ── QUICK-QUOTE FORM ─────────────────────────────────── */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6 max-w-2xl">
@@ -235,8 +179,9 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── SECTORS WE SERVE (rich grid) ─────────────────────── */}
+      {/* ── SECTORS WE SERVE (rich grid, each card deep-links) ── */}
       <SectorsServed
+        lang={lang}
         title={dict.sectorsServed.title}
         subtitle={dict.sectorsServed.subtitle}
         items={dict.sectorsServed.items}
@@ -250,13 +195,6 @@ export default async function HomePage({
         partners={site.partners}
       />
 
-      {/* ── INDUSTRIES STRIP (compact icons) ─────────────────── */}
-      <IndustriesStrip
-        title={dict.industries.title}
-        subtitle={dict.industries.subtitle}
-        items={dict.industries.items}
-      />
-
       {/* ── OFFICE PHOTO + LOCATION CTA ─────────────────────── */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
@@ -264,7 +202,7 @@ export default async function HomePage({
             <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-xl aspect-video relative">
               <Image
                 src="/images/office.jpg"
-                alt={`${site.brand.name} — ${site.contact.city}`}
+                alt={`${site.brand.name} · ${site.contact.city}`}
                 fill
                 className="object-cover"
                 sizes="(max-width:768px) 100vw, 50vw"

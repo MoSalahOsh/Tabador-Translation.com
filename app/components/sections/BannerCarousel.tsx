@@ -46,8 +46,8 @@ export function BannerCarousel({ lang, label, slides, cta, ctaHref, images = DEF
     >
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Image */}
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card-elevated bg-brand-navy-light">
+          {/* Image — preserves the 4:5 portrait of the source ad creatives */}
+          <div className="relative aspect-[4/5] max-h-[600px] rounded-2xl overflow-hidden shadow-card-elevated bg-brand-navy-light">
             <AnimatePresence mode="wait">
               <motion.div
                 key={image}
@@ -57,7 +57,7 @@ export function BannerCarousel({ lang, label, slides, cta, ctaHref, images = DEF
                 transition={{ duration: 0.6 }}
                 className="absolute inset-0"
               >
-                <Image src={image} alt="" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <Image src={image} alt="" fill className="object-contain" sizes="(max-width:768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/60 via-transparent to-transparent" />
               </motion.div>
             </AnimatePresence>

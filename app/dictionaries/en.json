@@ -23,9 +23,15 @@
     "headlineSub": "You Can Rely On",
     "body": "Accepted by all government authorities and embassies inside and outside the Kingdom. Your documents right the first time.",
     "cta": "Send Your Document Now",
-    "ctaSecondary": "Learn More",
+    "ctaSecondary": "Browse Services",
     "whatsappCta": "WhatsApp Us",
-    "callCta": "Call Now"
+    "callCta": "Call Now",
+    "slides": [
+      { "headline": "Certified Translation You Can Rely On", "sub": "Accepted by every embassy and authority, inside and outside the Kingdom." },
+      { "headline": "Your Official Documents in Safe Hands", "sub": "One unified, certified translation that moves your application forward." },
+      { "headline": "All Certified Translation Services in One Place", "sub": "Precision · Speed · Commitment, in over 100 language pairs." },
+      { "headline": "Every Document, Translated With Certification", "sub": "From IDs to contracts to Schengen files, accepted the first time." }
+    ]
   },
   "trust": {
     "title": "Why Clients Choose Tabador",
@@ -38,16 +44,16 @@
     "fast": "Fast Turnaround",
     "fastDesc": "Standard and express service. We respect your deadlines.",
     "location": "Near Jawazat Dammam",
-    "locationDesc": "Located opposite the Passport Office — right where you need us."
+    "locationDesc": "Located opposite the Passport Office · right where you need us."
   },
   "process": {
     "title": "How It Works",
     "subtitle": "From document to certified translation in four simple steps",
     "steps": [
       { "n": "01", "title": "Send Your Document", "desc": "Upload a scan or photo via WhatsApp, email, or the quote form. Any format welcome." },
-      { "n": "02", "title": "Get a Free Quote", "desc": "We reply within minutes with a fixed price and accurate delivery time — no hidden fees." },
+      { "n": "02", "title": "Get a Free Quote", "desc": "We reply within minutes with a fixed price and accurate delivery time · no hidden fees." },
       { "n": "03", "title": "Professional Translation", "desc": "A certified human translator produces your document with stamp, signature, and official seal." },
-      { "n": "04", "title": "Delivery & Acceptance", "desc": "Pick up in Dammam or receive by email/courier. Accepted by authorities the first time — guaranteed." }
+      { "n": "04", "title": "Delivery & Acceptance", "desc": "Pick up in Dammam or receive by email/courier. Accepted by authorities the first time · guaranteed." }
     ]
   },
   "industries": {
@@ -74,7 +80,7 @@
       },
       {
         "q": "Are your translations accepted by embassies and government bodies?",
-        "a": "Yes. Tabador Translation Est. holds Translation Licence No. 317 and is accepted by all Saudi government authorities (Jawazat, MOHE, MOFA, MOH, MOJ, Chambers of Commerce) and by foreign embassies inside and outside the Kingdom — including full Schengen file acceptance."
+        "a": "Yes. Tabador Translation Est. holds Translation Licence No. 317 and is accepted by all Saudi government authorities (Jawazat, MOHE, MOFA, MOH, MOJ, Chambers of Commerce) and by foreign embassies inside and outside the Kingdom · including full Schengen file acceptance."
       },
       {
         "q": "How fast can you deliver?",
@@ -90,7 +96,7 @@
       },
       {
         "q": "How is pricing calculated?",
-        "a": "Pricing is based on the document type, length, language pair, and urgency. We send you a fixed quote before any work starts — no surprises."
+        "a": "Pricing is based on the document type, length, language pair, and urgency. We send you a fixed quote before any work starts · no surprises."
       }
     ]
   },
@@ -100,10 +106,10 @@
   },
   "schengen": {
     "title": "Schengen Visa Translation",
-    "subtitle": "Every document the consulates expect — translated, certified, and accepted",
+    "subtitle": "Every document the consulates expect · translated, certified, and accepted",
     "intro": "Tabador Translation Est. has prepared Schengen visa files for thousands of applicants from the Eastern Province. Whether you're applying through France, Germany, Italy, Spain, the Netherlands, or any other Schengen state, every required document is translated, certified, and ready to submit.",
     "checklistTitle": "Standard Schengen document checklist",
-    "checklistNote": "Exact requirements vary by consulate. We translate every document on this list — and any extras your specific consulate asks for.",
+    "checklistNote": "Exact requirements vary by consulate. We translate every document on this list · and any extras your specific consulate asks for.",
     "checklistItems": [
       "Passport (photo page + previous Schengen visas)",
       "National ID / Iqama",
@@ -129,8 +135,8 @@
     ],
     "processTitle": "How a Schengen file is handled",
     "processItems": [
-      { "title": "Send your full document set", "desc": "WhatsApp or email — we'll review and tell you instantly if anything is missing." },
-      { "title": "Fixed quote for the bundle", "desc": "Per-file pricing with a bundle discount — no surprises after we start." },
+      { "title": "Send your full document set", "desc": "WhatsApp or email · we'll review and tell you instantly if anything is missing." },
+      { "title": "Fixed quote for the bundle", "desc": "Per-file pricing with a bundle discount · no surprises after we start." },
       { "title": "Certified translation, ready in 24–48 hours", "desc": "Standard. Same-day express available for last-minute appointments." },
       { "title": "Pickup or courier delivery", "desc": "Local pickup in Dammam, or courier anywhere in the Kingdom." }
     ],
@@ -139,10 +145,10 @@
       "Every document carries the official Tabador stamp and signature.",
       "Translations are formatted exactly the way consulates expect them.",
       "If a consulate rejects a translation we issued, we re-do it for free.",
-      "We've handled this exact paperwork thousands of times — we know what works."
+      "We've handled this exact paperwork thousands of times · we know what works."
     ],
     "ctaTitle": "Submitting a Schengen application?",
-    "ctaBody": "Send us your full document set today — we'll have your certified file ready before your appointment."
+    "ctaBody": "Send us your full document set today · we'll have your certified file ready before your appointment."
   },
   "blog": {
     "title": "Notes & Guides",
@@ -158,11 +164,11 @@
         "minutes": 6,
         "date": "2026-04-24",
         "body": [
-          { "type": "p", "text": "Applying for a Schengen visa from Saudi Arabia means handling documents in Arabic that the consulate of France, Germany, Italy, Spain, or another Schengen state needs to read in their own language. Every document submitted with the application — bank statements, marriage certificates, employment letters — must be officially translated by a licensed translator." },
+          { "type": "p", "text": "Applying for a Schengen visa from Saudi Arabia means handling documents in Arabic that the consulate of France, Germany, Italy, Spain, or another Schengen state needs to read in their own language. Every document submitted with the application · bank statements, marriage certificates, employment letters · must be officially translated by a licensed translator." },
           { "type": "h2", "text": "Which documents need certified translation?" },
           { "type": "p", "text": "Every consulate has its own checklist, but the core list is consistent across the Schengen area:" },
           { "type": "ul", "items": [
-            "Passport — biographical page",
+            "Passport · biographical page",
             "National ID or Iqama",
             "Family record (Civil Status booklet)",
             "Marriage certificate (for spousal travel)",
@@ -175,16 +181,16 @@
           { "type": "p", "text": "Three things, every time: an official stamp from a licensed translation office, the translator's signature, and a statement of fidelity (a one-line declaration that the translation accurately reflects the source). Without all three, the document is treated as informal and the application is paused or rejected." },
           { "type": "h2", "text": "The most common rejection causes" },
           { "type": "ol", "items": [
-            "Using an uncertified translator (machine translation, freelance translation without a licence) — automatic rejection.",
-            "Missing pages — a single missing page in a bank statement can void the entire submission.",
-            "Wrong format — Schengen consulates expect a side-by-side or cleanly formatted document with the original layout preserved.",
-            "Outdated documents — most financial documents must be no older than 30 days at submission.",
-            "Translator inconsistency — names spelled differently across documents in the same file is a red flag."
+            "Using an uncertified translator (machine translation, freelance translation without a licence) · automatic rejection.",
+            "Missing pages · a single missing page in a bank statement can void the entire submission.",
+            "Wrong format · Schengen consulates expect a side-by-side or cleanly formatted document with the original layout preserved.",
+            "Outdated documents · most financial documents must be no older than 30 days at submission.",
+            "Translator inconsistency · names spelled differently across documents in the same file is a red flag."
           ] },
           { "type": "h2", "text": "How long does it take?" },
           { "type": "p", "text": "A standard Schengen file (10–15 documents) takes 24–48 hours at standard turnaround. Same-day delivery is possible if you submit the full set before noon and we have no clarifications to send back. For appointments tomorrow, our express service is the safe choice." },
           { "type": "h2", "text": "What does it cost?" },
-          { "type": "p", "text": "Pricing is per-document with a bundle discount when the entire Schengen file is submitted together. We send a fixed quote within minutes of seeing your set — no hidden fees, no surcharges for the certification stamp, and corrections within scope are free." },
+          { "type": "p", "text": "Pricing is per-document with a bundle discount when the entire Schengen file is submitted together. We send a fixed quote within minutes of seeing your set · no hidden fees, no surcharges for the certification stamp, and corrections within scope are free." },
           { "type": "h2", "text": "Where to start" },
           { "type": "p", "text": "Send your document set via WhatsApp or the quick-quote form on this site. We'll tell you immediately if anything is missing, give you a fixed quote, and confirm a delivery time that fits your appointment date." }
         ]
@@ -199,14 +205,14 @@
         "title": "About Certified Translation",
         "items": [
           { "q": "What makes a translation 'certified'?", "a": "A certified translation is produced by a licensed translator who attaches an official stamp, signature, and a statement of accuracy. This is what makes it legally accepted by ministries, courts, embassies, and immigration authorities." },
-          { "q": "Why can't I use Google Translate or AI?", "a": "Machine translations have no legal standing — no Saudi authority or foreign embassy will accept them. Certified translation requires a licensed human translator who is legally accountable for the accuracy of the document." },
-          { "q": "Do you certify the content of the document?", "a": "No. We certify the fidelity of the translation only — that the translation accurately reflects the source. The truthfulness or validity of the original document is the responsibility of its issuer." }
+          { "q": "Why can't I use Google Translate or AI?", "a": "Machine translations have no legal standing · no Saudi authority or foreign embassy will accept them. Certified translation requires a licensed human translator who is legally accountable for the accuracy of the document." },
+          { "q": "Do you certify the content of the document?", "a": "No. We certify the fidelity of the translation only · that the translation accurately reflects the source. The truthfulness or validity of the original document is the responsibility of its issuer." }
         ]
       },
       {
         "title": "Pricing & Turnaround",
         "items": [
-          { "q": "How is the price calculated?", "a": "Pricing depends on document type, length, language pair, and how urgent you need it. We send a fixed quote within minutes — no hidden fees, no surprises after delivery." },
+          { "q": "How is the price calculated?", "a": "Pricing depends on document type, length, language pair, and how urgent you need it. We send a fixed quote within minutes · no hidden fees, no surprises after delivery." },
           { "q": "Do you charge for the certification stamp?", "a": "No. The certification stamp, signature, and one printed copy are included in the price. Extra physical copies are available at a small additional cost." },
           { "q": "What's your fastest turnaround?", "a": "For most personal documents (IDs, certificates, passports), same-day delivery is possible if you submit before noon. For larger files or rare languages, we'll confirm a precise turnaround in your quote." }
         ]
@@ -223,13 +229,13 @@
         "title": "Acceptance & Delivery",
         "items": [
           { "q": "What if my translation is rejected by an authority?", "a": "Our first-time-acceptance guarantee covers exactly this. If a Saudi authority or embassy rejects a translation we issued, we correct it free of charge until it is accepted." },
-          { "q": "Do you handle Schengen visa applications?", "a": "Yes — Schengen files are one of our most common services. We translate every required document with the proper certification expected by the consulates of France, Germany, Italy, Spain, the Netherlands, and other Schengen states." },
+          { "q": "Do you handle Schengen visa applications?", "a": "Yes · Schengen files are one of our most common services. We translate every required document with the proper certification expected by the consulates of France, Germany, Italy, Spain, the Netherlands, and other Schengen states." },
           { "q": "Can you deliver to a different city or abroad?", "a": "Yes. Local pickup is from our office opposite Jawazat in Dammam. We also offer email delivery (certified PDF) and courier delivery anywhere in the Kingdom or abroad at the client's preferred carrier." }
         ]
       }
     ],
     "stillTitle": "Still have a question?",
-    "stillBody": "We answer WhatsApp and phone calls during working hours — Sunday through Thursday, 8 AM to 10 PM."
+    "stillBody": "We answer WhatsApp and phone calls during working hours · Sunday through Thursday, 8 AM to 10 PM."
   },
   "services": {
     "title": "Our Services",
@@ -301,13 +307,13 @@
   },
   "quote": {
     "title": "Get a Quick Quote",
-    "subtitle": "Send your document now — we respond within minutes.",
+    "subtitle": "Send your document now · we respond within minutes.",
     "docType": "Document Type",
     "docTypePlaceholder": "e.g. Birth certificate, Degree...",
     "langFrom": "From Language",
     "langTo": "To Language",
     "upload": "Attach Document",
-    "uploadHint": "PDF, JPG, PNG, DOC, DOCX — max 3 MB. For larger files, send via WhatsApp.",
+    "uploadHint": "PDF, JPG, PNG, DOC, DOCX · max 3 MB. For larger files, send via WhatsApp.",
     "fileTooLarge": "File is too large. Maximum 3 MB.",
     "fileTypeBad": "Unsupported file type. Allowed: PDF, JPG, PNG, WEBP, DOC, DOCX.",
     "removeFile": "Remove file",
@@ -343,10 +349,10 @@
   "carousel": {
     "label": "Tabador in action",
     "slides": [
-      { "headline": "Certified Translation You Can Rely On", "body": "Official translations accepted by all embassies and government bodies — inside and outside the Kingdom." },
-      { "headline": "Every Document, Translated With Precision", "body": "From IDs and birth certificates to contracts, Schengen files, and all official paperwork — accepted the first time." },
+      { "headline": "Certified Translation You Can Rely On", "body": "Official translations accepted by all embassies and government bodies · inside and outside the Kingdom." },
+      { "headline": "Every Document, Translated With Precision", "body": "From IDs and birth certificates to contracts, Schengen files, and all official paperwork · accepted the first time." },
       { "headline": "Any Official Matter Needs an Accurate, Certified Translation", "body": "A small mistake can mean delay or rejection. We deliver precision, speed, and commitment for total peace of mind." },
-      { "headline": "All Types of Translation, All Languages", "body": "Personal, official, educational, embassy, contracts, medical, legal & administrative — handled by certified translators." }
+      { "headline": "All Types of Translation, All Languages", "body": "Personal, official, educational, embassy, contracts, medical, legal & administrative · handled by certified translators." }
     ]
   },
   "sectorsServed": {
@@ -389,23 +395,23 @@
   "pricing": {
     "title": "Transparent Pricing",
     "subtitle": "Fixed price, agreed before any work starts",
-    "intro": "We don't publish a fixed rate card because every document is different. What we do promise: a precise, fixed quote within minutes of seeing your document — with no hidden fees.",
+    "intro": "We don't publish a fixed rate card because every document is different. What we do promise: a precise, fixed quote within minutes of seeing your document · with no hidden fees.",
     "howTitle": "How pricing is calculated",
     "howItems": [
       { "title": "Document type", "desc": "Personal docs (IDs, certificates) are priced per-document; long reports are priced per-word." },
       { "title": "Language pair", "desc": "English ⇄ Arabic is the most common; rarer pairs (Farsi, Chinese, Tagalog) are slightly higher." },
-      { "title": "Turnaround", "desc": "Standard (next business day) vs. express (same-day) — you choose." },
+      { "title": "Turnaround", "desc": "Standard (next business day) vs. express (same-day) · you choose." },
       { "title": "Volume", "desc": "Batch discounts for multiple documents, embassy files, and corporate clients." }
     ],
     "guaranteeTitle": "Our pricing guarantee",
     "guaranteeItems": [
-      "Fixed quote before we start — never pay more than the number we sent you.",
+      "Fixed quote before we start · never pay more than the number we sent you.",
       "No hidden fees for certification stamp, signature, or second copy.",
       "Re-translation or minor corrections within scope are free.",
       "Quotes are free and carry no obligation."
     ],
     "ctaTitle": "Get your quote now",
-    "ctaBody": "Send us the document — we reply within minutes with a fixed price and delivery time.",
+    "ctaBody": "Send us the document · we reply within minutes with a fixed price and delivery time.",
     "ctaButton": "Request a Free Quote"
   },
   "urgent": {
@@ -426,14 +432,14 @@
       { "title": "Send your document now", "desc": "WhatsApp, email, or upload through the quote form." },
       { "title": "Priority quote in 15 minutes", "desc": "We confirm exact price and delivery time before work starts." },
       { "title": "Dedicated express track", "desc": "Your document jumps the standard queue and goes to a certified translator immediately." },
-      { "title": "Pickup or instant email delivery", "desc": "Same-day pickup from our office opposite Jawazat — or certified scan by email." }
+      { "title": "Pickup or instant email delivery", "desc": "Same-day pickup from our office opposite Jawazat · or certified scan by email." }
     ],
     "guaranteeTitle": "Express service guarantee",
     "guaranteeItems": [
       "Same-day delivery for most personal documents (submitted before noon).",
       "Next-morning delivery for items submitted after 5 PM.",
       "Full certification, stamp, and signature included.",
-      "First-time acceptance guaranteed — or we fix it free."
+      "First-time acceptance guaranteed · or we fix it free."
     ],
     "ctaTitle": "Send your urgent document now",
     "ctaBody": "Every minute counts. Tap below and we'll get back to you immediately.",
@@ -469,14 +475,14 @@
     "cr": "Commercial Registration 2051221647",
     "location": "Opposite Jawazat, Dammam",
     "missionTitle": "Our Mission",
-    "missionBody": "Deliver certified translations that are accepted on the first submission — saving our clients time, cost, and stress.",
+    "missionBody": "Deliver certified translations that are accepted on the first submission · saving our clients time, cost, and stress.",
     "visionTitle": "Our Vision",
     "visionBody": "To be the Eastern Province's most trusted translation partner for individuals, businesses, and government.",
     "valuesTitle": "Our Values",
     "values": [
       { "title": "Precision", "desc": "Every term, number, and stamp rendered exactly." },
       { "title": "Speed", "desc": "Standard and express service that respects your deadlines." },
-      { "title": "Commitment", "desc": "We stand behind every translation — with our licence and our name." },
+      { "title": "Commitment", "desc": "We stand behind every translation · with our licence and our name." },
       { "title": "Confidentiality", "desc": "Your documents are handled privately and never shared." }
     ]
   },
@@ -488,7 +494,7 @@
     "address": "Address",
     "hours": "Working Hours",
     "form": "Send a Message",
-    "mapTitle": "Tabador Translation — Dammam",
+    "mapTitle": "Tabador Translation · Dammam",
     "openInMaps": "Open in Google Maps"
   }
 }
